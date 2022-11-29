@@ -1,0 +1,17 @@
+{
+  "baseUrl": "http://localhost:3000",
+  "numTestsKeptInMemory": 0,
+  "reporter": "junit",
+  "screenshotOnRunFailure": false,
+  "video": false,
+  "trashAssetsBeforeRuns": false,
+  "reporterOptions": {
+    "mochaFile": "reports/junit/junit-[hash].xml",
+    "testsuitesTitle": true,
+    "testCaseSwitchClassnameAndName": true
+  },
+  "component": {
+    "testFiles": "**/*.test.{js,ts,jsx,tsx}",
+    "componentFolder": "src"
+  }
+}
