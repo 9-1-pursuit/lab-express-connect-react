@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate , Link } from "react-router-dom";
 import axios from "axios";
+import "./LogNew.css"
 const API = process.env.REACT_APP_API_URL
 
 function LogNew(){

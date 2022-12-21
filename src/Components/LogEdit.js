@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams, Link , useNavigate} from "react-router-dom";
-import "./LogEdit.css"
 import axios from "axios";
+import "./LogNew.css"
 const API = process.env.REACT_APP_API_URL
 
 function LogEdit(){
@@ -42,9 +42,10 @@ function LogEdit(){
       };
 
       return(
-        <div className="New">
+        <div className="Edit">
           <h1>Edit</h1>
         <form onSubmit={handleSubmit}>
+        <br></br>
           <label htmlFor="captainName">Captain's Name:</label>
           <input
             id="captainName"
@@ -54,6 +55,8 @@ function LogEdit(){
             placeholder="Captain Name"
             required
           />
+           <br></br>
+          <br></br>
           <label htmlFor="title">Title:</label>
           <input
             id="title"
@@ -63,6 +66,8 @@ function LogEdit(){
             placeholder="Title"
             onChange={handleTextChange}
           />
+           <br></br>
+          <br></br>
           <label htmlFor="post">Post:</label>
           <textarea
             id="post"
@@ -70,6 +75,8 @@ function LogEdit(){
             value={logs.post}
             onChange={handleTextChange}
           />
+           <br></br>
+          <br></br>
           <label htmlFor="daysSinceLastCrisis">Days Since Last Crisis:</label>
           <input
             id="daysSinceLastCrisis"
@@ -77,6 +84,8 @@ function LogEdit(){
             onChange={handleTextChange}
             value={logs.daysSinceLastCrisis}
           />
+           <br></br>
+          <br></br>
           <label htmlFor="mistakesWereMadeToday">Mistakes were made today:</label>
         <input
           id="mistakesWereMadeToday"
@@ -84,12 +93,15 @@ function LogEdit(){
           onChange={handleCheckboxChange}
           checked={logs.mistakesWereMadeToday}
         />
-          <br />
+         <br></br>
+         <br></br>
+         <div className="new-buttons">
           <input type="submit" />
-        </form>
         <Link to={`/logs/${index}`}>
-        <button>Back</button>
+        <button className="cancel">Back</button>
       </Link>
+         </div>
+        </form>
       </div>
       )
 }
