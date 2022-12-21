@@ -9,7 +9,10 @@ export default function Logs() {
   useEffect(() => {
     axios
       .get(`${API}/logs`)
-      .then((res) => setLogs(res.data))
+      .then((res) => {
+        console.log(res.data);
+        setLogs(res.data);
+      })
       .catch((err) => console.error(err));
   }, []);
 
@@ -21,8 +24,10 @@ export default function Logs() {
         return (
           <div key={index}>
             <h3>{log.captainName}</h3>
-            <h5>{log.title}</h5>
-            <p>{log.post}</p>
+            <Link to={`/logs/${index}`}>
+              <h5>{log.title}</h5>
+            </Link>
+
             <hr></hr>
           </div>
         );

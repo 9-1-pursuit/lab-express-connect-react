@@ -22,8 +22,8 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/logs" element={<Index />} />
             <Route path="/logs/new" element={<New />} />
-            <Route path="/logs/:idex" element={<Show />} />
-            <Route path="/logs/:idex/edit" element={<Edit />} />
+            <Route path="/logs/:index" element={<Show />} />
+            <Route path="/logs/:index/edit" element={<Edit />} />
             <Route path="*" element={<Error />} />
           </Routes>
         </main>
