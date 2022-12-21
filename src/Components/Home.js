@@ -1,17 +1,17 @@
-// import "./Home.css"
-// import ufo from "./assets/ufo.png"
+import "./Home.css"
+import ufo from "./assets/ufo.png"
 
-// function Home(props) {
-//     return (
-//         <div className="home">
-//             <h1>Captain's Logs React</h1>
-//             <img src = {ufo} alt = "ufo" />
-//             <p>
-//                 Destiny J. 
-//             </p>
+function Home(props) {
+    return (
+        <div className="home">
+            <h1>Captain's Logs React</h1>
+            <img src = {ufo} alt = "ufo" />
+            <p>
+                Destiny J. 
+            </p>
             
-//         </div>
-//     );
-// }
+        </div>
+    );
+}
 
-// export default Home;
+export default Home;
