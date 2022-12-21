@@ -1,0 +1,18 @@
+.navBar {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    height: 15vh;
+    width: 100vw;
+    background-color: rgb(33, 49, 158);
+   justify-items: center;
+   font-family: monospace;
+}
+
+.welcomeh1{
+    color: white;
+}
+
+#logs, #newLog {
+    color: white;
+    margin-top: 15%;
+}
