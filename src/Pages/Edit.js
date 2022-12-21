@@ -97,9 +97,9 @@ export default function Edit() {
           onChange={handleCheckbox}
           checked={log.mistakesWereMadeToday}
         />
+        <button type="submit">Submit!</button>
       </form>
       <button onClick={() => navigate(`/logs/${index}`)}>Back</button>
-      <button type="submit">Submit!</button>
     </div>
   );
 }

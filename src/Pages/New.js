@@ -86,7 +86,9 @@ export default function New() {
           onChange={handleCheckbox}
           checked={log.mistakesWereMadeToday}
         />
+        <input type="submit" />
       </form>
+      <button onClick={() => navigate("/logs")}>go Back</button>
     </div>
   );
 }

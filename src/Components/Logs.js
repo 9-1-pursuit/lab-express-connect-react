@@ -10,7 +10,6 @@ export default function Logs() {
     axios
       .get(`${API}/logs`)
       .then((res) => {
-        console.log(res.data);
         setLogs(res.data);
       })
       .catch((err) => console.error(err));
