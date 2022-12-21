@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate , Link } from "react-router-dom";
 import axios from "axios";
 const API = process.env.REACT_APP_API_URL
 
@@ -33,7 +33,8 @@ function LogNew(){
       return(
         <div className="New">
         <form onSubmit={handleSubmit}>
-          <label htmlFor="captainName">Captain Name:</label>
+          <br></br>
+          <label htmlFor="captainName">Captain's Name:</label>
           <input
             id="captainName"
             value={logs.captainName}
@@ -42,6 +43,8 @@ function LogNew(){
             placeholder="Captain Name"
             required
           />
+          <br></br>
+          <br></br>
           <label htmlFor="title">Title:</label>
           <input
             id="title"
@@ -51,6 +54,8 @@ function LogNew(){
             placeholder="Title"
             onChange={handleTextChange}
           />
+          <br></br>
+          <br></br>
           <label htmlFor="post">Post:</label>
           <textarea
             id="post"
@@ -58,13 +63,17 @@ function LogNew(){
             value={logs.post}
             onChange={handleTextChange}
           />
-          <label htmlFor="daysSinceLastCrisis">Days since last crisis:</label>
+          <br></br>
+          <br></br>
+          <label htmlFor="daysSinceLastCrisis">Days Since Last Crisis:</label>
           <input
             id="daysSinceLastCrisis"
-            type="text"
+            type="number"
             onChange={handleTextChange}
             value={logs.daysSinceLastCrisis}
           />
+          <br></br>
+          <br></br>
           <label htmlFor="mistakesWereMadeToday">Mistakes were made today:</label>
         <input
           id="mistakesWereMadeToday"
@@ -72,8 +81,16 @@ function LogNew(){
           onChange={handleCheckboxChange}
           checked={logs.mistakesWereMadeToday}
         />
-          <br />
+        <br></br>
+          <br></br>
+          <div className="new-buttons">
           <input type="submit" />
+
+          <Link to={"/logs"}>
+            <button className="cancel">Cancel</button>
+          </Link>
+
+          </div>
         </form>
       </div>
       )

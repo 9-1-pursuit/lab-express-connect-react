@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useParams , useNavigate} from "react-router-dom";
 import axios from "axios";
+import "./LogsDetails.css"
 const API = process.env.REACT_APP_API_URL
 
 function LogDeatails(){
@@ -34,21 +35,21 @@ function LogDeatails(){
         <h3>{logs.post}</h3>
         <p><span>Days since last crisis:</span> {logs.daysSinceLastCrisis}</p>
          </div>
+      <br></br>
+
         <div className="buttons">
-            <div>
+            <div >
                 <Link to={"/logs"}>
-                    <button>Back</button>
+                    <button className="captain-buttons">Back</button>
                 </Link>
             </div>
-            <div>
+            <div >
                 <Link to={`/logs/${index}/edit`}>
-                    <button>Edit</button>
+                    <button className="captain-buttons">Edit</button>
                 </Link>
             </div>
-            <div>
-        
-          <button onClick={handleDelete}>Delete</button>
-              
+            <div >
+          <button className="captain-buttons" onClick={handleDelete}>Delete</button>
             </div>
         </div>
 

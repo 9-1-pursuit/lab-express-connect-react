@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams, Link , useNavigate} from "react-router-dom";
+import "./LogEdit.css"
 import axios from "axios";
 const API = process.env.REACT_APP_API_URL
 
@@ -42,8 +43,9 @@ function LogEdit(){
 
       return(
         <div className="New">
+          <h1>Edit</h1>
         <form onSubmit={handleSubmit}>
-          <label htmlFor="captainName">Captain Name:</label>
+          <label htmlFor="captainName">Captain's Name:</label>
           <input
             id="captainName"
             value={logs.captainName}
@@ -68,10 +70,10 @@ function LogEdit(){
             value={logs.post}
             onChange={handleTextChange}
           />
-          <label htmlFor="daysSinceLastCrisis">Days since last crisis:</label>
+          <label htmlFor="daysSinceLastCrisis">Days Since Last Crisis:</label>
           <input
             id="daysSinceLastCrisis"
-            type="text"
+            type="number"
             onChange={handleTextChange}
             value={logs.daysSinceLastCrisis}
           />

@@ -1,6 +1,7 @@
 import { useState , useEffect} from "react";
 import Log from "./Log";
 import axios from "axios";
+
 const API = process.env.REACT_APP_API_URL
 
 function Logs(){
@@ -13,24 +14,24 @@ function Logs(){
     }, [])
 
  return(
-    <div >
-    <section>
-      <table>
-        <thead>
-          <tr>
-            <th></th>
-            <th>Take me there</th>
-            <th>See this bookmark</th>
-          </tr>
-        </thead>
-        <tbody>
-          {logs.map((log, index) => {
-            return <Log key={index} log={log} index={index} />;
-          })}
-        </tbody>
-      </table>
-    </section>
-  </div>
+  <div>
+      <section>
+        <table>
+          <thead>
+            <tr>
+              <th></th>
+              <th>Take me there</th>
+              <th>See this bookmark</th>
+            </tr>
+          </thead>
+          <body className="captains-table">
+            {logs.map((log, index) => {
+              return <Log key={index} log={log} index={index} />;
+            })}
+          </body>
+        </table>
+      </section>
+    </div>
  )
 
 }

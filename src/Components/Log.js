@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
 
+
 function Log({log , index}){
     return(
-<tr>
+<tr className="captains-table">
       <td>
         {log.mistakesWereMadeToday ? (
           <span>💥</span>
@@ -11,7 +12,9 @@ function Log({log , index}){
         )}
       </td>
       <td>
+        
          <Link to={`/logs/${index}`}>{log.captainName}</Link>
+        
       </td>
       <td>
        {log.title}
@@ -22,3 +25,4 @@ function Log({log , index}){
 }
 
 export default Log
+

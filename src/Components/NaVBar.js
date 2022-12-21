@@ -1,14 +1,18 @@
 import { Link } from "react-router-dom";
+import "./NavBar.css"
 
 export default function NavBar() {
   return (
     <nav>
-      <h1>
-        <Link to="/logs">Captain Log's</Link>
+      <h1 className="home-page-link">
+        <Link to="/logs">Captain's Log</Link>
       </h1>
-      <button>
-        <Link to="/logs/new">New Log</Link>
+        <Link to="/logs/new">
+        <button className="new-captain">
+          New Captain
       </button>
+          </Link>
+      
     </nav>
   );
 }

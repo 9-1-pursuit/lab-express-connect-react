@@ -1,0 +1,20 @@
+form{
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+.new-buttons{
+    display: grid;
+    grid-template-columns: repeat(2 , 60px);
+    grid-column-gap: 10px;
+}
+
+.cancel{
+    background: none!important;
+  border: none;
+  padding: 0!important;
+  font-family: arial, sans-serif;
+  color: #069;
+  text-decoration: underline;
+  cursor: pointer;
+}
