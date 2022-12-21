@@ -1,9 +1,12 @@
-import React from 'react'
+import Log from "../Components/Log";
 
 function Show() {
   return (
-    <div>Show</div>
-  )
+    <div>
+      <h1>Show</h1>
+      <Log />
+    </div>
+  );
 }
 
-export default Show
+export default Show;

@@ -1,17 +1,16 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
-
+// import Log from "../Components/Log"
 const API = process.env.REACT_APP_API_URL;
-console.log(API);
+//
 export default function Logs() {
   const [logs, setLogs] = useState([]);
-
-  // USEEFFECT
+  // UseEffect
   useEffect(() => {
     axios
       .get(`${API}/logs`)
       .then((res) => {
-        console.log(res.data);
         setLogs(res.data);
       })
       .catch((error) => console.log("catch", error));
@@ -20,14 +19,11 @@ export default function Logs() {
     <div className="Logs">
       {logs.map((log, index) => {
         return (
-          <div key={index}>
-            <h3>
-              {log.title} - by {log.captainName}{" "}
-            </h3>
-            <p>{log.post}</p>
-            <p>
-              <b>Days since last criris:</b> {log.daysSinceLastCrisis}
-            </p>
+          <div key={index} style={{ border: "1px solid black" }}>
+            <Link to={`/logs/${index}`}>
+              <h2>{log.title}</h2>{" "}
+            </Link>
+            by {log.captainName}
           </div>
         );
       })}

@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import NavBar from "./Components/NavBar";
 //! PAGES
 import Home from "./Pages/Home";
-import Index from "./Pages/Index"
+import Index from "./Pages/Index";
 import Show from "./Pages/Show";
 import Edit from "./Pages/Edit";
 import New from "./Pages/New";
