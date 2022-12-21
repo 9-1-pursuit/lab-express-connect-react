@@ -4,21 +4,18 @@ import { ContextData } from "./Provider";
 import LogsIndexDisplay from "./LogsIndexDisplay";
 import "./LogsIndex.css"
 
-
-
-
-function LogsIndex(props) {
+function LogsIndex() {
     const {logs, setLogs} = useContext(ContextData)
 
     return (
         <div className="index">
             <h2>INDEX</h2>
             <section className="listedLogs">
-            <div className= "logsHeader">
-                <span>Mistakes</span>
-                <p>Captain</p>
-                <p>Log Title</p>
-            </div>
+                <div className= "logsHeader">
+                    <p>Mistakes</p>
+                    <p>Captain</p>
+                    <p>Log Title</p>
+                </div>
                 {
                     logs.map(({captainName, title, mistakesWereMadeToday}, index) => 
                        <LogsIndexDisplay 

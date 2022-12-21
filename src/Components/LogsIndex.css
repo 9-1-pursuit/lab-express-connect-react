@@ -1,8 +1,23 @@
 .index {
     margin-top: 80px;
+    background-color: #050539;
+    color: #AA0078;
 }
+
+.index, .logs, .logsHeader {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.index h2 {
+    font-family: 'Orbitron', sans-serif;
+    text-align: center;
+    font-size: 40px;
+}
+
 .listedLogs {
-    margin-top: 50px;
+    margin-top: 50px; 
 }
 
 .logs, .logsHeader {
@@ -18,8 +33,13 @@
     height: 40px;
 }
 
+.logs {
+    color: #FDC30B;
+    font-size: 18px;
+    font-family: 'Rajdhani', sans-serif;
+}
+
 .logsHeader {
     font-size: 24px;
     font-family: 'Orbitron', sans-serif;
-
 }
