@@ -1,14 +1,15 @@
 import { Routes, Route } from 'react-router-dom';
+import Home from './Home';
 
 
-function Routes(props) {
+function RouteComponent(props) {
     return (
        <Routes>
         <Route path = "/">
-            <Route index element = {} />
+            <Route index element = {<Home />} />
         </Route>
        </Routes>
     );
 }
 
-export default Routes;
+export default RouteComponent;

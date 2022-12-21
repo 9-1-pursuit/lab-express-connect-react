@@ -1,5 +1,7 @@
 import { createContext, useState } from "react";
 import axios from "axios";
+import Nav from "./Nav";
+import Footer from "./Footer";
 // Context obj to consume data
 export const ContextData = createContext()
 
@@ -16,6 +18,8 @@ function Provider({children}) {
                 logs,
                 setLogs,
             }}>
+                <Nav />
+                <Footer />
                 {children}
             </ContextData.Provider>
             
