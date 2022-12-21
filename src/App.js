@@ -1,5 +1,5 @@
 import Provider from "./Components/Provider";
-import Routes from "./Components/Routes";
+import RouteComponent from "./Components/RouteComponent";
 import "./App.css"
 
 
@@ -7,7 +7,7 @@ function App() {
   return(
     <div className="App">
       <Provider>
-        <Routes />
+        <RouteComponent />
       </Provider>
     </div>
   ) 
