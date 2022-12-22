@@ -2,6 +2,7 @@
     margin-top: 80px;
     background-color: #050539;
     color: #AA0078;
+    border-radius: 5px;
 }
 
 .index, .logs, .logsHeader {
