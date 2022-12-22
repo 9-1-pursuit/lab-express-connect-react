@@ -18,7 +18,6 @@ function Provider({children}) {
     },[])
 
     return (
-        <div>
             <ContextData.Provider value={{
                 axios,
                 API,
@@ -30,7 +29,7 @@ function Provider({children}) {
                 {children}
             </ContextData.Provider>
             
-        </div>
+       
     );
 }
 

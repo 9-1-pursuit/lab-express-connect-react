@@ -1,7 +1,7 @@
 .index {
     margin-top: 80px;
     padding-bottom: 50px;
-    background-color: #050539;
+    background-color: #050539d2;
     color: #AA0078;
     border-radius: 5px;
 }
@@ -19,7 +19,9 @@
 }
 
 .listedLogs {
-    margin-top: 50px; 
+    margin-top: 50px;
+    height: fit-content;
+
 }
 
 .logs, .logsHeader {
