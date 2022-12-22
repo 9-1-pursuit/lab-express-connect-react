@@ -1,0 +1,22 @@
+.show {
+    margin-top: 80px;
+    display: grid;
+    grid-template-columns: 30% 55% 15%;
+    grid-template-rows: 1fr 4fr;
+}
+
+.show h2{
+    grid-row: 1;
+    grid-column: span 3;
+    justify-self: center;
+}
+
+.show img {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.show .entry {
+    grid-column: 2;
+    grid-row: 2;
+}
