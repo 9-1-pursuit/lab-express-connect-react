@@ -8,9 +8,10 @@
     grid-template-columns: repeat(3, 1fr);
     justify-items: center;
     align-items: center;
-    background-image: url('./assets/black-space.gif');
+    background-image: url('./assets/black-space.gif'); 
+   
+    /* background-color: black; */
     z-index: 500;
-
 }
 
 .nav a {

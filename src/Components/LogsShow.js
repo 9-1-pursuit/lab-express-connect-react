@@ -1,5 +1,5 @@
 import { useEffect, useState, useContext } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { ContextData } from './Provider';
 import './LogsShow.css'
 import picard from './assets/Picard.jpeg'
@@ -57,9 +57,15 @@ function LogsShow() {
                 </>
             }
             <div className='buttons'>
-                <button>Back</button>
-                <button>Edit</button>
-                <button>Delete</button>
+                <Link to = "/logs">
+                    <button>Back</button>
+                </Link>
+                <Link to ={`/logs/${index}/edit`}>
+                    <button>Edit</button>
+                </Link>
+                <Link to="/">
+                    <button>Delete</button>
+                </Link>
             </div>
         </div>
     );
