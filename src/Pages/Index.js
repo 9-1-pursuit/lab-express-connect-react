@@ -1,7 +1,6 @@
 import LogsIndex from "../Components/LogsIndex";
 
-
-function Index(props) {
+function Index() {
     return (
         <div>
             <LogsIndex />  

@@ -1,7 +1,21 @@
 .home {
-    margin-top: 65px;
+    margin-top: 70px;
+    padding-top: 30px;
     text-align: center;
+    /* color: #FDC30B; */
+    color: #AA0078;
+    width: 60%;
+    margin-left:auto;
+    margin-right: auto;
+    font-family: 'Rajdhani', sans-serif;
 }
+
+.home h1 {
+    font-size: 60px;
+    /* color: #AA0078; */
+    color: #FDC30B;
+}
+
 
 .home img {
     height: 250px;

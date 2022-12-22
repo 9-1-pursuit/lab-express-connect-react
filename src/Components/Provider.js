@@ -18,8 +18,8 @@ function Provider({children}) {
     },[])
 
     return (
-        <div>
             <ContextData.Provider value={{
+                axios,
                 API,
                 logs,
                 setLogs,
@@ -29,7 +29,7 @@ function Provider({children}) {
                 {children}
             </ContextData.Provider>
             
-        </div>
+       
     );
 }
 
