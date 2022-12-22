@@ -1,5 +1,5 @@
 .show {
-    margin-top: 80px;
+    margin-top: 110px;
     display: grid;
     grid-template-columns: 30% 55% 15%;
     grid-template-rows: .8fr 2fr ;
