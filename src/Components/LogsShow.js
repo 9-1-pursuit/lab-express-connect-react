@@ -27,6 +27,7 @@ function LogsShow() {
         if(nameLower === `morgan`) return morgan
         if(nameLower === `hansolo`) return hansolo
         if(nameLower === `kirk`) return kirk
+        if(nameLower === `jacksparrow`) return jacksparrow
     }
     
     useEffect(() => {
@@ -38,13 +39,13 @@ function LogsShow() {
 
     return (
         <div className='show'>
-            <h2>SHOW</h2>
+            <h2>CAPTAIN'S LOG : {index}</h2>
             {
                 Object.keys(thisLog).length &&
                 <>
                 <div className="logProfile">
                     <img src = {pic(thisLog.captainName)} alt = {thisLog.captainName} />
-                    <p>{thisLog.captainName}</p>
+                    <p> Captain {thisLog.captainName}</p>
                 </div>
                 <div className='entry'>
                     <h3>{thisLog.title}</h3>
@@ -55,6 +56,11 @@ function LogsShow() {
                 </div>
                 </>
             }
+            <div className='buttons'>
+                <button>Back</button>
+                <button>Edit</button>
+                <button>Delete</button>
+            </div>
         </div>
     );
 }
