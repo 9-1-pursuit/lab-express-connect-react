@@ -1,9 +1,10 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 const API = process.env.REACT_APP_API_URL;
 
-const NewLogForm = () => {
+const EditLogForm = () => {
+  let { index } = useParams();
   let navigate = useNavigate();
 
   // newLogInfo
@@ -33,17 +34,28 @@ const NewLogForm = () => {
     });
   };
 
+  //gets the data to give edit form default index values
+  useEffect(() => {
+    axios
+      .get(`${API}/logs/${index}`)
+      .then((res) => setLog(res.data))
+      .catch((err) => console.error(err));
+  }, [index]);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post(`${API}/logs`, log)
-      .then(() => navigate("/logs"))
+      .put(`${API}/logs/${index}`, log)
+      .then((res) => {
+        setLog(res.data);
+        navigate(`/logs/${index}`);
+      })
       .catch((err) => console.error(err));
   };
 
   return (
     <div className="newLog">
-      <h1>Create New Log</h1>
+      <h1>Edit Log</h1>
       <form className="newLogForm" onSubmit={handleSubmit}>
         <label htmlFor="captainName">
           {" "}
@@ -100,4 +112,4 @@ const NewLogForm = () => {
   );
 };
 
-export default NewLogForm;
+export default EditLogForm;

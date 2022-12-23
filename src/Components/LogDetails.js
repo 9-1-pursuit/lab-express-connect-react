@@ -27,6 +27,7 @@ const LogDetails = () => {
   return (
     <div className="logIndex">
       <h2>Log</h2>
+      <p>Captain's Name: {log.captainName}</p>
       <p>Log Title: {log.title}</p>
       <p>Log: {log.post}</p>
       <p>Mistakes Made Today: {`${log.mistakesWereMadeToday}`}</p>
