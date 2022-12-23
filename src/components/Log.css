@@ -1,0 +1,28 @@
+.padding {
+    padding: 10px;
+}
+
+.black-border {
+    font-size: 13px;
+    border: 2px solid black;
+    box-shadow: 0px 0px 10px inset;
+    padding: 3px;
+}
+
+.log-container {
+    margin-left: 450px;
+    margin-right: 450px;
+}
+
+li {
+    list-style: none;
+    border: 3px solid black;
+    padding: 20px;
+    padding-top: 0px;
+    box-shadow: 15px 15px 0px;
+    margin-bottom: 50px;
+}
+
+#log-post {
+    height: 50px;
+}
