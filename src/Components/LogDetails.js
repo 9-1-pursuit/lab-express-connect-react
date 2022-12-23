@@ -20,8 +20,14 @@ const LogDetails = () => {
   const deleteLog = () => {
     axios
       .delete(`${API}/logs/${index}`)
-      .then(navigate("/logs"))
-      .catch((err) => console.error(err));
+      .then(() => {
+        navigate("/logs");
+        window.alert("Log successfully deleted.");
+      })
+      .catch((err) => {
+        console.error(err);
+        window.alert("Error, log not deleted.");
+      });
   };
 
   return (
