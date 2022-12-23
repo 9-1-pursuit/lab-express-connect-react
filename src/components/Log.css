@@ -12,9 +12,6 @@
 .log-container {
     margin-left: 450px;
     margin-right: 450px;
-}
-
-li {
     list-style: none;
     border: 3px solid black;
     padding: 20px;
