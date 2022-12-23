@@ -2,13 +2,12 @@ import { useState, useEffect } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./LogDetails.css";
-// import AllLogsIndex from "./AllLogsIndex";
 const API = process.env.REACT_APP_API_URL;
 
 const LogDetails = () => {
   const [log, setLog] = useState([]);
   let { index } = useParams();
-  //   let navigate = useNavigate();
+  let navigate = useNavigate();
 
   useEffect(() => {
     axios
@@ -17,7 +16,13 @@ const LogDetails = () => {
       .catch((err) => console.error(err));
     //   .catch((err) => navigate("/not-found"));
   }, [index]);
-  console.log(log);
+
+  const deleteLog = () => {
+    axios
+      .delete(`${API}/logs/${index}`)
+      .then(navigate("/logs"))
+      .catch((err) => console.error(err));
+  };
 
   return (
     <div className="logIndex">
@@ -26,6 +31,13 @@ const LogDetails = () => {
       <p>Log: {log.post}</p>
       <p>Mistakes Made Today: {`${log.mistakesWereMadeToday}`}</p>
       <p> Days Since Last Crisis: {log.daysSinceLastCrisis}</p>
+      <Link to="/logs">
+        <button className="back"> Back </button>
+      </Link>
+
+      <button onClick={deleteLog} className="delete">
+        Delete
+      </button>
     </div>
   );
 };
