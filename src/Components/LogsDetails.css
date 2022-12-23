@@ -13,8 +13,11 @@
 }
 
 .captain-buttons{
-  
     height: 40px;
     background-color: azure;
     cursor: pointer;
+}
+
+.captains-table{
+    text-align: center;
 }
