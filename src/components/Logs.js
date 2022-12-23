@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import "./Logs.css";
 
 export default function Logs({ logs }) {
@@ -5,24 +7,34 @@ export default function Logs({ logs }) {
     return (
       <li key={index}>
         <div className="logs-container">
-          <section>{log.mistakesWereMadeToday ? "True" : "False"}</section>
-          <section>{log.captainName}</section>
-          <section>{log.title}</section>
+          <section>{log.mistakesWereMadeToday ? "🔴" : "⚪️"}</section>
+          <section>
+            <em>{log.captainName}</em>
+          </section>
+          <section>
+            <Link to={`/logs/${index}`}>{log.title}</Link>
+          </section>
         </div>
       </li>
     );
   });
 
   return (
-    <ul>
+    <div className="index-container">
       <li key="alpha">
         <div className="logs-subtitles-container">
-          <section>Mistakes</section>
-          <section>Captain Name</section>
-          <section>See This Log</section>
+          <section>
+            <strong>Mistakes</strong>
+          </section>
+          <section>
+            <strong>Captain Name</strong>
+          </section>
+          <section>
+            <strong>See This Log</strong>
+          </section>
         </div>
       </li>
       {formattedLogs}
-    </ul>
+    </div>
   );
 }

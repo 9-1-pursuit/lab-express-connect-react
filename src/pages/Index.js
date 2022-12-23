@@ -14,8 +14,8 @@ export default function Index() {
     axios
       .get(`${API}/logs`)
       .then((response) => setLogs(response.data))
-      .catch((e) => console.error(e));
-  }, []);
+      .catch(() => navigate("/not-found"));
+  });
 
   return (
     <div>
