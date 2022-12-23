@@ -32,10 +32,12 @@ const LogDetails = () => {
       <p>Mistakes Made Today: {`${log.mistakesWereMadeToday}`}</p>
       <p> Days Since Last Crisis: {log.daysSinceLastCrisis}</p>
       <Link to="/logs">
-        <button className="back"> Back </button>
+        <button className="backBtn"> Back </button>
       </Link>
-
-      <button onClick={deleteLog} className="delete">
+      <Link to={`/logs/${index}/edit`}>
+        <button className="editBtn"> Edit </button>
+      </Link>
+      <button onClick={deleteLog} className="deleteBtn">
         Delete
       </button>
     </div>
