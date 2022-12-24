@@ -38,6 +38,10 @@ export default function LogsNewForm() {
 
   return (
     <form className="new-log-form" onSubmit={handleSubmit}>
+      <h4 style={{ fontFamily: "monospace", margin: 0 }}>
+        {"Create New Log #???"}
+      </h4>
+      <div></div>
       <label htmlFor="title">Title: </label>
       <input
         id="title"
@@ -79,6 +83,7 @@ export default function LogsNewForm() {
         onChange={handleTextChange}
         value={newLog.post}
         placeholder="Enter Log Post..."
+        rows="6"
         required
       />
       <label htmlFor="submitInput"></label>

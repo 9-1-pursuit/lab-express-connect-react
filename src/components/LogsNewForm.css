@@ -4,15 +4,24 @@
 
 .new-log-form {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 32fr 40fr;
 
     gap: 10px;
 
     border: 3px solid black;
     padding: 20px;
+    padding-top: 17.3px;
     margin: auto;
     margin-top: 0px;
     margin-bottom: 0px;
     width: 350px;
     box-shadow: 15px 15px black;
+}
+
+.new-log-form label {
+    text-align: right;
+}
+
+textarea {
+    resize: none;
 }
