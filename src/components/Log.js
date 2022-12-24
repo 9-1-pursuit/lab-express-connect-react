@@ -3,7 +3,7 @@ import "./Log.css";
 export default function Logs({ log, index }) {
   return (
     <div className="log-container">
-      <h4>Log #{Number(index) + 1}</h4>
+      <h4>Log #{index}</h4>
       <p
         className="
         black-border">
