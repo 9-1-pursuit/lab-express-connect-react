@@ -5,36 +5,34 @@ import "./Logs.css";
 export default function Logs({ logs }) {
   const formattedLogs = logs.map((log, index) => {
     return (
-      <li key={index}>
-        <div className="logs-container">
-          <section>{log.mistakesWereMadeToday ? "🔴" : "⚪️"}</section>
-          <section>
-            <em>{log.captainName}</em>
-          </section>
-          <section>
-            <Link to={`/logs/${index}`}>{log.title}</Link>
-          </section>
-        </div>
-      </li>
+      <tr className="Log" key={index}>
+        <td>{log.mistakesWereMadeToday ? "🔴" : "⚪️"}</td>
+        <td>
+          <em>{log.captainName}</em>
+        </td>
+        <td>
+          <Link to={`/logs/${index}`}>{log.title}</Link>
+        </td>
+      </tr>
     );
   });
 
   return (
-    <div className="index-container">
-      <li key="alpha">
-        <div className="logs-subtitles-container">
-          <section>
+    <table className="index-container" style={{ textAlign: "center" }}>
+      <thead className="logs-subtitles-container">
+        <tr>
+          <td>
             <strong>Mistakes</strong>
-          </section>
-          <section>
+          </td>
+          <td>
             <strong>Captain Name</strong>
-          </section>
-          <section>
+          </td>
+          <td>
             <strong>See This Log</strong>
-          </section>
-        </div>
-      </li>
-      {formattedLogs}
-    </div>
+          </td>
+        </tr>
+      </thead>
+      <tbody>{formattedLogs}</tbody>
+    </table>
   );
 }
