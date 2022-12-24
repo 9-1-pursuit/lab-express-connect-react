@@ -15,7 +15,7 @@ export default function Index() {
       .get(`${API}/logs`)
       .then((response) => setLogs(response.data))
       .catch(() => navigate("/not-found"));
-  });
+  }, [navigate]);
 
   return (
     <div>
