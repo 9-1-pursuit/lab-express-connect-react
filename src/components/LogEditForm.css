@@ -20,8 +20,19 @@
 
 .edit-log-form label {
     text-align: right;
+    font-size: smaller;
+    margin: auto;
+    margin-right: 0px;
 }
 
 textarea {
     resize: none;
+}
+
+#mistakesWereMadeToday {
+    margin-left: -174px;
+}
+
+#daysSinceLastCrisis {
+    width: 40px;
 }

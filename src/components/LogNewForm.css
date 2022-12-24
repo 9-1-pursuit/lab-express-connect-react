@@ -28,3 +28,11 @@
 textarea {
     resize: none;
 }
+
+#mistakesWereMadeToday {
+    margin-left: -174px;
+}
+
+#daysSinceLastCrisis {
+    width: 40px;
+}

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import "./LogNewForm.css";
 
@@ -39,9 +39,18 @@ export default function LogNewForm() {
   return (
     <form className="new-log-form" onSubmit={handleSubmit}>
       <h4 style={{ fontFamily: "monospace", margin: 0 }}>
-        {"New Captain's Log"}
+        {"Captain's Log #New"}
       </h4>
       <div></div>
+      <label htmlFor="captainName">Captain's Name: </label>
+      <input
+        id="captainName"
+        type="text"
+        onChange={handleTextChange}
+        value={newLog.captainName}
+        placeholder="Enter Captain's Name..."
+        required
+      />
       <label htmlFor="title">Title: </label>
       <input
         id="title"
@@ -49,15 +58,6 @@ export default function LogNewForm() {
         onChange={handleTextChange}
         value={newLog.title}
         placeholder="Enter Log Title..."
-        required
-      />
-      <label htmlFor="captainName">Captain's Name: </label>
-      <input
-        id="captainName"
-        type="text"
-        onChange={handleTextChange}
-        value={newLog.captainName}
-        placeholder="Enter Captain Name..."
         required
       />
       <label htmlFor="mistakesWereMadeToday">Mistakes were made today: </label>
@@ -88,6 +88,13 @@ export default function LogNewForm() {
       />
       <label htmlFor="submitInput"></label>
       <input id="submitInput" type="submit" />
+      <footer id="log-buttons-footer">
+        <Link to="/logs">
+          <label htmlFor="backButton">
+            <button id="backButton">Back</button>
+          </label>
+        </Link>
+      </footer>
     </form>
   );
 }
