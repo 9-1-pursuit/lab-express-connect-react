@@ -1,4 +1,5 @@
 import "./Log.css";
+import LogFooter from "./LogFooter";
 
 export default function Logs({ log, index }) {
   return (
@@ -27,17 +28,7 @@ export default function Logs({ log, index }) {
       </body>
       <br></br>
       <hr></hr>
-      <footer id="log-buttons-footer">
-        <label htmlFor="backButton">
-          <button id="backButton">Back</button>
-        </label>
-        <label htmlFor="editButton">
-          <button id="editButton">Edit</button>
-        </label>
-        <label htmlFor="deleteButton">
-          <button id="deleteButton">Delete</button>
-        </label>
-      </footer>
+      <LogFooter />
     </div>
   );
 }

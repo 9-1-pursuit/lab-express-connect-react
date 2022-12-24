@@ -24,8 +24,3 @@
 #log-post {
     height: 50px;
 }
-
-#log-buttons-footer {
-    display: flex;
-    justify-content: space-between;
-}
