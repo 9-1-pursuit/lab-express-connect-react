@@ -42,7 +42,7 @@ export default function LogEditForm() {
       .get(`${API}/logs/${index}`)
       .then((response) => setLog(response.data))
       .catch(() => navigate("/not-found"));
-  }, [index]);
+  }, [index, navigate]);
 
   return (
     <form className="edit-log-form" onSubmit={handleSubmit}>
