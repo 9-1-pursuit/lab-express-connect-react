@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams, Link } from "react-router-dom";
 import "./LogFooter.css";
 
 const API = process.env.REACT_APP_API_URL;
@@ -15,26 +15,18 @@ export default function LogFooter() {
       .catch(() => navigate("/not-found"));
   };
 
-  const handleEdit = () => {
-    navigate(`/logs/${index}/edit`);
-  };
-
   return (
     <footer id="log-buttons-footer">
-      <label htmlFor="backButton">
-        <button
-          onClick={() => {
-            navigate("/logs");
-          }}
-          id="backButton">
-          Back
-        </button>
-      </label>
-      <label htmlFor="editButton">
-        <button onClick={handleEdit} id="editButton">
-          Edit
-        </button>
-      </label>
+      <Link to="/logs">
+        <label htmlFor="backButton">
+          <button id="backButton">Back</button>
+        </label>
+      </Link>
+      <Link to={`/logs/${index}/edit`}>
+        <label htmlFor="editButton">
+          <button id="editButton">Edit</button>
+        </label>
+      </Link>
       <label htmlFor="deleteButton">
         <button onClick={handleDelete} id="deleteButton">
           Delete

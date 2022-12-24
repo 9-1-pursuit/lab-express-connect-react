@@ -5,11 +5,11 @@ export default function Navbar() {
   return (
     <nav>
       <div className="nav-inner-contaniner">
-        <Link id="home-link" to="/">
+        {/* <Link id="home-link" to="/">
           Home
-        </Link>
+        </Link> */}
         <Link id="index-link" to="/logs">
-          All Logs
+          Logs
         </Link>
         <Link id="new-link" to="/logs/new">
           Create New Log

@@ -2,9 +2,9 @@ import { Routes, Route } from "react-router-dom";
 import Navbar from "./common/Navbar";
 import Home from "./pages/Home";
 import Index from "./pages/Index";
+import Show from "./pages/Show";
 import New from "./pages/New";
 import Edit from "./pages/Edit";
-import Show from "./pages/Show";
 import NotFound from "./pages/NotFound.js";
 
 function App() {
