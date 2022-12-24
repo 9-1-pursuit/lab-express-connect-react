@@ -1,12 +1,12 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
-import "./LogsNewForm.css";
+import "./LogEditForm.css";
 
 const API = process.env.REACT_APP_API_URL;
 
-export default function LogsNewForm() {
-  const [newLog, setNewLog] = useState({
+export default function LogEditForm() {
+  const [log, setLog] = useState({
     captainName: "",
     title: "",
     post: "",
@@ -14,32 +14,40 @@ export default function LogsNewForm() {
     daysSinceLastCrisis: 0,
   });
   const navigate = useNavigate();
+  const { index } = useParams();
 
   const handleTextChange = (e) => {
-    setNewLog({ ...newLog, [e.target.id]: e.target.value });
+    setLog({ ...log, [e.target.id]: e.target.value });
   };
 
   const handleNumberChange = (e) => {
-    setNewLog({ ...newLog, [e.target.id]: Number(e.target.value) });
+    setLog({ ...log, [e.target.id]: Number(e.target.value) });
   };
 
   const handleCheckboxChange = (e) => {
-    setNewLog({ ...newLog, [e.target.id]: !newLog.mistakesWereMadeToday });
+    setLog({ ...log, [e.target.id]: !log.mistakesWereMadeToday });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     axios
-      .post(`${API}/logs`, newLog)
-      .then(() => navigate("/logs"))
+      .put(`${API}/logs/${index}`, log)
+      .then(() => navigate(`/logs/${index}`))
       .catch(() => navigate("not-found"));
   };
 
+  useEffect(() => {
+    axios
+      .get(`${API}/logs/${index}`)
+      .then((response) => setLog(response.data))
+      .catch(() => navigate("/not-found"));
+  }, [index]);
+
   return (
-    <form className="new-log-form" onSubmit={handleSubmit}>
+    <form className="edit-log-form" onSubmit={handleSubmit}>
       <h4 style={{ fontFamily: "monospace", margin: 0 }}>
-        {"Create New Log #???"}
+        {`Edit Log #${Number(index) + 1}`}
       </h4>
       <div></div>
       <label htmlFor="title">Title: </label>
@@ -47,7 +55,7 @@ export default function LogsNewForm() {
         id="title"
         type="text"
         onChange={handleTextChange}
-        value={newLog.title}
+        value={log.title}
         placeholder="Enter Log Title..."
         required
       />
@@ -56,7 +64,7 @@ export default function LogsNewForm() {
         id="captainName"
         type="text"
         onChange={handleTextChange}
-        value={newLog.captainName}
+        value={log.captainName}
         placeholder="Enter Captain Name..."
         required
       />
@@ -65,7 +73,7 @@ export default function LogsNewForm() {
         id="mistakesWereMadeToday"
         type="checkbox"
         onChange={handleCheckboxChange}
-        value={newLog.mistakesWereMadeToday}
+        checked={log.mistakesWereMadeToday}
       />
       <label htmlFor="daysSinceLastCrisis">Days Since Last Crisis: </label>
       <input
@@ -73,7 +81,7 @@ export default function LogsNewForm() {
         type="number"
         min={0}
         onChange={handleNumberChange}
-        value={newLog.daysSinceLastCrisis}
+        value={log.daysSinceLastCrisis}
         required
       />
       <label htmlFor="post">Post: </label>
@@ -81,7 +89,7 @@ export default function LogsNewForm() {
         id="post"
         type="text"
         onChange={handleTextChange}
-        value={newLog.post}
+        value={log.post}
         placeholder="Enter Log Post..."
         rows="6"
         required

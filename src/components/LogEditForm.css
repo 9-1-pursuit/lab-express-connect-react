@@ -1,8 +1,8 @@
-.new-log-form label {
+.edit-log-form label {
     display: block;
 }
 
-.new-log-form {
+.edit-log-form {
     display: grid;
     grid-template-columns: 32fr 40fr;
 
@@ -18,7 +18,7 @@
     box-shadow: 15px 15px black;
 }
 
-.new-log-form label {
+.edit-log-form label {
     text-align: right;
 }
 
