@@ -75,7 +75,7 @@ describe("Edit Page", () => {
         // go back to index to see the edit as well
         cy.visit(`${URL}/logs`);
         // confirm update is on the index
-        cy.get("td").eq(4).contains("Karolin");
+        cy.get("td").eq(7).contains("Karolin");
       }
     });
   });
