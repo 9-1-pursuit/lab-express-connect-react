@@ -1,7 +1,22 @@
-import "./Log.css";
+import { useState, useEffect } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import axios from "axios";
 import LogFooter from "./LogFooter";
+import "./Log.css";
 
-export default function Logs({ log, index }) {
+const API = process.env.REACT_APP_API_URL;
+
+export default function Logs() {
+  const [log, setLog] = useState({});
+  const { index } = useParams();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    axios
+      .get(`${API}/logs/${index}`)
+      .then((response) => setLog(response.data))
+      .catch(() => navigate("/not-found"));
+  }, [index, navigate]);
   return (
     <div className="log-container">
       <div>
