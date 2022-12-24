@@ -1,0 +1,16 @@
+.new-log-form label {
+    display: block;
+}
+
+.new-log-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 10px;
+
+    border: 3px solid black;
+    padding: 20px;
+    margin-left: 25%;
+    margin-right: 25%;
+    box-shadow: 15px 15px black;
+}
