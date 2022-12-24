@@ -20,6 +20,9 @@
 
 .new-log-form label {
     text-align: right;
+    font-size: smaller;
+    margin: auto;
+    margin-right: 0px;
 }
 
 textarea {

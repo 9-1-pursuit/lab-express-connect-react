@@ -39,7 +39,7 @@ export default function LogNewForm() {
   return (
     <form className="new-log-form" onSubmit={handleSubmit}>
       <h4 style={{ fontFamily: "monospace", margin: 0 }}>
-        {"Create New Log #???"}
+        {"New Captain's Log"}
       </h4>
       <div></div>
       <label htmlFor="title">Title: </label>
@@ -51,7 +51,7 @@ export default function LogNewForm() {
         placeholder="Enter Log Title..."
         required
       />
-      <label htmlFor="captainName">Captain Name: </label>
+      <label htmlFor="captainName">Captain's Name: </label>
       <input
         id="captainName"
         type="text"
@@ -60,7 +60,7 @@ export default function LogNewForm() {
         placeholder="Enter Captain Name..."
         required
       />
-      <label htmlFor="mistakesWereMadeToday">Mistakes: </label>
+      <label htmlFor="mistakesWereMadeToday">Mistakes were made today: </label>
       <input
         id="mistakesWereMadeToday"
         type="checkbox"
