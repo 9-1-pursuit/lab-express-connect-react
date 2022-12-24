@@ -15,6 +15,10 @@ export default function LogFooter() {
       .catch(() => navigate("/not-found"));
   };
 
+  const handleEdit = () => {
+    navigate(`/logs/${index}/edit`);
+  };
+
   return (
     <footer id="log-buttons-footer">
       <label htmlFor="backButton">
@@ -27,7 +31,9 @@ export default function LogFooter() {
         </button>
       </label>
       <label htmlFor="editButton">
-        <button id="editButton">Edit</button>
+        <button onClick={handleEdit} id="editButton">
+          Edit
+        </button>
       </label>
       <label htmlFor="deleteButton">
         <button onClick={handleDelete} id="deleteButton">

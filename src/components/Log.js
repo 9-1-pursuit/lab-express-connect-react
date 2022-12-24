@@ -4,10 +4,8 @@ import LogFooter from "./LogFooter";
 export default function Logs({ log, index }) {
   return (
     <div className="log-container">
-      <body>
-        <h4 style={{ fontFamily: "monospace" }}>
-          Log #{Number(index) + Number(Math.random().toFixed(3)) + "." + index}
-        </h4>
+      <div>
+        <h4 style={{ fontFamily: "monospace" }}>Log #{Number(index) + 1}</h4>
         <p
           className="
         black-border">
@@ -25,7 +23,7 @@ export default function Logs({ log, index }) {
         <p className="black-border" id="log-post">
           Post: {log.post}
         </p>
-      </body>
+      </div>
       <br></br>
       <hr></hr>
       <LogFooter />
