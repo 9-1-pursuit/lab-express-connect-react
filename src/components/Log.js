@@ -3,7 +3,9 @@ import "./Log.css";
 export default function Logs({ log, index }) {
   return (
     <div className="log-container">
-      <h4>Log #{index}</h4>
+      <h4 style={{ fontFamily: "monospace" }}>
+        Log #{Number(index) + Number(Math.random().toFixed(3)) + "." + index}
+      </h4>
       <p
         className="
         black-border">
