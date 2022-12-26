@@ -1,0 +1,14 @@
+td {
+    height: 20px;
+    border: 2px solid black;
+}
+
+table {
+    border: 2px solid black;
+    
+  }
+
+.index-container {
+    width: 400px;
+    margin: auto;
+}
