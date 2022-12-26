@@ -8,10 +8,6 @@ const API = process.env.REACT_APP_API_URL;
 
 export default function Logs() {
   const [logs, setLogs] = useState([]);
-  const [reload, setReload] = useState(false);
-  setTimeout(() => {
-    setReload(true);
-  }, 500);
 
   const formattedLogs = logs.map((log, index) => {
     return (
@@ -32,7 +28,7 @@ export default function Logs() {
       .get(`${API}/logs`)
       .then((response) => setLogs(response.data))
       .catch(() => Navigate("/not-found"));
-  }, [reload]);
+  }, []);
 
   return (
     <table className="index-container" style={{ textAlign: "center" }}>
