@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import Log from './Log';
+import { Link } from 'react-router-dom';
+import LogsDetails from './LogsDetails';
 import axios from 'axios';
 const API = process.env.REACT_APP_API_URL;
 
@@ -18,18 +19,13 @@ export default function Logs() {
   return (
     <div>
       <section>
-        <table>
-          <thead>
-            <tr>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            {logs.map((log, index) => {
-              return <Log key={log.id} log={log} />;
-            })}
-          </tbody>
-        </table>
+        {logs.map((log, index) => {
+          return (
+            <div>
+              <Link to={`/logs/${index}`}>{log.captainName}</Link>
+            </div>
+          );
+        })}
       </section>
     </div>
   );

@@ -12,7 +12,6 @@ export default function LogsEditForm() {
     post: '',
     mistakesWereMadeToday: false,
     daysSinceLastCrisis: 0,
-    // daysSinceLastCrisis: '',
   });
   const handleTextChange = (event) => {
     setLog({ ...log, [event.target.id]: event.target.value });
@@ -30,6 +29,7 @@ export default function LogsEditForm() {
       .then((res) => setLog(res.data))
       .catch((err) => console.log(err));
   }, [index]);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
@@ -88,6 +88,9 @@ export default function LogsEditForm() {
         ></input>
         <input type="submit"></input>
       </form>
+      <Link to={`/logs/${index}`}>
+        <button>Go Back</button>
+      </Link>
     </div>
   );
 }
