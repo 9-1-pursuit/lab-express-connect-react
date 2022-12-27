@@ -21,7 +21,7 @@ export default function Logs() {
       <section>
         {logs.map((log, index) => {
           return (
-            <div>
+            <div key={index} id={index}>
               <Link to={`/logs/${index}`}>{log.captainName}</Link>
             </div>
           );
