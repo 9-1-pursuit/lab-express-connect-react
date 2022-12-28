@@ -1,7 +1,11 @@
 import React from 'react';
 
 const Error = () => {
-  return <div>Not Found</div>;
+  return (
+    <div>
+      <h2>Not Found</h2>
+    </div>
+  );
 };
 
 export default Error;

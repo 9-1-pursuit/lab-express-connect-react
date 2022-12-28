@@ -12,7 +12,7 @@ import LogsDetails from './Components/LogsDetails';
 
 function App() {
   return (
-    <div>
+    <div className="container">
       <Router>
         <NavBar />
         <Routes>

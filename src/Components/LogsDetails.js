@@ -24,52 +24,30 @@ function LogsDetails() {
       .catch((err) => console.log(err));
   };
   return (
-    <div>
-      <h3>
-        {log.captainName ? (
-          <span>
-            {' '}
-            <b>Name</b>: {log.captainName}
-          </span>
-        ) : null}
-      </h3>
-      <p>
-        {log.title ? (
-          <span>
-            {' '}
-            <b>Title</b>: {log.title}
-          </span>
-        ) : null}
-      </p>
-      <p>
-        {log.post ? (
-          <span>
-            {' '}
-            <b>Post</b>: {log.post}
-          </span>
-        ) : null}
-      </p>
-      <p>
-        {log.daysSinceLastCrisis ? (
-          <span>
-            <b>Days Since Last Crisis</b>:{log.daysSinceLastCrisis}
-          </span>
-        ) : null}
-      </p>
+    <div className="nameDetails">
+      <div className='nameCard'>
+        <h2>
+          {log.title ? <span> {log.title}</span> : null} -By
+          {log.captainName ? <span> {log.captainName}</span> : null}
+        </h2>
+        <p>{log.post ? <span> {log.post}</span> : null}</p>
+        <h6>
+          {log.daysSinceLastCrisis ? (
+            <span>
+              <b>Days Since Last Crisis</b>:{log.daysSinceLastCrisis}
+            </span>
+          ) : null}
+        </h6>
+      </div>
+
       <div>
         {' '}
         <Link to={`/logs`}>
           <button>Back</button>
-        </Link>
-      </div>
-      <div>
-        {' '}
+        </Link>{' '}
         <Link to={`/logs/${index}/edit`}>
           <button>Edit</button>
-        </Link>
-      </div>
-      <div>
-        {' '}
+        </Link>{' '}
         <button onClick={handleDelete}>Delete</button>
       </div>
     </div>
