@@ -1,0 +1,559 @@
+.Light {
+  display: grid;
+  grid-template-rows: 0.6fr 6fr;
+  color: #000000;
+  height: 100vh;
+  width: 100vw;
+}
+
+.Light nav {
+  display: flex;
+  justify-content: space-between;
+  background-color: #ec7f37;
+  box-shadow: rgb(0, 0, 0, 0.5) 0 5px 6px;
+}
+
+.Light nav button {
+  padding: 1em 3em;
+  font-weight: bold;
+  border: none;
+  border-radius: 0.5em;
+  background: none;
+  margin: 1em;
+  box-shadow: rgb(0, 0, 0, 0.2) 3px 3px 6px, rgb(0, 0, 0, 0.1) -3px -2px 6px;
+}
+.Light nav button {
+  color: #ffffff;
+}
+
+.Light nav button:hover {
+  background-color: #ff5a09;
+  transform: scale(1.1);
+  opacity: 0.9;
+}
+
+.Light nav a {
+  color: #ffffff;
+  transform: scale(1.1);
+  opacity: 0.9;
+}
+
+.Light nav h1 {
+  margin-left: 0.2em;
+}
+
+.Light #h1:hover {
+  color: #000000;
+}
+
+.Light main {
+  background: #f6f4f1;
+}
+.Light .Index {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+}
+
+/* .Light .Index h2 {
+  text-align: start;
+  margin-left: 1em;
+} */
+
+.Light .logs {
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.8),
+    rgba(255, 255, 255, 0.5)
+  );
+  width: 65%;
+  padding: 2em;
+  height: 100%;
+  position: relative;
+  left: 15%;
+  text-align: center;
+  border-radius: 0.5em;
+  backdrop-filter: blur(8px);
+  box-shadow: rgb(0, 0, 0, 0.2) 3px 3px 6px, rgb(0, 0, 0, 0.1) -3px -2px 6px;
+}
+
+.Light .logs section {
+  display: flex;
+  text-align: center;
+  justify-content: space-evenly;
+  background: linear-gradient(
+    180deg,
+    rgba(248, 96, 8, 0.4),
+    rgba(232, 232, 239, 0.2)
+  );
+}
+
+.Light .table {
+  table-layout: fixed;
+  width: 100%;
+  height: 100%;
+  border-collapse: collapse;
+}
+
+.Light .table tbody tr td {
+  padding: 1.2em 5em;
+  border-bottom: 0.5px dotted gray;
+}
+
+.Light .table thead tr th {
+  padding: 1em 5em;
+  border-bottom: 0.5px dotted gray;
+}
+
+tbody td:not(td:first-of-type):hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+.Light tbody tr:nth-child(even) {
+  background: linear-gradient(
+    120deg,
+    rgba(255, 122, 122, 0.2),
+    rgba(122, 122, 255, 0.1)
+  );
+  backdrop-filter: blur(10px);
+}
+
+.Light #titleLink {
+  color: #000000;
+}
+
+.Light main .Show {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  z-index: 5;
+}
+
+.Light .Show article {
+  background: linear-gradient(
+    180deg,
+    rgba(248, 96, 8, 0.4),
+    rgba(232, 232, 239, 0.2)
+  );
+  width: 65%;
+  padding: 5em 2em;
+  height: 100%;
+  position: relative;
+  left: 15%;
+  text-align: center;
+  border-radius: 0.5em;
+  backdrop-filter: blur(8px);
+  box-shadow: rgb(0, 0, 0, 0.3) 3px 3px 6px, rgb(0, 0, 0, 0.2) -3px -2px 6px;
+  z-index: 10;
+}
+
+.Light .showNavigation {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.5),
+    rgba(255, 255, 255, 0.3)
+  );
+  width: 50%;
+  padding: 2em;
+  height: 100%;
+  position: relative;
+  left: 25%;
+  text-align: center;
+  border-radius: 0.5em;
+  backdrop-filter: blur(8px);
+  box-shadow: rgb(0, 0, 0, 0.3) 3px 3px 6px, rgb(0, 0, 0, 0.1) -3px -2px 6px;
+  display: flex;
+  justify-content: space-evenly;
+  z-index: 100;
+}
+
+.Light .showNavigation button {
+  background: #f6f4f1;
+  padding: 1em 2em;
+  border: none;
+  border-radius: 0.5em;
+  font-weight: bold;
+  box-shadow: rgb(0, 0, 0, 0.3) 3px 3px 6px, rgb(0, 0, 0, 0.1) -3px -2px 6px;
+}
+
+.Light .showNavigation button:hover {
+  background: #ff5a09;
+  transform: scale(1.2);
+  opacity: 0.9;
+  box-shadow: rgb(0, 0, 0, 0.3) 3px 3px 6px, rgb(0, 0, 0, 0.1) -3px -2px 6px;
+}
+
+.Light .NewEdit {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  z-index: 5;
+}
+
+.Light .Edit {
+  background: linear-gradient(
+    180deg,
+    rgba(248, 96, 8, 0.4),
+    rgba(232, 232, 239, 0.2)
+  );
+  width: 55%;
+  padding: 3em 2em;
+  height: 60%;
+  position: relative;
+  left: 20%;
+  text-align: center;
+  border-radius: 0.5em;
+  backdrop-filter: blur(8px);
+  box-shadow: rgb(0, 0, 0, 0.3) 3px 3px 6px, rgb(0, 0, 0, 0.2) -3px -2px 6px;
+  z-index: 10;
+}
+
+.Edit form {
+  margin: auto;
+  width: 90%;
+  text-align: start;
+}
+
+input[type],
+textarea {
+  display: block;
+  width: 90%;
+  margin: 0.5em 0;
+  padding: 0.8em 1em;
+  border-radius: 0.2em;
+  border: 0.5px dotted gray;
+}
+
+input[type="checkbox"] {
+  margin: 0;
+  width: 15%;
+  position: relative;
+  right: 3em;
+}
+
+.Edit button {
+  width: 30%;
+  padding: 0.8em 0;
+  position: relative;
+  right: 5%;
+  border: 0.5px dotted gray;
+  border-radius: 0.2em;
+}
+
+.Light .NewLog {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  z-index: 5;
+}
+
+.Light .New {
+  background: linear-gradient(
+    180deg,
+    rgba(248, 96, 8, 0.4),
+    rgba(232, 232, 239, 0.2)
+  );
+  width: 55%;
+  padding: 3em 2em;
+  height: 60%;
+  position: relative;
+  left: 20%;
+  text-align: center;
+  border-radius: 0.5em;
+  backdrop-filter: blur(8px);
+  box-shadow: rgb(0, 0, 0, 0.3) 3px 3px 6px, rgb(0, 0, 0, 0.2) -3px -2px 6px;
+  z-index: 10;
+}
+
+.New form {
+  margin: auto;
+  width: 90%;
+  text-align: start;
+}
+
+input[type],
+textarea {
+  display: block;
+  width: 90%;
+  margin: 0.5em 0;
+  padding: 0.8em 1em;
+  border-radius: 0.2em;
+  border: 0.5px dotted gray;
+}
+
+input[type="checkbox"] {
+  margin: 0;
+  width: 15%;
+  position: relative;
+  right: 3em;
+}
+
+.New input[type="submit"] {
+  width: 30%;
+}
+
+/*-------------------------------------*/
+/*dark mode*/
+.Dark {
+  display: grid;
+  grid-template-rows: 0.6fr 6fr;
+  color: #ffffff;
+  height: 100vh;
+  width: 100vw;
+}
+
+.Dark nav {
+  display: flex;
+  justify-content: space-between;
+  background-color: #ff5a09;
+  box-shadow: rgb(0, 0, 0, 0.5) 3px 5px 6px;
+}
+
+.Dark nav button {
+  padding: 1em 3em;
+  font-weight: bold;
+  border: none;
+  border-radius: 0.5em;
+  background: none;
+  margin: 1em;
+  color: #ffffff;
+  box-shadow: rgb(0, 0, 0, 0.2) 3px 3px 6px, rgb(0, 0, 0, 0.1) -3px -2px 6px;
+}
+
+.Dark nav button:hover {
+  background-color: rgb(63, 63, 63);
+  color: #ffffff;
+  transform: scale(1.1);
+  opacity: 0.9;
+}
+
+.Dark nav a {
+  color: #ffffff;
+  transform: scale(1.15);
+  opacity: 0.9;
+}
+
+.Dark nav a:hover {
+  color: #ffffff;
+}
+
+.Dark nav h1 {
+  margin-left: 0.2em;
+}
+
+.Dark #h1:hover {
+  color: rgb(63, 63, 63);
+}
+
+.Dark main {
+  background: #393939;
+}
+.Dark .Index {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+}
+
+.Dark .logs {
+  background: linear-gradient(120deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2));
+  width: 65%;
+  padding: 2em;
+  height: 100%;
+  position: relative;
+  left: 15%;
+  text-align: center;
+  border-radius: 0.5em;
+  backdrop-filter: blur(8px);
+  box-shadow: rgb(255, 255, 255, 0.05) 2px 3px 8px,
+    rgb(255, 255, 255, 0.01) -3px -2px 6px;
+}
+
+.Dark .logs section {
+  display: flex;
+  text-align: center;
+  justify-content: space-evenly;
+  background: linear-gradient(
+    180deg,
+    rgba(248, 96, 8, 0.25),
+    rgba(232, 232, 239, 0.1)
+  );
+}
+
+.Dark .table {
+  table-layout: fixed;
+  width: 100%;
+  height: 100%;
+  border-collapse: collapse;
+}
+
+.Dark .table tbody tr td {
+  padding: 1.2em 5em;
+  border-bottom: 0.5px dotted gray;
+}
+
+.Dark .table thead tr th {
+  padding: 1em 5em;
+  border-bottom: 0.5px dotted gray;
+}
+
+tbody td:not(td:first-of-type):hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+.Dark tbody tr:nth-child(even) {
+  background: linear-gradient(
+    120deg,
+    rgba(122, 122, 122, 0.4),
+    rgba(122, 122, 122, 0.2)
+  );
+  backdrop-filter: blur(10px);
+}
+
+.Dark #titleLink {
+  color: #ffffff;
+}
+#titleLink:hover {
+  color: #ff5a09;
+}
+
+
+.Dark main .Show {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  z-index: 5;
+}
+
+.Dark .Show article {
+  background: linear-gradient(
+    180deg,
+    rgba(248, 96, 8, 0.4),
+    rgba(232, 232, 239, 0.2)
+  );
+  width: 65%;
+  padding: 5em 2em;
+  height: 100%;
+  position: relative;
+  left: 15%;
+  text-align: center;
+  border-radius: 0.5em;
+  backdrop-filter: blur(8px);
+  box-shadow: rgb(0, 0, 0, 0.3) 3px 3px 6px, rgb(0, 0, 0, 0.2) -3px -2px 6px;
+  z-index: 10;
+}
+
+.Dark .showNavigation {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3));
+  width: 50%;
+  padding: 2em;
+  height: 100%;
+  position: relative;
+  left: 25%;
+  text-align: center;
+  border-radius: 0.5em;
+  backdrop-filter: blur(8px);
+  box-shadow: rgb(0, 0, 0, 0.3) 3px 3px 6px, rgb(0, 0, 0, 0.1) -3px -2px 6px;
+  display: flex;
+  justify-content: space-evenly;
+  z-index: 100;
+}
+
+.Dark .showNavigation button {
+  background: #f6f4f1;
+  padding: 1em 2em;
+  border: none;
+  border-radius: 0.5em;
+  font-weight: bold;
+  box-shadow: rgb(0, 0, 0, 0.3) 3px 3px 6px, rgb(0, 0, 0, 0.1) -3px -2px 6px;
+}
+
+.Dark .showNavigation button:hover {
+  background: #ff5a09;
+  transform: scale(1.2);
+  opacity: 0.9;
+  box-shadow: rgb(0, 0, 0, 0.3) 3px 3px 6px, rgb(0, 0, 0, 0.1) -3px -2px 6px;
+}
+
+.Dark .NewEdit {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  z-index: 5;
+}
+
+.Dark .Edit {
+  background: linear-gradient(
+    180deg,
+    rgba(248, 96, 8, 0.4),
+    rgba(232, 232, 239, 0.2)
+  );
+  width: 55%;
+  padding: 3em 2em;
+  height: 60%;
+  position: relative;
+  left: 20%;
+  text-align: center;
+  border-radius: 0.5em;
+  backdrop-filter: blur(8px);
+  box-shadow: rgb(0, 0, 0, 0.3) 3px 3px 6px, rgb(0, 0, 0, 0.2) -3px -2px 6px;
+  z-index: 10;
+}
+
+.Dark .NewLog {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  z-index: 5;
+}
+
+.Dark .New {
+  background: linear-gradient(
+    180deg,
+    rgba(248, 96, 8, 0.4),
+    rgba(232, 232, 239, 0.2)
+  );
+  width: 55%;
+  padding: 3em 2em;
+  height: 60%;
+  position: relative;
+  left: 20%;
+  text-align: center;
+  border-radius: 0.5em;
+  backdrop-filter: blur(8px);
+  box-shadow: rgb(0, 0, 0, 0.3) 3px 3px 6px, rgb(0, 0, 0, 0.2) -3px -2px 6px;
+  z-index: 10;
+}
+
+.New form {
+  margin: auto;
+  width: 90%;
+  text-align: start;
+}
+
+.New input[type="submit"] {
+  width: 30%;
+}
+
+nav img {
+    width: 60px; 
+    height: 60px;
+    border-radius: 50%;
+    margin: 0.5em 0.5em 0.5em 1em;
+    display: block;
+    transition: transform 2s;
+}
+
+nav img:hover {
+  transform: rotate(360deg);
+}
+ 
