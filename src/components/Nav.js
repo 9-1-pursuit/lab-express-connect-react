@@ -5,7 +5,7 @@ function Nav() {
   return (
     <div className="navbar">
       <nav>
-        <Link to="/logs/:index">Index</Link>
+        <Link to="/logs">Index</Link>
         <Link to="/logs/new">New</Link>
       </nav>
     </div>

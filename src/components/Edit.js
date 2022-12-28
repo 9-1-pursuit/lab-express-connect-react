@@ -1,7 +1,15 @@
 import React from "react";
 
 function Edit() {
-  return <div></div>;
+  function handleTextChange() {}
+
+  function handleOnClick() {}
+
+  return (
+    <div className="edit">
+      <button>Edit</button>
+    </div>
+  );
 }
 
 export default Edit;
