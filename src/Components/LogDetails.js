@@ -13,8 +13,8 @@ const LogDetails = () => {
     axios
       .get(`${API}/logs/${index}`)
       .then((res) => setLog(res.data))
-      .catch((err) => console.error(err));
-    //   .catch((err) => navigate("/not-found"));
+      // .catch((err) => console.error(err));
+      .catch(() => navigate("/not-found"));
   }, [index]);
 
   const deleteLog = () => {

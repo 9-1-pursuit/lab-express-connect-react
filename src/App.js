@@ -18,7 +18,7 @@ const App = () => {
           <Route path="/logs/:index" element={<LogDetails />} />
           <Route path="/logs/new" element={<NewLogForm />} />
           <Route path="/logs/:index/edit" element={<EditLogForm />} />
-          {/* <Route path="*" element={FourOFour} /> */}
+          <Route path="*" element={<FourOFour />} />
         </Routes>
       </Router>
     </div>
