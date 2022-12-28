@@ -27,11 +27,9 @@ function Index() {
         {captains.map((captain, index) => {
           return (
             <li key={index}>
-              <Link to={`/logs/:${index}`}>
-                {captain.title}
-                <Edit />
-                <Delete />
-              </Link>
+              <Link to={`/logs/:${index}`}>{captain.title}</Link>
+              <Edit />
+              <Delete />
             </li>
           );
         })}
