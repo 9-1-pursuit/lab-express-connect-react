@@ -2,7 +2,7 @@ import React from "react";
 import Edit from "./Edit";
 import Delete from "./Delete";
 
-function Show() {
+function Show(captain, i) {
   return (
     <div>
       <Edit />
