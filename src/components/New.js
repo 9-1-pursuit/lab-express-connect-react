@@ -22,9 +22,9 @@ function New() {
     e.preventDefault();
   }
 
-  useEffect(() => {
-    axios.get().then().catch();
-  }, []);
+  // useEffect(() => {
+  //   axios.get().then().catch();
+  // }, []);
 
   return (
     <div>

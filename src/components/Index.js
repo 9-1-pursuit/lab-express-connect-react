@@ -1,6 +1,9 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import Show from "./Show";
+import { Link } from "react-router-dom";
+// import Show from "./Show";
+import Edit from "./Edit";
+import Delete from "./Delete";
 import axios from "axios";
 const API = process.env.REACT_APP_API_URL;
 
@@ -21,11 +24,14 @@ function Index() {
   return (
     <div className="Log">
       <ul>
-        {captains.map((captain, i) => {
+        {captains.map((captain, index) => {
           return (
-            <li key={i}>
-              {/* {captain.captainsName} */}
-              {/* <Show captain={captain} /> */}
+            <li key={index}>
+              <Link to={`/logs/:${index}`}>
+                {captain.title}
+                <Edit />
+                <Delete />
+              </Link>
             </li>
           );
         })}
