@@ -1,17 +1,12 @@
 import { useContext, useState } from "react";
 import { ContextData } from "./Provider";
 import { useNavigate } from "react-router-dom";
+import TextInput from "../ReusableComponents/TextInput";
 import "./LogsNewForm.css"
 
 
 function LogsNewForm() {
-/* 
-captainName (text)
-title (text)
-post (text)
-mistakesWereMadeToday (checkbox)
-daysSinceLastCrisis (number)
-submit (submit) */
+
 const {API, axios} = useContext(ContextData)
 const navigate = useNavigate()
 // declare state for checkbox
@@ -30,14 +25,14 @@ function handleCheckbox() {
     newForm.mistakesWereMadeToday = !checkbox
 }
 // function for handling text input change
-function handleTextChange(e) {
-    let value = e.target.value
-    const id = e.target.id
-    if(id === "daysSinceLastCrisis"){
-        value = +e.target.value
-    }
-    setNewForm({...newForm, [id]: value})
-}
+// function handleTextChange(e) {
+//     let value = e.target.value
+//     const id = e.target.id
+//     if(id === "daysSinceLastCrisis"){
+//         value = +e.target.value
+//     }
+//     setNewForm({...newForm, [id]: value})
+// }
 //  function for handling form submit
 function handleSubmit(e) {
     e.preventDefault()
@@ -56,36 +51,24 @@ function handleSubmit(e) {
            <form 
            onSubmit={(event) => handleSubmit(event)}>
             {/* Name */}
-            <label htmlFor="captainName">Captain Name: 
-                <input 
-                id = "captainName"
-                type = "text"
-                value = {newForm.captainName}
-                onChange = {(event) => handleTextChange(event)}
-                />
-            </label>
+            <TextInput
+            stateVar = {newForm}
+            setFunction = {setNewForm}
+            value = {"captainName"} />
             <br></br>
-
+            
             {/* title */}
-            <label htmlFor="title">Title: 
-                <input 
-                id = "title"
-                type = "text"
-                value = {newForm.title}
-                onChange = {(event) => handleTextChange(event)}
-                />
-            </label>
+            <TextInput
+            stateVar = {newForm}
+            setFunction = {setNewForm}
+            value = {"title"} />
             <br></br>
 
             {/* post */}
-            <label htmlFor="post">Post: 
-                <input 
-                id = "post"
-                type = "text"
-                value = {newForm.post}
-                onChange = {(event) => handleTextChange(event)}
-                />
-            </label>
+            <TextInput
+            stateVar = {newForm}
+            setFunction = {setNewForm}
+            value = {"post"} />
             <br></br>
             
             {/* Mistakes */}
@@ -101,14 +84,14 @@ function handleSubmit(e) {
             <br></br>
 
             {/* days Since crisis */}
-            <label htmlFor="daysSinceLastCrisis">Days Since Last Crisis: 
+            {/* <label htmlFor="daysSinceLastCrisis">Days Since Last Crisis: 
                 <input 
                 id = "daysSinceLastCrisis"
                 type = "number"
                 value = {newForm.daysSinceLastCrisis}
                 onChange = {(event) => handleTextChange(event)}
                 />
-            </label>
+            </label> */}
             <br></br>
 
             {/* submit button */}
