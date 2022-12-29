@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { ContextData } from "./Provider";
 import { useNavigate } from "react-router-dom";
 import TextInput from "../ReusableComponents/TextInput";
+import NumberInput from "../ReusableComponents/NumberInput";
 import "./LogsNewForm.css"
 
 
@@ -24,15 +25,7 @@ function handleCheckbox() {
     setCheckbox(!checkbox)
     newForm.mistakesWereMadeToday = !checkbox
 }
-// function for handling text input change
-// function handleTextChange(e) {
-//     let value = e.target.value
-//     const id = e.target.id
-//     if(id === "daysSinceLastCrisis"){
-//         value = +e.target.value
-//     }
-//     setNewForm({...newForm, [id]: value})
-// }
+
 //  function for handling form submit
 function handleSubmit(e) {
     e.preventDefault()
@@ -41,10 +34,6 @@ function handleSubmit(e) {
     .then(() => navigate("/logs"))
     .catch(err => console.log(err))
 }
-
-
-
-
 
     return (
         <div className='new'>
@@ -84,14 +73,11 @@ function handleSubmit(e) {
             <br></br>
 
             {/* days Since crisis */}
-            {/* <label htmlFor="daysSinceLastCrisis">Days Since Last Crisis: 
-                <input 
-                id = "daysSinceLastCrisis"
-                type = "number"
-                value = {newForm.daysSinceLastCrisis}
-                onChange = {(event) => handleTextChange(event)}
-                />
-            </label> */}
+            <NumberInput
+            stateVar = {newForm}
+            setFunction = {setNewForm}
+            value = {"daysSinceLastCrisis"}
+             />
             <br></br>
 
             {/* submit button */}
