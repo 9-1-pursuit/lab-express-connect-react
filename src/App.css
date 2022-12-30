@@ -15,7 +15,7 @@ font-family: 'Orbitron', sans-serif;
 
  .index, .show, .new, .edit {
     margin-top: 70px;
-    padding: 30px;
+    padding: 10px;
     width: 80%;
     margin-left: auto;
     margin-right: auto;
@@ -24,6 +24,7 @@ font-family: 'Orbitron', sans-serif;
  }
  .index h2, .show h2, .new h2, .edit h2 {
     font-size: 40px;
+    margin-bottom: 40px;
  }
 
  .index, .new, .show {
