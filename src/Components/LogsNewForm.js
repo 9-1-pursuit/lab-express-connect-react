@@ -16,7 +16,7 @@ const [newForm, setNewForm] = useState({
     captainName: "",
     title: "",
     post: "",
-    mistakesWereMadeToday: undefined,
+    mistakesWereMadeToday: false,
     daysSinceLastCrisis: undefined,
 })
 
