@@ -7,7 +7,6 @@ import "./LogsNewForm.css"
 function LogsNewForm() {
     const {API, axios} = useContext(ContextData)
     const navigate = useNavigate()
-
     // declare state for checkbox
     const [checkbox, setCheckbox] = useState(false)
     // declare state for new form input
@@ -30,7 +29,7 @@ function LogsNewForm() {
 
     return (
         <div className='new'>
-           <h2>New Log</h2>
+           <h2>NEW LOG</h2>
            <form 
            onSubmit={(event) => handleSubmit(event)}>
                 <FormInputs 
@@ -39,8 +38,7 @@ function LogsNewForm() {
                 checkboxVar = {checkbox}
                 setCheckboxFunction = {setCheckbox}
                 />
-        </form> 
-            
+            </form>       
         </div>
     );
 }

@@ -27,14 +27,13 @@ function LogsEditForm() {
         .catch(err =>  console.log(err))
     },[index])
 
-
     return (
         <div className='edit'>
-            <h2>Edit Log # {index}</h2>
+            <h2>EDIT LOG # {index}</h2>
             <form
-            onSubmit={(event) => handleSubmit(event)}
-            >
-                { editForm.captainName && <FormInputs
+            onSubmit={(event) => handleSubmit(event)}>
+                { editForm.captainName && 
+                <FormInputs
                 stateVar = {editForm}
                 setFunction = {setEditForm}
                 checkboxVar = {checkbox}

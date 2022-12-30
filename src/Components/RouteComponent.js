@@ -5,7 +5,6 @@ import Home from './Home';
 import New from '../Pages/New';
 import Edit from '../Pages/Edit';
 
-
 function RouteComponent() {
     return (
        <Routes>
@@ -19,11 +18,7 @@ function RouteComponent() {
                     <Route index element = {<Show />} />
                     <Route path = "edit" element ={<Edit />} />
                 </Route>
-
             </Route>
-            
-
-
         </Route>
        </Routes>
     );
