@@ -10,11 +10,6 @@
     font-family: 'Orbitron', sans-serif;
 }
 
-.formInputs {
-    display: grid;
-    grid-template-rows: auto;
-    justify-items: left;
-}
 
 .new h2 {
     font-size: 40px;
@@ -26,10 +21,6 @@
     font-size: 25px;
 }
 .new input {
-    height: 30px;
-    width: 300px;
-    border-radius: 10px;
-    margin-bottom: 20px;
     background-color: #FDC30B;
 }
 

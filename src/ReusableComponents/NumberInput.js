@@ -9,7 +9,7 @@ function NumberInput({stateVar, setFunction, value}) {
             <input
             id = {value}
             type = "number"
-            value = {stateVar.value}
+            value = {stateVar[value]}
             onChange = {(event) => handleTextChange(event, stateVar, setFunction)}
              />
         </label>

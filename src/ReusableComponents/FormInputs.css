@@ -1,0 +1,15 @@
+.formInputs {
+    display: grid;
+    grid-template-rows: auto;
+    justify-items: left;
+}
+
+.formInputs label {
+    margin-bottom: 20px;
+}
+
+.formInputs textarea{
+    border-radius: 10px;
+    overflow: scroll;
+    
+}
