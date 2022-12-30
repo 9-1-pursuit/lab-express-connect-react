@@ -5,7 +5,7 @@ import CheckboxInput from "./CheckboxInput";
 function FormInputs({stateVar, setFunction, checkboxVar, setCheckboxFunction}) {
 
     return (
-        <>  
+        <div className="formInputs">  
             <TextInput
             stateVar = {stateVar}
             setFunction = {setFunction}
@@ -38,9 +38,10 @@ function FormInputs({stateVar, setFunction, checkboxVar, setCheckboxFunction}) {
             <br></br>
     
             <input
+            className="formButton"
             type = "submit" />
 
-        </> 
+        </div> 
     );
 }
 

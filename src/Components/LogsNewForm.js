@@ -5,33 +5,32 @@ import FormInputs from "../ReusableComponents/FormInputs";
 import "./LogsNewForm.css"
 
 function LogsNewForm() {
+    const {API, axios} = useContext(ContextData)
+    const navigate = useNavigate()
 
-const {API, axios} = useContext(ContextData)
-const navigate = useNavigate()
+    // declare state for checkbox
+    const [checkbox, setCheckbox] = useState(false)
+    // declare state for new form input
+    const [newForm, setNewForm] = useState({
+        captainName: "",
+        title: "",
+        post: "",
+        mistakesWereMadeToday: false,
+        daysSinceLastCrisis: undefined,
+    })
 
-// declare state for checkbox
-const [checkbox, setCheckbox] = useState(false)
-// declare state for new form input
-const [newForm, setNewForm] = useState({
-    captainName: "",
-    title: "",
-    post: "",
-    mistakesWereMadeToday: false,
-    daysSinceLastCrisis: undefined,
-})
-
-//  function for handling form submit
-function handleSubmit(e) {
-    e.preventDefault()
-    // use post request, 1st arg: url, 2nd arg: data to send
-    axios.post(`${API}`, newForm)
-    .then(() => navigate("/logs"))
-    .catch(err => console.log(err))
-}
+    //  function for handling form submit
+    function handleSubmit(e) {
+        e.preventDefault()
+        // use post request, 1st arg: url, 2nd arg: data to send
+        axios.post(`${API}`, newForm)
+        .then(() => navigate("/logs"))
+        .catch(err => console.log(err))
+    }
 
     return (
         <div className='new'>
-           
+           <h2>New Log</h2>
            <form 
            onSubmit={(event) => handleSubmit(event)}>
                 <FormInputs 
