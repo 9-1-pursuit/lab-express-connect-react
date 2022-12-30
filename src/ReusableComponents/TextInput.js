@@ -7,7 +7,7 @@ function TextInput({stateVar, setFunction, value}) {
         <label 
         htmlFor= {value}>{labelTitle}: {" "}
             <textarea
-            rows= {Math.round(charLength/50)}
+            rows= {Math.round(charLength/50) + 1}
             cols={Math.round(charLength/(Math.round(charLength/70)))} 
             wrap="soft" 
             id = {value}
