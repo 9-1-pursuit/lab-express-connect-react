@@ -6,3 +6,9 @@
 .edit input, .edit textarea {
     background-color: #FDC30Bd2 ;
 }
+
+.edit input.formButton:hover {
+    cursor: pointer;
+    background-color: #050539;
+    color: #FDC30B;
+}

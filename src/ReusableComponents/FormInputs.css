@@ -2,12 +2,12 @@
     display: grid;
     grid-template-rows: auto;
     justify-items: left;
+    font-family: 'Orbitron', sans-serif;
 }
 
 .formInputs label {
     margin-bottom: 20px;
     font-size: 25px;
-    font-family: 'Orbitron', sans-serif;
 }
 
 .formInputs textarea, .formInputs input{
@@ -18,4 +18,13 @@
 .formInputs input[type="checkbox"], .formInputs input[type="number"] {
     height: 30px;
     width: 50px;
+}
+
+.formInputs input.formButton {
+    justify-self: center;
+    color: #050539d2;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 18px;
+    height: 50px;
+    width: 200px;
 }
