@@ -20,7 +20,7 @@
 .new label {
     font-size: 25px;
 }
-.new input {
+.new textarea, .new input {
     background-color: #FDC30B;
 }
 

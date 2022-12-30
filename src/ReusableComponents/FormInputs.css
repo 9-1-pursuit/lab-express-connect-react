@@ -8,8 +8,12 @@
     margin-bottom: 20px;
 }
 
-.formInputs textarea{
-    border-radius: 10px;
-    overflow: scroll;
-    
+.formInputs textarea, .formInputs input{
+    border-radius: 10px; 
+    max-width: 50ch; 
+}
+
+.formInputs input[type="checkbox"], .formInputs input[type="number"] {
+    height: 30px;
+    width: 50px;
 }
