@@ -2,7 +2,6 @@ import { useState } from "react";
 import { convertInput } from "./helperFunctions";
 
 function CheckboxInput({stateVar, setFunction, obj, value}) {
-
 const labelTitle = convertInput(value)
 
 function handleCheckbox() {

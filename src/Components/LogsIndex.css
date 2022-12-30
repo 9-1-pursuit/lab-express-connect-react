@@ -1,28 +1,13 @@
-.index {
-    margin-top: 70px;
-    padding-bottom: 50px;
-    background-color: #050539d2;
-    color: #AA0078;
-    border-radius: 5px;
-}
 
-.index, .logs, .logsHeader {
+ .logs, .logsHeader {
     width: 80%;
     margin-left: auto;
     margin-right: auto;
 }
 
-.index h2 {
-    font-family: 'Orbitron', sans-serif;
-    text-align: center;
-    font-size: 40px;
-    padding-top: 50px;
-}
-
 .listedLogs {
     margin-top: 50px;
     height: fit-content;
-
 }
 
 .logs, .logsHeader {

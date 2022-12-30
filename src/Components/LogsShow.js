@@ -42,7 +42,7 @@ function LogsShow() {
 
     return (
         <div className='show'>
-            <h2>CAPTAIN'S LOG : {index}</h2>
+            <h2>CAPTAIN'S LOG # {index}</h2>
             {
                 Object.keys(thisLog).length &&
                 <>

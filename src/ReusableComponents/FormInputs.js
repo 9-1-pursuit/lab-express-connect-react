@@ -1,6 +1,7 @@
 import TextInput from "./TextInput";
 import NumberInput from "./NumberInput";
 import CheckboxInput from "./CheckboxInput";
+import "./FormInputs.css"
 
 function FormInputs({stateVar, setFunction, checkboxVar, setCheckboxFunction}) {
 
