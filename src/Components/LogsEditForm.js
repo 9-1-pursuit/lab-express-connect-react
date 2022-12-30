@@ -1,15 +1,23 @@
 import { useState, useEffect, useContext } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { ContextData } from "./Provider";
 import FormInputs from "../ReusableComponents/FormInputs";
 import "./LogsEditForm.css"
 
-
 function LogsEditForm() {
     const {API, axios} = useContext(ContextData)
     const {index} = useParams()
+    const navigate = useNavigate()
     const [editForm, setEditForm] = useState({})
     const [checkbox, setCheckbox] = useState(false)
+
+    // handle edit form submit (put req)
+    function handleSubmit(e) {
+        e.preventDefault()
+        axios.put(`${API}/${index}`, editForm)
+        .then(respJson => navigate(`/logs/${index}`))
+        .catch(err => console.log(err))
+    }
 
     useEffect(() => {
         axios.get(`${API}/${index}`)
@@ -22,12 +30,17 @@ function LogsEditForm() {
 
     return (
         <div className='edit'>
-           { editForm.captainName && <FormInputs
-            stateVar = {editForm}
-            setFunction = {setEditForm}
-            checkboxVar = {checkbox}
-            setCheckboxFunction = {setCheckbox} />
-           }
+            <h2>Edit Log # {index}</h2>
+            <form
+            onSubmit={(event) => handleSubmit(event)}
+            >
+                { editForm.captainName && <FormInputs
+                stateVar = {editForm}
+                setFunction = {setEditForm}
+                checkboxVar = {checkbox}
+                setCheckboxFunction = {setCheckbox} />
+                }
+           </form>
         </div>
     );
 }

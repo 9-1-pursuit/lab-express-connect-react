@@ -6,6 +6,8 @@
 
 .formInputs label {
     margin-bottom: 20px;
+    font-size: 25px;
+    font-family: 'Orbitron', sans-serif;
 }
 
 .formInputs textarea, .formInputs input{
