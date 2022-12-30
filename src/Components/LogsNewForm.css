@@ -1,0 +1,48 @@
+.new {
+    margin-top: 70px;
+    padding: 30px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #050539d2;
+    color: #AA0078;
+    text-align: center;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.formInputs {
+    display: grid;
+    grid-template-rows: auto;
+    justify-items: left;
+}
+
+.new h2 {
+    font-size: 40px;
+    margin: 0;
+    margin-bottom: 50px;
+}
+
+.new label {
+    font-size: 25px;
+}
+.new input {
+    height: 30px;
+    width: 300px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    background-color: #FDC30B;
+}
+
+ input.formButton {
+    justify-self: center;
+    color: #050539d2;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 18px;
+    height: 50px;
+    width: 200px;
+}
+
+input.formButton:hover {
+    cursor: pointer;
+    background-color: #AA0078;
+}

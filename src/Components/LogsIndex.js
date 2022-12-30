@@ -5,7 +5,14 @@ import LogsIndexDisplay from "./LogsIndexDisplay";
 import "./LogsIndex.css"
 
 function LogsIndex() {
-    const {logs, setLogs} = useContext(ContextData)
+    const [logs, setLogs] = useState([])
+    const {API, axios} = useContext(ContextData)
+
+    useEffect(() => {
+        axios.get(`${API}`)
+        .then(respJson => setLogs(respJson.data))
+        .catch(err => console.log(err))
+    },[])
 
     return (
         <div className="index">
@@ -16,7 +23,7 @@ function LogsIndex() {
                     <p>Captain</p>
                     <p>Log Title</p>
                 </div>
-                {
+                { logs.length > 0 &&
                     logs.map(({captainName, title, mistakesWereMadeToday}, index) => 
                        <LogsIndexDisplay 
                        key={uuid()}

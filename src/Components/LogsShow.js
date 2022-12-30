@@ -11,7 +11,7 @@ import hook from './assets/Hook.png'
 import jacksparrow from './assets/Jack-Sparrow.png'
 import morgan from './assets/Morgan.png'
 import kirk from './assets/Kirk.png'
-
+import unknownUser from './assets/unknownUser.png'
 function LogsShow() {
     const {API, axios} = useContext(ContextData)
     const {index} = useParams()
@@ -28,6 +28,9 @@ function LogsShow() {
         if(nameLower === `hansolo`) return hansolo
         if(nameLower === `kirk`) return kirk
         if(nameLower === `jacksparrow`) return jacksparrow
+        else{
+            return unknownUser
+        }
     }
     
     useEffect(() => {
