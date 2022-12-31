@@ -8,13 +8,6 @@ export default function LogDetails() {
   let { index } = useParams();
   let navigate = useNavigate();
 
-  useEffect(() => {
-    axios
-      .get(`${API}/logs/${index}`)
-      .then((res) => setLog(res.data))
-      .catch((err) => navigate("/not-found"));
-  }, [index, navigate]);
-
   const handleDelete = () => {
     axios
       .delete(`${API}/logs/${index}`)
@@ -24,33 +17,41 @@ export default function LogDetails() {
       .catch((err) => console.log(err));
   };
 
+  useEffect(() => {
+    axios
+      .get(`${API}/logs/${index}`)
+      .then((res) => setLog(res.data))
+      .catch((err) => navigate("/not-found"));
+  }, [index, navigate]);
+
   return (
-    <article>
-      <h5>
-        <span>
-          <a>{log.captainName}</a>
-        </span>{" "}
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        {log.url}
-      </h5>
-      <h6>{log.title}</h6>
-      <p>{log.post}</p>
-      <div className="showNav">
+    <article className="details">
+      <div className="namecard">
+        <h2>
+          {log.title} - By {log.captainName}
+        </h2>
+        <h3>{log.post}</h3>
+        <p>
+          <span>Days since last crisis:</span> {log.daysSinceLastCrisis}
+        </p>
+      </div>
+      <br></br>
+
+      <div className="buttons">
         <div>
-          {" "}
-          <Link to={`/logs`}>
-            <button>Back</button>
+          <Link to={"/logs"}>
+            <button className="capButtons">Back</button>
           </Link>
         </div>
         <div>
-          {" "}
           <Link to={`/logs/${index}/edit`}>
-            <button>Edit</button>
+            <button className="capButtons">Edit</button>
           </Link>
         </div>
         <div>
-          {" "}
-          <button onClick={handleDelete}>Delete</button>
+          <button className="capButtons" onClick={handleDelete}>
+            Delete
+          </button>
         </div>
       </div>
     </article>

@@ -4,8 +4,16 @@ export default function Log({ log, index }) {
   return (
     <tr>
       <td>
-        <Link to={`/logs/${index}`}>✏️</Link>
+        {log.mistakesWereMadeToday ? (
+          <span>💥</span>
+        ) : (
+          <span>&nbsp; &nbsp; &nbsp;</span>
+        )}
       </td>
+      <td>
+        <Link to={`/logs/${index}`}>{log.captainName}</Link>
+      </td>
+      <td>{log.title}</td>
     </tr>
   );
 }

@@ -4,7 +4,7 @@ import axios from "axios";
 const API = process.env.REACT_APP_API_URL;
 
 export default function Logs() {
-  //   console.log(API);
+  // console.log(API);
   const [logs, setLogs] = useState([]);
 
   useEffect(() => {
@@ -20,14 +20,14 @@ export default function Logs() {
         <table>
           <thead>
             <tr>
-              <th></th>
-              <th>Take me there</th>
+              <th>Mistakes</th>
+              <th>Captain Name</th>
               <th>See this Log</th>
             </tr>
           </thead>
           <tbody>
             {logs.map((log, index) => {
-              return <Log key={index} Log={Log} index={index} />;
+              return <Log key={index} log={log} index={index} />;
             })}
           </tbody>
         </table>
