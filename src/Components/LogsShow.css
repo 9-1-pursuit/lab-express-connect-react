@@ -1,7 +1,6 @@
 .show {
     display: grid;
     grid-template-columns: 30% 55% 15%;
-    /* grid-template-rows: .8fr auto ; */
 }
 
 .show h2{
@@ -16,7 +15,12 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: left;
+    justify-content: space-evenly;
+    row-gap: 30px;
+}
+
+.buttons button {
+    margin: 0px auto;
 }
 
 .logProfile {
@@ -40,8 +44,6 @@
 .entry {
     grid-column: 2;
     grid-row: 2;
-    margin-left: 20px;
-    margin-top: 10%;
     font-family: 'Rajdhani', sans-serif;
 }
 
