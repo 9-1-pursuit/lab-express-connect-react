@@ -29,7 +29,7 @@ function LogsEditForm() {
 
     return (
         <div className='edit'>
-            <h2>EDIT LOG # {index}</h2>
+            <h2>EDIT CAPTAIN'S LOG # {index}</h2>
             <form
             onSubmit={(event) => handleSubmit(event)}>
                 { editForm.captainName && 
