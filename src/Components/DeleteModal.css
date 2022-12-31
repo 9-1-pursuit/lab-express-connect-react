@@ -39,5 +39,6 @@
 
   .deleteModal button:hover {
     cursor: pointer;
-    background-color:#FDC30B ;
+    background-color:#FDC30B;
+    color: #050539;
   }

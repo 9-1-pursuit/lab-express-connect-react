@@ -7,8 +7,8 @@ function TextInput({stateVar, setFunction, value}) {
         <label 
         htmlFor= {value}>{labelTitle === "Captain Name" ? "Captain's Name" : labelTitle}: {" "}
             <textarea
-            rows= {Math.round(charLength/50) + 1}
-            cols={Math.round(charLength/(Math.round(charLength/70)))} 
+            rows= {charLength === "0" ? "3" : Math.round(charLength/50) + 1}
+            cols={charLength === "0" ? "40" : Math.round(charLength/(Math.round(charLength/70)))} 
             wrap="soft" 
             id = {value}
             type = "text"

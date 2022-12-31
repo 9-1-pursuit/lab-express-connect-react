@@ -25,7 +25,7 @@ function LogsNewForm() {
         // use post request, 1st arg: url, 2nd arg: data to send
         axios.post(`${API}`, newForm)
         .then(() => navigate("/logs"))
-        .catch(err => console.log(err))
+        .catch(err => navigate("/*"))
     }
 
     return (
