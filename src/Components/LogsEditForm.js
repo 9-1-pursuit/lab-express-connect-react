@@ -2,7 +2,9 @@ import { useState, useEffect, useContext } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { ContextData } from "./Provider";
 import FormInputs from "../ReusableComponents/FormInputs";
+import BackButton from "../ReusableComponents/BackButton";
 import "./LogsEditForm.css"
+
 
 function LogsEditForm() {
     const {API, axios} = useContext(ContextData)
@@ -40,6 +42,7 @@ function LogsEditForm() {
                 setCheckboxFunction = {setCheckbox} />
                 }
            </form>
+           <BackButton />
         </div>
     );
 }

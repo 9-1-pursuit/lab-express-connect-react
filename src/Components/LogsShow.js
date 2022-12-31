@@ -1,6 +1,7 @@
 import { useEffect, useState, useContext } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { ContextData } from './Provider';
+import BackButton from '../ReusableComponents/BackButton';
 import './LogsShow.css'
 import picard from './assets/Picard.jpeg'
 import sarahlance from './assets/Sara-Lance.jpg'
@@ -65,14 +66,13 @@ function LogsShow() {
                 </>
             }
             <div className='buttons'>
-                <Link to = "/logs">
-                    <button>Back</button>
-                </Link>
+                <BackButton />
                 <Link to ={`/logs/${index}/edit`}>
                     <button>Edit</button>
                 </Link>
-                    <button onClick = {() => handleDeleteButton()}
-                    >Delete</button>
+                <button onClick = {() => handleDeleteButton()}>
+                    Delete
+                </button>
             </div>
         </div>
     );

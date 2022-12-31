@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { ContextData } from "./Provider";
 import { useNavigate } from "react-router-dom";
 import FormInputs from "../ReusableComponents/FormInputs";
+import BackButton from "../ReusableComponents/BackButton";
 import "./LogsNewForm.css"
 
 function LogsNewForm() {
@@ -38,7 +39,8 @@ function LogsNewForm() {
                 checkboxVar = {checkbox}
                 setCheckboxFunction = {setCheckbox}
                 />
-            </form>       
+            </form>  
+            <BackButton />     
         </div>
     );
 }
