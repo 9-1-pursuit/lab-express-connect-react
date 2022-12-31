@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import uuid from "react-uuid";
 import { ContextData } from "./Provider";
 import LogsIndexDisplay from "./LogsIndexDisplay";
+import SortDropdown from "../ReusableComponents/SortDropdown";
 import "./LogsIndex.css"
 
 function LogsIndex() {
@@ -19,6 +20,9 @@ function LogsIndex() {
     return (
         <div className="index">
             <h2>INDEX</h2>
+            <SortDropdown
+            setLogs = {setLogs} 
+            />
             <section className="listedLogs">
                 <div className= "logsHeader">
                     <p>Mistakes</p>
