@@ -3,22 +3,24 @@ import { useNavigate } from "react-router-dom";
 import uuid from "react-uuid";
 import { ContextData } from "./Provider";
 import LogsIndexDisplay from "./LogsIndexDisplay";
+import SortDropdown from "../ReusableComponents/SortDropdown";
 import "./LogsIndex.css"
 
 function LogsIndex() {
-    const [logs, setLogs] = useState([])
-    const {API, axios} = useContext(ContextData)
-    const navigate = useNavigate()
+    // const [logs, setLogs] = useState([])
+    const {API, axios, logs, setLogs} = useContext(ContextData)
+    // const navigate = useNavigate()
 
-    useEffect(() => {
-        axios.get(`${API}`)
-        .then(respJson => setLogs(respJson.data))
-        .catch(err => navigate("/*"))
-    },[])
+    // useEffect(() => {
+    //     axios.get(`${API}`)
+    //     .then(respJson => setLogs(respJson.data))
+    //     .catch(err => navigate("/*"))
+    // },[])
 
     return (
         <div className="index">
             <h2>INDEX</h2>
+            <SortDropdown />
             <section className="listedLogs">
                 <div className= "logsHeader">
                     <p>Mistakes</p>

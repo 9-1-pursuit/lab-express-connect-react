@@ -15,7 +15,7 @@ import kirk from './assets/Kirk.png'
 import unknownUser from './assets/unknownUser.png'
 
 function LogsShow() {
-    const {API, axios, setDeleteModal, setModalIndex} = useContext(ContextData)
+    const {API, axios, setDeleteModal, setModalIndex, select, logs} = useContext(ContextData)
     const {index} = useParams()
     const navigate = useNavigate()
     const [thisLog, setThisLog] = useState({})
@@ -42,10 +42,14 @@ function LogsShow() {
     }
 
     useEffect(() => {
-        axios.get(`${API}/${index}`)
-        .then(respJson => setThisLog(respJson.data)
-        )
-        .catch(err => navigate("/*"))
+        if(select !== "default"){
+            setThisLog(logs[index])
+        }
+        else{
+            axios.get(`${API}/${index}`)
+            .then(respJson => setThisLog(respJson.data))
+            .catch(err => navigate("/*"))
+        }
     }, [])
 
     return (
