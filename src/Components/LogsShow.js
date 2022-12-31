@@ -13,7 +13,7 @@ import morgan from './assets/Morgan.png'
 import kirk from './assets/Kirk.png'
 import unknownUser from './assets/unknownUser.png'
 function LogsShow() {
-    const {API, axios} = useContext(ContextData)
+    const {API, axios, setDeleteModal, setModalIndex} = useContext(ContextData)
     const {index} = useParams()
     const [thisLog, setThisLog] = useState({})
     
@@ -32,7 +32,12 @@ function LogsShow() {
             return unknownUser
         }
     }
-    
+    // function to handle delete button
+    function handleDeleteButton() {
+        setModalIndex(index)
+        setDeleteModal(true)
+    }
+
     useEffect(() => {
         axios.get(`${API}/${index}`)
         .then(respJson => setThisLog(respJson.data)
@@ -66,9 +71,8 @@ function LogsShow() {
                 <Link to ={`/logs/${index}/edit`}>
                     <button>Edit</button>
                 </Link>
-                <Link to="/">
-                    <button>Delete</button>
-                </Link>
+                    <button onClick = {() => handleDeleteButton()}
+                    >Delete</button>
             </div>
         </div>
     );
