@@ -16,7 +16,7 @@ function LogsNewForm() {
         title: "",
         post: "",
         mistakesWereMadeToday: false,
-        daysSinceLastCrisis: undefined,
+        daysSinceLastCrisis: "",
     })
 
     //  function for handling form submit
