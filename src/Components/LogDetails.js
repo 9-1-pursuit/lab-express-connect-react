@@ -21,6 +21,9 @@ const LogDetails = () => {
         .then((res) => {
             setLogs(res.data)
         })
+        .catch(() => {
+            navigate("/not-found")
+        })
     },[index, navigate])
 
     return (

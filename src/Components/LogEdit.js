@@ -26,7 +26,8 @@ const LogEdit = () => {
     function handleSubmit(event) {
         event.preventDefault()
         axios.put(`${API}/logs/${index}`, logs)
-            .then(() => {
+            .then((res) => {
+                setLogs(res.data)
                 navigate(`/logs/${index}`)
             })
             .catch(err => console.log(err))
