@@ -27,7 +27,7 @@ const LogDetails = () => {
         <div>
             <div className='logDetails'>
                 <h1>Show Details</h1>
-                <h2>{logs.title} By {logs.captainName}</h2>
+                <h2>{logs.title} - By {logs.captainName}</h2>
                 <h3>{logs.post}</h3>
                 <p><span>Days since last crisis: </span>{logs.daysSinceLastCrisis}</p>
             </div>

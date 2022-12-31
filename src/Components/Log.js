@@ -1,8 +1,7 @@
-import { Link } from "react-router-dom";
 
 function Log({ log, index }) {
   return (
-    <tr>
+    <tr className="Log">
       <td>
         {log.mistakesWereMadeToday ? (
           <span>⭐️</span>
@@ -11,7 +10,7 @@ function Log({ log, index }) {
         )}
       </td>
       <td>
-        <Link to={`/logs/${index}`}>{log.captainName}</Link>
+        <a href={`/logs/${index}`}>{log.captainName}</a>
       </td>
       <td>
         {log.title}

@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { Link, useParams, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 const API = process.env.REACT_APP_API_URL
 
 const LogNew = () => {
+    let navigate = useNavigate()
     const [logs, setLogs] = useState({
         captainName: "",
         title: "",
@@ -11,9 +12,6 @@ const LogNew = () => {
         mistakesWereMadeToday: false,
         daysSinceLastCrisis: ""
     })
-
-    let navigate = useNavigate()
-    let index = useParams()
 
     function handleTextChange(event) {
         setLogs({...logs, [event.target.id]: event.target.value})
@@ -28,7 +26,7 @@ const LogNew = () => {
         axios.post(`${API}/logs`, logs)
             .then((res) => {
                 setLogs(res.data)
-                navigate(`/logs/${index}`)
+                navigate(`/logs`)
             })
             .catch(err => console.log(err))
     }
@@ -36,11 +34,11 @@ const LogNew = () => {
     return (
         <div className="New">
         <form onSubmit={handleSubmit}>
-        <label htmlFor="name">Captain Name:</label>
+        <label htmlFor="name">Captain's Name:</label>
         <input
-          id="name"
-          value={logs.captainName}
+          id="captainName"
           type="text"
+          value={logs.captainName}
           onChange={handleTextChange}
           placeholder="Captain Name"
           required
@@ -55,7 +53,7 @@ const LogNew = () => {
           onChange={handleTextChange}
         />
         <label htmlFor="post">Post:</label>
-        <input
+        <textarea
           id="post"
           type="text"
           value={logs.post}
@@ -64,11 +62,11 @@ const LogNew = () => {
         <label htmlFor="daysSinceLastCrisis">Days Since Last Crisis:</label>
         <input
           id="daysSinceLastCrisis"
-          type="text"
+          type="number"
           value={logs.daysSinceLastCrisis}
           onChange={handleTextChange}
         />
-        <label htmlFor="mistakesWereMadeToday">Mistakes Were Made Today:</label>
+        <label htmlFor="mistakesWereMadeToday">Mistakes were made today:</label>
         <input
           id="mistakesWereMadeToday"
           type="checkbox"
@@ -80,7 +78,7 @@ const LogNew = () => {
 
         <input type="submit" />
       </form>
-      <Link to={`/logs/${index}`}>
+      <Link to={`/logs`}>
         <button>Nevermind!</button>
       </Link>
     </div>

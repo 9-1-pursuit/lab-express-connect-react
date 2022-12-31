@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 const API = process.env.REACT_APP_API_URL
 
@@ -22,12 +22,11 @@ const LogEdit = () => {
     function handleCheckBoxChange() {
         setLogs({...logs, mistakesWereMadeToday: !logs.mistakesWereMadeToday})
     }
-
+    
     function handleSubmit(event) {
         event.preventDefault()
-        axios.post(`${API}/logs`, logs)
-            .then((res) => {
-                setLogs(res.data)
+        axios.put(`${API}/logs/${index}`, logs)
+            .then(() => {
                 navigate(`/logs/${index}`)
             })
             .catch(err => console.log(err))
@@ -39,18 +38,19 @@ const LogEdit = () => {
                 setLogs(res.data)
             })
             .catch(err => console.log(err))
-    },[index])
+    },[index, navigate])
 
     return (
         <div className="Edit">
+            <h3>Edit</h3>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="name">Captain Name:</label>
+        <label htmlFor="name">Captain's Name:</label>
         <input
-          id="name"
-          value={logs.captainName}
+          id="captainName"
           type="text"
+          value={logs.captainName}
           onChange={handleTextChange}
-          placeholder="Captain Name"
+          placeholder="Captain's Name"
           required
         />
         <label htmlFor="title">Title:</label>
@@ -63,7 +63,7 @@ const LogEdit = () => {
           onChange={handleTextChange}
         />
         <label htmlFor="post">Post:</label>
-        <input
+        <textarea
           id="post"
           type="text"
           value={logs.post}
@@ -72,11 +72,11 @@ const LogEdit = () => {
         <label htmlFor="daysSinceLastCrisis">Days Since Last Crisis:</label>
         <input
           id="daysSinceLastCrisis"
-          type="text"
+          type="number"
           value={logs.daysSinceLastCrisis}
           onChange={handleTextChange}
         />
-        <label htmlFor="mistakesWereMadeToday">Mistakes Were Made Today:</label>
+        <label htmlFor="mistakesWereMadeToday">Mistakes were made today:</label>
         <input
           id="mistakesWereMadeToday"
           type="checkbox"
@@ -88,9 +88,9 @@ const LogEdit = () => {
 
         <input type="submit" />
       </form>
-      <Link to={`/logs/${index}`}>
-        <button>Nevermind!</button>
-      </Link>
+      <a href={`/logs/${index}`}>
+        <button>Back</button>
+      </a>
     </div>
     );
 };
