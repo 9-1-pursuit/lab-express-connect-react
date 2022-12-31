@@ -2,8 +2,7 @@ import React from 'react';
 
 function About() {
     return (
-        <div className='about'
-        style={{fontSize: "18px", fontFamily: "'Rajdhani', sans-serif"}}>
+        <div className='about'>
             <h2>How To Use This App</h2>
             <li>You should see a Navigation Bar with various links</li>
             <li>The Home Link should take you to the Home Page</li>

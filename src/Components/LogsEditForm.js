@@ -18,7 +18,7 @@ function LogsEditForm() {
         e.preventDefault()
         axios.put(`${API}/${index}`, editForm)
         .then(respJson => navigate(`/logs/${index}`))
-        .catch(err => console.log(err))
+        .catch(err => navigate("/*"))
     }
 
     useEffect(() => {
@@ -26,7 +26,7 @@ function LogsEditForm() {
         .then(respJson => {
             setEditForm(respJson.data)
             setCheckbox(respJson.data.mistakesWereMadeToday)})
-        .catch(err =>  console.log(err))
+        .catch(err =>  navigate("/*"))
     },[index])
 
     return (

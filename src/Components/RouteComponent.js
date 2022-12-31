@@ -5,6 +5,7 @@ import Home from './Home';
 import New from '../Pages/New';
 import Edit from '../Pages/Edit';
 import About from '../Pages/About';
+import Error from '../Pages/Error';
 
 function RouteComponent() {
     return (
@@ -22,6 +23,7 @@ function RouteComponent() {
             </Route>
             <Route path = "about" element = {<About />} />
         </Route>
+        <Route path = "*" element= {<Error />} />
        </Routes>
     );
 }

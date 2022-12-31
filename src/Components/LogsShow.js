@@ -1,5 +1,5 @@
 import { useEffect, useState, useContext } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import { ContextData } from './Provider';
 import BackButton from '../ReusableComponents/BackButton';
 import './LogsShow.css'
@@ -13,9 +13,11 @@ import jacksparrow from './assets/Jack-Sparrow.png'
 import morgan from './assets/Morgan.png'
 import kirk from './assets/Kirk.png'
 import unknownUser from './assets/unknownUser.png'
+
 function LogsShow() {
     const {API, axios, setDeleteModal, setModalIndex} = useContext(ContextData)
     const {index} = useParams()
+    const navigate = useNavigate()
     const [thisLog, setThisLog] = useState({})
     
     function pic(name){
@@ -43,7 +45,7 @@ function LogsShow() {
         axios.get(`${API}/${index}`)
         .then(respJson => setThisLog(respJson.data)
         )
-        .catch(err => console.log(err))
+        .catch(err => navigate("/*"))
     }, [])
 
     return (
