@@ -1,10 +1,10 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import NavBar from "../Components/NavBar";
-import Home from "../Components/NavBar";
-import Logs from "../Components/NavBar";
-import LogDetails from "../Components/NavBar";
-import LogEdit from "../Components/NavBar";
-import LogNew from "../Components/NavBar";
+import NavBar from "./Components/NavBar";
+import Home from "./Components/Home";
+import Logs from "./Components/Logs";
+import LogDetails from "./Components/LogDetails";
+import LogEdit from "./Components/LogEdit";
+import LogNew from "./Components/LogNew";
 
 
 function App() {
