@@ -7,6 +7,7 @@ function Nav(props) {
         <Link to = "/">Home</Link>
         <Link to = "/logs">Logs</Link>
         <Link to = "/logs/new">New Log</Link>
+        <Link to = "/about">About</Link>
 
        </nav>
 

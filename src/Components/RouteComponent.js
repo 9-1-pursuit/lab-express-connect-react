@@ -4,6 +4,7 @@ import Show from '../Pages/Show';
 import Home from './Home';
 import New from '../Pages/New';
 import Edit from '../Pages/Edit';
+import About from '../Pages/About';
 
 function RouteComponent() {
     return (
@@ -19,6 +20,7 @@ function RouteComponent() {
                     <Route path = "edit" element ={<Edit />} />
                 </Route>
             </Route>
+            <Route path = "about" element = {<About />} />
         </Route>
        </Routes>
     );

@@ -29,7 +29,7 @@ function LogsNewForm() {
 
     return (
         <div className='new'>
-           <h2>NEW LOG</h2>
+           <h2>NEW CAPTAIN'S LOG</h2>
            <form 
            onSubmit={(event) => handleSubmit(event)}>
                 <FormInputs 

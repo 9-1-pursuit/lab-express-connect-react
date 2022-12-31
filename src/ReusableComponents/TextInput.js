@@ -5,7 +5,7 @@ function TextInput({stateVar, setFunction, value}) {
   const charLength = stateVar[value].length
     return (
         <label 
-        htmlFor= {value}>{labelTitle}: {" "}
+        htmlFor= {value}>{labelTitle === "Captain Name" ? "Captain's Name" : labelTitle}: {" "}
             <textarea
             rows= {Math.round(charLength/50) + 1}
             cols={Math.round(charLength/(Math.round(charLength/70)))} 
