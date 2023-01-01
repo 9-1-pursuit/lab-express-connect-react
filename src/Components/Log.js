@@ -21,11 +21,11 @@ export default function Log() {
 
   const handleDelete = () => {
     axios
-    .delete(`${API}/logs/${index}`)
-    .then(() => {
-      navigate(`/logs`);
-    })
-    .catch((e) => console.error(e));
+      .delete(`${API}/logs/${index}`)
+      .then(() => {
+        navigate(`/logs`);
+      })
+      .catch((e) => console.error(e));
   };
 
   return (
@@ -46,7 +46,13 @@ export default function Log() {
           {" "}
           <button>Back</button>{" "}
         </Link>
-        <button onClick={()=>{navigate(`/logs/${index}/edit`)}}>Edit</button>
+        <button
+          onClick={() => {
+            navigate(`/logs/${index}/edit`);
+          }}
+        >
+          Edit
+        </button>
         <button onClick={handleDelete}>Delete</button>
       </div>
     </article>

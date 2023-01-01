@@ -1,8 +1,8 @@
-import React from 'react'
+import "./Home.css"
 
 function Home() {
   return (
-    <div>Home</div>
+    <div className='Home'>Welcome to Captain's Log</div>
   )
 }
 
