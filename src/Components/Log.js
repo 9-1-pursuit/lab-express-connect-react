@@ -13,7 +13,7 @@ export default function Log() {
     axios
       .get(`${API}/logs/${index}`)
       .then((res) => setLog(res.data))
-      .catch((err) => console.log(err));
+      .catch((err) => navigate("/*"));
   }, [index]);
 
   function handleDelete() {
