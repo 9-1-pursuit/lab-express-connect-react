@@ -15,6 +15,8 @@ function Provider({children}) {
     const [logs, setLogs] = useState([])
     // move select state here so can check value in logsShow component
     const [select, setSelect] = useState("default")
+    // declare state for query value for editform 
+    const [query, setQuery] = useState("")
     const navigate = useNavigate()
 
     useEffect(() => {
@@ -34,7 +36,9 @@ function Provider({children}) {
                 logs, 
                 setLogs,
                 select,
-                setSelect, 
+                setSelect,
+                query,
+                setQuery, 
             }}>
                 <Nav />
                 <Footer />

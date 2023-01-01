@@ -16,10 +16,40 @@ function handleTextChange(e, stateVar, setFunction) {
         return newInput.split(/(?=[A-Z])/).join(` `)
     }
 
+    // function for handling dropdown sort 
+    function displayLogs(input, arr) {
+        let display;
+   
+        if(input === "asc"){
+            display = arr.sort((a,b) => a.captainName < b.captainName ? -1 : 1 || 0)
+        }
+        if(input === "desc"){
+            display = arr.sort((a,b) => a.captainName > b.captainName ? -1 : 1 || 0)
+        }
+        if(input === "true"){
+            display = arr.filter(({mistakesWereMadeToday}) => mistakesWereMadeToday === true)
+        }
+        if(input === "false"){
+            display = arr.filter(({mistakesWereMadeToday}) => mistakesWereMadeToday === false)
+        } 
+        if(input === "gt10"){
+            display = arr.filter(({daysSinceLastCrisis}) => daysSinceLastCrisis > 10)
+        }
+        if(input === "gte20"){
+            display = arr.filter(({daysSinceLastCrisis}) => daysSinceLastCrisis >= 20)
+        }
+        if(input ==="lte5"){
+            display = arr.filter(({daysSinceLastCrisis}) => daysSinceLastCrisis <= 5)
+        }
+        
+        return display
+    }
+
 
 
 
 export  {
     handleTextChange,
     convertInput,
+    displayLogs,
 }

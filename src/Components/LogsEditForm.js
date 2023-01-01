@@ -7,26 +7,53 @@ import "./LogsEditForm.css"
 
 
 function LogsEditForm() {
-    const {API, axios} = useContext(ContextData)
+    const {API, axios, query, logs} = useContext(ContextData)
     const {index} = useParams()
     const navigate = useNavigate()
     const [editForm, setEditForm] = useState({})
     const [checkbox, setCheckbox] = useState(false)
+    // declare state to hold value of originalIndex of edited object if sort methods were used
+    const [originalIndex, setOriginalIndex] = useState("")
 
     // handle edit form submit (put req)
     function handleSubmit(e) {
         e.preventDefault()
-        axios.put(`${API}/${index}`, editForm)
-        .then(respJson => navigate(`/logs/${index}`))
-        .catch(err => navigate("/*"))
+        const whichIndex = originalIndex ? originalIndex : index
+        console.log(whichIndex)
+        // axios.put(`${API}/${whichIndex}`, editForm)
+        //     .then(() => navigate(`/logs/${index}`))
+        //     .catch(err => navigate("/*"))
     }
 
     useEffect(() => {
-        axios.get(`${API}/${index}`)
-        .then(respJson => {
+        if(query){
+            setEditForm(logs[index])
+            setCheckbox(logs[index].mistakesWereMadeToday)
+            axios.get(`${API}`)
+            .then(respJson => {
+                // NOT IDEAL IN FUTURE WILL HAVE UNIQUE ID NUMBERS TO FIND THE MATCHING OBJECT FROM DATABASE ONCE THE ORDER IS ALTERED FROM VARIOUS SORTING METHODS (DROPDOWN)
+                const match = respJson.data.findIndex(({captainName, title, post, mistakesWereMadeToday, daysSinceLastCrisis}) => {
+                    const nameMatch = logs[index].captainName === captainName
+                    const titleMatch = logs[index].title === title
+                    const postMatch = logs[index].post === post
+                    const mistakesMatch = logs[index].mistakesWereMadeToday === mistakesWereMadeToday
+                    const crisisMatch = logs[index].daysSinceLastCrisis === daysSinceLastCrisis
+                    console.log(logs[index].captainName,captainName, titleMatch, postMatch, mistakesMatch, crisisMatch)
+                    
+
+                    return nameMatch && titleMatch && postMatch && mistakesMatch && crisisMatch
+                })
+                setOriginalIndex(match)
+            })
+            .catch(err => navigate("/*"))
+        }
+        else{
+            axios.get(`${API}/${index}`)
+            .then(respJson => {
             setEditForm(respJson.data)
             setCheckbox(respJson.data.mistakesWereMadeToday)})
-        .catch(err =>  navigate("/*"))
+            .catch(err =>  navigate("/*"))
+        }
     },[index])
 
     return (

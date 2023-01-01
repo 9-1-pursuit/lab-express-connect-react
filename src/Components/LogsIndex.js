@@ -1,5 +1,4 @@
-import { useEffect, useState, useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import { useContext, useState } from "react";
 import uuid from "react-uuid";
 import { ContextData } from "./Provider";
 import LogsIndexDisplay from "./LogsIndexDisplay";
@@ -7,20 +6,17 @@ import SortDropdown from "../ReusableComponents/SortDropdown";
 import "./LogsIndex.css"
 
 function LogsIndex() {
-    // const [logs, setLogs] = useState([])
     const {API, axios, logs, setLogs} = useContext(ContextData)
-    // const navigate = useNavigate()
+    // declare state for which logs array order to display
+    const [display, setDisplay] = useState([])
 
-    // useEffect(() => {
-    //     axios.get(`${API}`)
-    //     .then(respJson => setLogs(respJson.data))
-    //     .catch(err => navigate("/*"))
-    // },[])
-
+    const showLogs = display.length > 0 ? display : logs
+    
     return (
         <div className="index">
             <h2>INDEX</h2>
-            <SortDropdown />
+            <SortDropdown
+            setDisplay = {setDisplay} />
             <section className="listedLogs">
                 <div className= "logsHeader">
                     <p>Mistakes</p>
@@ -28,7 +24,7 @@ function LogsIndex() {
                     <p>Log Title</p>
                 </div>
                 { logs.length > 0 &&
-                    logs.map(({captainName, title, mistakesWereMadeToday}, index) => 
+                    showLogs.map(({captainName, title, mistakesWereMadeToday}, index) => 
                        <LogsIndexDisplay 
                        key={uuid()}
                        captain={captainName}

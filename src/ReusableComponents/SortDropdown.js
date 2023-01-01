@@ -1,27 +1,18 @@
-import { useState, useContext } from "react";
+import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { ContextData } from "../Components/Provider";
+import { displayLogs } from "./helperFunctions";
 
-function SortDropdown() {
-    // declare state for select value
-    // const [select, setSelect] = useState("default")
-    const {API, axios, setLogs, select, setSelect} = useContext(ContextData)
+function SortDropdown({setDisplay}) {
+    const {API, axios, setLogs, logs, select, setSelect, setQuery} = useContext(ContextData)
     const navigate = useNavigate()
 
     // function for handling dropdown selection
     function handleDropdown(e) {
         const value = e.target.value
         setSelect(value)
-        let type; 
-        if(value === "asc" || value === "desc") type = "order"
-        if(value === "true" || value === "false") type = "mistakes"
-        if(value === "gt10" || value === "gte20" || value === "lte5") type = "lastCrisis"
-
-        let query = !type ? `` : `?${type}=${value}`
-
-        axios.get(`${API}${query}`)
-        .then(respJson => setLogs(respJson.data))
-        .catch(err => navigate("/*") )
+       value === "default" ? setDisplay(logs) : setDisplay(displayLogs(value, [...logs]))
+        
     }
 
     return (
