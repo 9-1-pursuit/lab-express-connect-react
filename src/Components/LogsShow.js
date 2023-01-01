@@ -3,6 +3,7 @@ import { useParams, Link, useNavigate } from 'react-router-dom';
 import { ContextData } from './Provider';
 import BackButton from '../ReusableComponents/BackButton';
 import './LogsShow.css'
+import { displayLogs } from '../ReusableComponents/helperFunctions';
 import picard from './assets/Picard.jpeg'
 import sarahlance from './assets/Sara-Lance.jpg'
 import ahab from './assets/Ahab.jpg'
@@ -43,7 +44,7 @@ function LogsShow() {
 
     useEffect(() => {
         if(select !== "default"){
-            setThisLog(logs[index])
+            setThisLog(displayLogs(select, [...logs])[index])
         }
         else{
             axios.get(`${API}/${index}`)

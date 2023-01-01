@@ -3,14 +3,16 @@ import uuid from "react-uuid";
 import { ContextData } from "./Provider";
 import LogsIndexDisplay from "./LogsIndexDisplay";
 import SortDropdown from "../ReusableComponents/SortDropdown";
+import { displayLogs } from "../ReusableComponents/helperFunctions";
 import "./LogsIndex.css"
 
 function LogsIndex() {
-    const {API, axios, logs, setLogs} = useContext(ContextData)
+    const {API, axios, logs, setLogs, select} = useContext(ContextData)
     // declare state for which logs array order to display
-    const [display, setDisplay] = useState([])
+    const [display, setDisplay] = useState(displayLogs(select, [...logs]))
 
-    const showLogs = display.length > 0 ? display : logs
+    const showLogs = select !== "default" ? display : logs
+    console.log(showLogs)
     
     return (
         <div className="index">
