@@ -19,7 +19,6 @@ function App() {
           <Route path="/logs/new" element={<New />} />
           <Route path="/logs/delete" element={<Delete />} />
           <Route path="/logs/:index" element={<Show />} />
-          {/* <Route path="/logs/:index/id" element={<Show />} /> */}
           <Route path="/logs/:index/edit" element={<Edit />} />
         </Routes>
       </Router>

@@ -1,33 +1,36 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
-import { useParams } from "react-router-dom";
-import Edit from "./Edit";
+import { Link, useParams } from "react-router-dom";
+import Back from "./Back";
 import Delete from "./Delete";
 import axios from "axios";
 const API = process.env.REACT_APP_API_URL;
 
-function Show({ captain }) {
-  // const [cap, setCap] = useState();
-  // const id = useParams();
+function Show() {
+  const [captain, setCaptain] = useState([]);
+  const index = useParams();
 
-  // useEffect(() => {
-  //   axios
-  //     .get(`${API}/logs/:${id}`)
-  //     .then((res) => setCap(res.data))
-  //     .catch((err) => console.log(err));
-  // }, [id]);
+  useEffect(() => {
+    axios
+      //What's wrong with get http address?
+      .get(`${API}/logs/:${index}`)
+      .then((res) => setCaptain(res.data))
+      .catch((err) => console.log(err));
+  }, [index]);
 
-  //WHY is my prop undefined?
-  console.log(captain);
-
+  //Details not listing out why?
   return (
     <div className="">
-      <p>{}</p>
-      <p>{}</p>
-      <p>{}</p>
-      <p>{}</p>
-      <Edit />
+      <h1>Captain's Log</h1>
+      <h3>Show</h3>
+      <p>{captain?.captainName}</p>
+      <p>{captain?.title}</p>
+      <p>{captain?.post}</p>
+      <p>{captain?.mistakesWereMadeToday}</p>
+      <p>{captain?.daysSinceLastCrisis}</p>
+      <Back />
       <Delete />
+      <Link to="/logs/:index/edit">Edit</Link>
     </div>
   );
 }

@@ -1,6 +1,5 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import Delete from "./Delete";
 import axios from "axios";
 const API = process.env.REACT_APP_API_URL;
 
@@ -15,21 +14,33 @@ function New() {
   });
 
   function handleTextChange(e) {
-    setCaptainData(e.target.value);
+    setCaptainData({ ...captainData, [e.target.id]: e.target.value });
   }
+
+  const handleCheckboxChange = () => {
+    setCaptainData({
+      ...captainData,
+      mistakesWereMadeToday: !captainData.mistakesWereMadeToday,
+    });
+  };
 
   function handleSubmit(e) {
     e.preventDefault();
   }
 
-  // useEffect(() => {
-  //   axios.get().then().catch();
-  // }, []);
+  useEffect(() => {
+    axios
+      .get(`${API}/logs/new`)
+      .then((res) => {})
+      .catch();
+  }, []);
 
   return (
     <div>
-      <form>
-        <label htmlFor="captainsName">Captains Name:</label>
+      <h1>Captain's Log</h1>
+      <h3>New</h3>
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="captainsName">Captain's Name:</label>
         <input
           type="text"
           value=""
@@ -59,7 +70,7 @@ function New() {
         <input
           type="text"
           id="days-since-last-crisis"
-          value=""
+          value={captainData.mistakesWereMadeToday}
           onChange={handleTextChange}
           placeholder="days-since-last-crisis"
         />
@@ -71,9 +82,8 @@ function New() {
           onChange={handleTextChange}
           placeholder="days-since-last-crisis"
         />
-        <button onClick={handleSubmit}>Submit</button>
+        <input type="submit"></input>
       </form>
-      <Delete />
     </div>
   );
 }

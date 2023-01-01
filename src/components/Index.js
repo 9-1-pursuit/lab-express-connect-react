@@ -1,15 +1,13 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-// import Show from "./Show";
-import Edit from "./Edit";
-import Delete from "./Delete";
 import axios from "axios";
 const API = process.env.REACT_APP_API_URL;
 
 function Index() {
   // console.log(API);
   const [captains, setCaptains] = useState([]);
+  const regex = /(\d+)/;
 
   useEffect(() => {
     axios
@@ -27,9 +25,7 @@ function Index() {
         {captains.map((captain, index) => {
           return (
             <li key={index}>
-              <Link to={`/logs/:${index}`}>{captain.title}</Link>
-              <Edit />
-              <Delete />
+              <Link to={`/logs${regex}`}>{captain.title}</Link>
             </li>
           );
         })}
