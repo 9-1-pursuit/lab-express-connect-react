@@ -9,7 +9,7 @@ import Index from './Pages/Index';
 import New from './Components/LogsNew';
 import Show from './Pages/Show';
 import LogsDetails from './Components/LogsDetails';
-
+// import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
   return (
     <div className="container">

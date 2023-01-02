@@ -38,13 +38,13 @@ function New() {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="name">Name:</label>
+        <label htmlFor="name">Captain's Name</label>
         <input
           id="captainName"
           type="text"
           value={log.captainName}
           onChange={handleTextChange}
-          placeholder="Name"
+          placeholder="Captain Name"
           required
         />
         <label htmlFor="title">Title:</label>
@@ -53,7 +53,7 @@ function New() {
           type="text"
           value={log.title}
           onChange={handleTextChange}
-          placeholder="title"
+          placeholder="Title"
           required
         />
         <label htmlFor="post">Post:</label>
@@ -62,19 +62,18 @@ function New() {
           type="text"
           value={log.post}
           onChange={handleTextChange}
-          placeholder="post"
+          placeholder="What happened today?"
           required
         />
-        <label htmlFor="daysSinceLastCrisis">Days Since Last Crisis:</label>
+        <label htmlFor="daysSinceLastCrisis">Days Since Last Crisis</label>
         <input
           id="daysSinceLastCrisis"
           type="number"
           value={log.daysSinceLastCrisis}
           onChange={handleTextChange}
-          placeholder="daysSinceLastCrisis"
           required
         />
-        <label htmlFor="checkbox">Mistakes</label>
+        <label htmlFor="mistakesWereMadeToday">Mistakes</label>
         <input
           checked={log.mistakesWereMadeToday}
           type="checkbox"
