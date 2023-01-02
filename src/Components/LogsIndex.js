@@ -12,7 +12,6 @@ function LogsIndex() {
     const [display, setDisplay] = useState(displayLogs(select, [...logs]))
 
     const showLogs = select !== "default" ? display : logs
-    console.log(showLogs)
     
     return (
         <div className="index">

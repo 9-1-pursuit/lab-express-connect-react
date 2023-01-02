@@ -44,7 +44,8 @@ function LogsShow() {
 
     useEffect(() => {
         if(select !== "default"){
-            setThisLog(displayLogs(select, [...logs])[index])
+            axios.get(`${API}`)
+            .then(respJson =>  setThisLog(displayLogs(select, respJson.data)[index]))
         }
         else{
             axios.get(`${API}/${index}`)

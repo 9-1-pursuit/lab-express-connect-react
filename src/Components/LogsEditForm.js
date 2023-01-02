@@ -3,11 +3,12 @@ import { useParams, useNavigate } from "react-router-dom";
 import { ContextData } from "./Provider";
 import FormInputs from "../ReusableComponents/FormInputs";
 import BackButton from "../ReusableComponents/BackButton";
+import { displayLogs } from "../ReusableComponents/helperFunctions";
 import "./LogsEditForm.css"
 
 
 function LogsEditForm() {
-    const {API, axios, query, logs} = useContext(ContextData)
+    const {API, axios, select, logs} = useContext(ContextData)
     const {index} = useParams()
     const navigate = useNavigate()
     const [editForm, setEditForm] = useState({})
@@ -20,32 +21,30 @@ function LogsEditForm() {
         e.preventDefault()
         const whichIndex = originalIndex ? originalIndex : index
         console.log(whichIndex)
-        // axios.put(`${API}/${whichIndex}`, editForm)
-        //     .then(() => navigate(`/logs/${index}`))
-        //     .catch(err => navigate("/*"))
+        axios.put(`${API}/${whichIndex}`, editForm)
+            .then(() => navigate(`/logs/${index}`))
+            .catch(err => navigate("/*"))
     }
 
     useEffect(() => {
-        if(query){
-            setEditForm(logs[index])
-            setCheckbox(logs[index].mistakesWereMadeToday)
+        if(select !== "default"){
             axios.get(`${API}`)
-            .then(respJson => {
-                // NOT IDEAL IN FUTURE WILL HAVE UNIQUE ID NUMBERS TO FIND THE MATCHING OBJECT FROM DATABASE ONCE THE ORDER IS ALTERED FROM VARIOUS SORTING METHODS (DROPDOWN)
-                const match = respJson.data.findIndex(({captainName, title, post, mistakesWereMadeToday, daysSinceLastCrisis}) => {
-                    const nameMatch = logs[index].captainName === captainName
-                    const titleMatch = logs[index].title === title
-                    const postMatch = logs[index].post === post
-                    const mistakesMatch = logs[index].mistakesWereMadeToday === mistakesWereMadeToday
-                    const crisisMatch = logs[index].daysSinceLastCrisis === daysSinceLastCrisis
-                    console.log(logs[index].captainName,captainName, titleMatch, postMatch, mistakesMatch, crisisMatch)
-                    
-
-                    return nameMatch && titleMatch && postMatch && mistakesMatch && crisisMatch
-                })
-                setOriginalIndex(match)
+            .then(respJson =>  {
+                setEditForm(displayLogs(select, respJson.data)[index])
+                setCheckbox(displayLogs(select, respJson.data)[index].mistakesWereMadeToday)
             })
             .catch(err => navigate("/*"))
+            // find index in sorted array that matches original index of logs array for submitting edit form
+            const match = logs.findIndex(({captainName, title, post, mistakesWereMadeToday, daysSinceLastCrisis}) => {
+                const nameMatch = editForm.captainName === captainName
+                const titleMatch = editForm.title === title
+                const postMatch = editForm.post === post
+                const mistakesMatch = editForm.mistakesWereMadeToday === mistakesWereMadeToday
+                const crisisMatch = editForm.daysSinceLastCrisis === daysSinceLastCrisis
+                
+                return nameMatch && titleMatch && postMatch && mistakesMatch && crisisMatch
+                })
+            setOriginalIndex(match)
         }
         else{
             axios.get(`${API}/${index}`)
