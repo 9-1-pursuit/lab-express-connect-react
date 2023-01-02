@@ -21,10 +21,12 @@ function handleTextChange(e, stateVar, setFunction) {
         let display;
    
         if(input === "asc"){
-            display = arr.sort((a,b) => a.captainName < b.captainName ? -1 : 1 || 0)
+            display = arr.sort((a,b) => 
+                a.captainName.toUpperCase() < b.captainName.toUpperCase() ? -1 : 1 || 0
+            )
         }
         if(input === "desc"){
-            display = arr.sort((a,b) => a.captainName > b.captainName ? -1 : 1 || 0)
+            display = arr.sort((a,b) => a.captainName.toUpperCase() > b.captainName.toUpperCase() ? -1 : 1 || 0)
         }
         if(input === "true"){
             display = arr.filter(({mistakesWereMadeToday}) => mistakesWereMadeToday === true)
