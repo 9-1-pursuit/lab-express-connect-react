@@ -13,7 +13,7 @@
   color: yellow;
 }
 .NavBar button {
-  /* border: none; */
+
   color: yellow;
   background-color: black;
 }
@@ -58,3 +58,5 @@
   left: -100%;
   opacity: 0;
 }
+
+

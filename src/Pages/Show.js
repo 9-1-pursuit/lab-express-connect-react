@@ -4,11 +4,9 @@ import Log from "../Components/Log";
 function Show() {
   return (
     <div className="Show">
-      <h1>Show</h1>
-     
-      <Log />
+      <h1 style={{textAlign: "center"}}>Show</h1>
+           <Log />
     </div>
   );
 }
-
 export default Show;

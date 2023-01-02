@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
-
+// Style
+import "./Log.css"
 //*
 const API = process.env.REACT_APP_API_URL;
 //
@@ -27,34 +28,35 @@ export default function Log() {
       })
       .catch((e) => console.error(e));
   };
-
-  return (
-    <article>
+  return ( 
+  <div className="Log_Container">
+    <article className="Log_Article" >
       <h3>
         {log.captainName} - {log.title}
       </h3>
       <p>
-        <b>Post:</b>
+        <b>Post:</b>{" "}
         {log.post}
       </p>
       <p>
         <b>Days sincelast Crisis:</b> {log.daysSinceLastCrisis}
       </p>
-      <div className="Button">
-        {" "}
-        <Link to={"/logs"}>
+    
+    </article>  <div className="Log_Buttons">
+        {" "} <div className="Back_Button"><Link to={"/logs"}>
           {" "}
+         
           <button>Back</button>{" "}
-        </Link>
-        <button
+        </Link></div>
+        <div className="Edit_Button">  <button
           onClick={() => {
             navigate(`/logs/${index}/edit`);
           }}
         >
           Edit
-        </button>
-        <button onClick={handleDelete}>Delete</button>
+        </button></div>
+      <div className="Delete_Button"> <button onClick={handleDelete}>Delete</button></div>
       </div>
-    </article>
+           </div>
   );
 }
