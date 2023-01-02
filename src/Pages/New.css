@@ -27,8 +27,8 @@
   margin-left: auto;
   margin-right: auto;
   font-weight: 600;
-  border: 1px solid rgb(136, 124, 165);
-  background-color: rgb(214, 181, 217);
+  border: 1px solid rgb(51, 68, 59);
+  background-color: rgb(131, 207, 138);
   border-radius: 14px;
   opacity: 85%;
   box-shadow: 0px 1px 2px rgba(0, 0, 0, 0);
@@ -43,12 +43,12 @@
   padding: 5px;
   border-radius: 8px;
   color: white;
-  border: 1px solid rgb(60, 44, 99);
-  background-color: rgb(123, 96, 157);
+  border: 1px solid rgb(44, 57, 99);
+  background-color: rgb(96, 126, 202);
 }
 
 .new_submit:hover {
-  background-color: rgb(40, 21, 64);
+  background-color: rgb(41, 71, 123);
   cursor: pointer;
   font-weight: 700;
   width: 15%;
@@ -69,12 +69,12 @@ input[type="text"] {
   padding: 5px;
   border-radius: 8px;
   color: white;
-  border: 1px solid rgb(60, 44, 99);
-  background-color: rgb(123, 96, 157);
+  border: 1px solid rgb(44, 57, 99);
+  background-color: rgb(96, 126, 202);
 }
 
 .new_back:hover {
-  background-color: rgb(40, 21, 64);
+  background-color: rgb(41, 71, 123);
   cursor: pointer;
   width: 15%;
   font-weight: 700;

@@ -1,12 +1,18 @@
 import React from "react";
+import "./Error.css";
 
 export default function Error() {
   return (
-    <div>
-      <h4 style={{ color: "red" }}>
-        Error: Page not
-        found!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-      </h4>
+    <div className="error">
+      <h2
+        style={{
+          color: "red",
+          fontSize: "4em",
+          textShadow: "white 4px 4px 4px",
+        }}
+      >
+        Error: Page not found!!!
+      </h2>
     </div>
   );
 }
