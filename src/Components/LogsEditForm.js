@@ -17,7 +17,7 @@ function LogsEditForm() {
     // handle edit form submit (put req)
     function handleSubmit(e) {
         e.preventDefault()
-        const whichIndex = originalIndex ? originalIndex : index
+        const whichIndex = select !== "default" ? originalIndex : index
         axios.put(`${API}/${whichIndex}`, editForm)
             .then(() => navigate(`/logs/${index}`))
             .catch(err => navigate("/*"))
