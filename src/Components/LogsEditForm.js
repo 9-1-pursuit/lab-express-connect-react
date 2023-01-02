@@ -8,14 +8,12 @@ import "./LogsEditForm.css"
 
 
 function LogsEditForm() {
-    const {API, axios, select, logs, originalIndex, setOriginalIndex} = useContext(ContextData)
+    const {API, axios, select, originalIndex, setOriginalIndex} = useContext(ContextData)
     const {index} = useParams()
     const navigate = useNavigate()
     const [editForm, setEditForm] = useState({})
     const [checkbox, setCheckbox] = useState(false)
-    // declare state to hold value of originalIndex of edited object if sort methods were used
-    // const [originalIndex, setOriginalIndex] = useState("")
-
+ 
     // handle edit form submit (put req)
     function handleSubmit(e) {
         e.preventDefault()
@@ -44,8 +42,7 @@ function LogsEditForm() {
                     })
                     setOriginalIndex(match)
             })
-            .catch(err => navigate("/*"))
-            
+            .catch(err => navigate("/*")) 
         }
         else{
             axios.get(`${API}/${index}`)
