@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import "./New.css";
 const API = process.env.REACT_APP_API_URL;
 
 export default function New() {
@@ -35,7 +36,7 @@ export default function New() {
     <div className="new_log">
       <h3>New</h3>
 
-      <form onSubmit={handleSubmit}>
+      <form className="new_form" onSubmit={handleSubmit}>
         <label htmlFor="captainName" className="name_label">
           Captain Name:
           <input
@@ -79,16 +80,20 @@ export default function New() {
             required
           ></input>
         </label>
-        <label htmlFor="mistakesWereMadeToday">Mistakes Were made Today:</label>
-        <input
-          id="mistakesWereMadeToday"
-          type="checkbox"
-          onChange={handleCheckbox}
-          checked={log.mistakesWereMadeToday}
-        />
-        <input type="submit" />
+        <label htmlFor="mistakesWereMadeToday">
+          Mistakes Were made Today:
+          <input
+            id="mistakesWereMadeToday"
+            type="checkbox"
+            onChange={handleCheckbox}
+            checked={log.mistakesWereMadeToday}
+          />
+        </label>
+        <input className="new_submit" type="submit" />
       </form>
-      <button onClick={() => navigate("/logs")}>go Back</button>
+      <button className="new_back" onClick={() => navigate("/logs")}>
+        Go Back
+      </button>
     </div>
   );
 }

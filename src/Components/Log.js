@@ -2,6 +2,7 @@ import axios from "axios";
 import React from "react";
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import "./Log.css";
 const API = process.env.REACT_APP_API_URL;
 
 export default function Log() {
@@ -28,12 +29,15 @@ export default function Log() {
     <div className="Log">
       <article className="log_details">
         <h3 className="title">
-          {log.title} - by {log.captainName}
+          <em>{log.title} </em> - by {log.captainName}
         </h3>
-        <p className="log_post">{log.post}</p>
+        <p className="log_post">
+          <em>{log.post}</em>
+        </p>
+        <hr></hr>
         <p className="mistakes">{log.mistakesWereMadeToday}</p>
         <p className="log_crisis">
-          <b>{log.daysSinceLastCrisis}</b>
+          <b>Days Since Last Crisis:</b> {log.daysSinceLastCrisis}
         </p>
       </article>
       <div className="log_buttons">

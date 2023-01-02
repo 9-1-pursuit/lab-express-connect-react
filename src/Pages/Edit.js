@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import "./Edit.css";
 const API = process.env.REACT_APP_API_URL;
 
 export default function Edit() {
@@ -46,9 +47,9 @@ export default function Edit() {
   return (
     <div className="Edit">
       <h3>Edit</h3>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="edit_form">
         <label htmlFor="captainName" className="name_label">
-          Captain Name:
+          Captain Name:{" "}
           <input
             id="captainName"
             value={log.captainName}
@@ -59,7 +60,7 @@ export default function Edit() {
           ></input>
         </label>
         <label htmlFor="title" className="label">
-          Title:
+          Title:{" "}
           <input
             id="title"
             value={log.title}
@@ -70,7 +71,7 @@ export default function Edit() {
           ></input>
         </label>
         <label htmlFor="post" className="label">
-          Post:
+          Post:{" "}
           <input
             id="post"
             value={log.post}
@@ -81,7 +82,7 @@ export default function Edit() {
           ></input>
         </label>
         <label htmlFor="daysSinceLastCrisis" className="label">
-          Days Since Last Crisis:
+          Days Since Last Crisis:{" "}
           <input
             id="daysSinceLastCrisis"
             value={log.daysSinceLastCrisis}
@@ -90,16 +91,22 @@ export default function Edit() {
             required
           ></input>
         </label>
-        <label htmlFor="mistakesWereMadeToday">Mistakes Were made Today:</label>
-        <input
-          id="mistakesWereMadeToday"
-          type="checkbox"
-          onChange={handleCheckbox}
-          checked={log.mistakesWereMadeToday}
-        />
-        <button type="submit">Submit!</button>
+        <label htmlFor="mistakesWereMadeToday">
+          Mistakes Were made Today:
+          <input
+            id="mistakesWereMadeToday"
+            type="checkbox"
+            onChange={handleCheckbox}
+            checked={log.mistakesWereMadeToday}
+          />
+        </label>
+        <button className="edit_submit" type="submit">
+          Submit!
+        </button>
       </form>
-      <button onClick={() => navigate(`/logs/${index}`)}>Back</button>
+      <button className="edit_back" onClick={() => navigate(`/logs/${index}`)}>
+        Back
+      </button>
     </div>
   );
 }

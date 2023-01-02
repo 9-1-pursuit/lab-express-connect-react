@@ -39,11 +39,11 @@
 }
 
 .logs:nth-child(even) {
-  background: #dbcaca;
+  background: #dbc2c2;
 }
 
 .logs:nth-child(odd) {
-  background: #cba0d8;
+  background: #aa8ab4;
 }
 
 .logs a {
@@ -53,4 +53,5 @@
 
 .logs a:hover {
   color: purple;
+  letter-spacing: 1px;
 }
