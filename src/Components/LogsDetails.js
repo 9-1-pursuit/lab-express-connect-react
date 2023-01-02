@@ -25,7 +25,7 @@ function LogsDetails() {
   };
   return (
     <div className="nameDetails">
-      <div className='nameCard'>
+      <div className="nameCard">
         <h2>
           {log.title ? <span> {log.title}</span> : null} -By
           {log.captainName ? <span> {log.captainName}</span> : null}
@@ -48,7 +48,9 @@ function LogsDetails() {
         <Link to={`/logs/${index}/edit`}>
           <button>Edit</button>
         </Link>{' '}
-        <button onClick={handleDelete}>Delete</button>
+        <Link to={`/logs`}>
+          <button onClick={handleDelete}>Delete</button>
+        </Link>
       </div>
     </div>
   );

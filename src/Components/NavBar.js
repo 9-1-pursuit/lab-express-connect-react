@@ -3,7 +3,7 @@ import Home from './Home';
 export default function NavBar() {
   return (
     <nav className="nav">
-      {/* <Link to="/">Home</Link> */}
+      <Link to="/">Home</Link>
       <h1>
         <Link to="/logs"> Captain's Log </Link>
       </h1>

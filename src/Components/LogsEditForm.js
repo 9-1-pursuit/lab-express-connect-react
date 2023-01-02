@@ -18,7 +18,7 @@ export default function LogsEditForm() {
   };
 
   function checkbox() {
-    return setLog({
+    setLog({
       ...log,
       mistakesWereMadeToday: !log.mistakesWereMadeToday,
     });
