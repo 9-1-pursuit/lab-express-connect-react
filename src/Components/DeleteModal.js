@@ -4,7 +4,7 @@ import { ContextData } from "./Provider";
 import "./DeleteModal.css"
 
 function DeleteModal() {
-    const {axios, API, setDeleteModal, modalIndex} = useContext(ContextData)
+    const {axios, API, setDeleteModal, modalIndex, originalIndex} = useContext(ContextData)
     const navigate = useNavigate()
     // function for 'go back' button
     function goBack(){
@@ -12,7 +12,8 @@ function DeleteModal() {
     }
     // function for 'delete log' button 
     function deleteLog() {
-        axios.delete(`${API}/${modalIndex}`)
+        const whichIndex = originalIndex ? originalIndex : modalIndex
+        axios.delete(`${API}/${whichIndex}`)
         .then(() => {
             setDeleteModal(false)
             navigate(`/logs`)

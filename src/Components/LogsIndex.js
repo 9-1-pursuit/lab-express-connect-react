@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useState,useEffect } from "react";
 import uuid from "react-uuid";
 import { ContextData } from "./Provider";
 import LogsIndexDisplay from "./LogsIndexDisplay";
