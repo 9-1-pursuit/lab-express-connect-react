@@ -1,4 +1,5 @@
-import { useContext, useState,useEffect } from "react";
+import { useContext, useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import uuid from "react-uuid";
 import { ContextData } from "./Provider";
 import LogsIndexDisplay from "./LogsIndexDisplay";
@@ -8,10 +9,17 @@ import "./LogsIndex.css"
 
 function LogsIndex() {
     const {API, axios, logs, setLogs, select} = useContext(ContextData)
+    const navigate = useNavigate()
     // declare state for which logs array order to display
     const [display, setDisplay] = useState(displayLogs(select, [...logs]))
 
     const showLogs = select !== "default" ? display : logs
+
+    useEffect(() => {
+        axios.get(`${API}`)
+        .then(respJson => setLogs(respJson.data))
+        .catch(err => navigate("/*"))
+    }, [])
     
     return (
         <div className="index">

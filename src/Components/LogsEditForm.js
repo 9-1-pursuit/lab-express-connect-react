@@ -29,21 +29,23 @@ function LogsEditForm() {
         if(select !== "default"){
             axios.get(`${API}`)
             .then(respJson =>  {
-                setEditForm(displayLogs(select, respJson.data)[index])
-                setCheckbox(displayLogs(select, respJson.data)[index].mistakesWereMadeToday)
+                const thisObj = displayLogs(select, respJson.data)[index]
+                setEditForm(thisObj)
+                setCheckbox(thisObj.mistakesWereMadeToday)
+                // find index in sorted array that matches original index of logs array for submitting edit form (would use id key in future but don't have that option here)
+                const match = respJson.data.findIndex(({captainName, title, post, mistakesWereMadeToday, daysSinceLastCrisis}) => {
+                    const nameMatch = thisObj.captainName === captainName
+                    const titleMatch = thisObj.title === title
+                    const postMatch = thisObj.post === post
+                    const mistakesMatch = thisObj.mistakesWereMadeToday === mistakesWereMadeToday
+                    const crisisMatch = thisObj.daysSinceLastCrisis === daysSinceLastCrisis
+                    
+                    return nameMatch && titleMatch && postMatch && mistakesMatch && crisisMatch
+                    })
+                    setOriginalIndex(match)
             })
             .catch(err => navigate("/*"))
-            // find index in sorted array that matches original index of logs array for submitting edit form
-            const match = logs.findIndex(({captainName, title, post, mistakesWereMadeToday, daysSinceLastCrisis}) => {
-                const nameMatch = editForm.captainName === captainName
-                const titleMatch = editForm.title === title
-                const postMatch = editForm.post === post
-                const mistakesMatch = editForm.mistakesWereMadeToday === mistakesWereMadeToday
-                const crisisMatch = editForm.daysSinceLastCrisis === daysSinceLastCrisis
-                
-                return nameMatch && titleMatch && postMatch && mistakesMatch && crisisMatch
-                })
-            setOriginalIndex(match)
+            
         }
         else{
             axios.get(`${API}/${index}`)
