@@ -18,6 +18,7 @@ export default function Logs() {
       .catch((error) => console.log("catch", error));
   }, []);
   return (
+    
     <div className="Logs">
       {logs.map((log, index) => {
         return (

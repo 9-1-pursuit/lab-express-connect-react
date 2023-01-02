@@ -3,10 +3,11 @@
   justify-content: space-between;
   background-color: black;
   padding: 10px;
+  border: 1px dotted yellow;
 }
 .NavBar a {
   text-decoration: none;
-  color: wheat;
+  color: rgb(206, 202, 202);
 }
 .NavBar a:hover {
   text-decoration: underline;
@@ -45,7 +46,6 @@
   top: 0;
   left: 0;
   font-family: sans-serif;
-  /* letter-spacing: 5px; */
   transition: all 1s;
   height: 100%;
   width: 100%;
@@ -59,4 +59,10 @@
   opacity: 0;
 }
 
+@media screen and (max-width: 992px) {
+  .NavBar {
+
+    border: 3px solid yellow;
+  }
+}
 

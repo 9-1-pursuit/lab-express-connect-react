@@ -1,27 +1,25 @@
 .Logs {
   display: grid;
-  color: wheat;
-  gap: 10px;
+  gap: 15px;
   position: absolute;
 }
 
 .Logs_Cards {
   text-align: center;
-  background-color: white;
+background-color: rgb(34, 34, 34);
   padding: 10px 16px;
-  box-shadow: 0 7px 10px 0 rgba(9, 9, 9, 0.2);
+  box-shadow: 0 7px 10px 0 rgb(206, 202, 202);
   border-radius: 10px;
-  color: rgb(2, 0, 0);
+  color: yellow;
   transition: 0.3s;
   width: 100%;
 }
 
 .Logs_Cards a {
   text-decoration: none;
-  color: rgb(2, 0, 0);
+  color: White;
 }
 
 .Logs_Cards:hover {
-
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
+  box-shadow: 0 8px 16px 0 yellow;
 }

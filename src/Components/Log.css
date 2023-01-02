@@ -1,21 +1,21 @@
 /* !Article */
 .Log_Article {
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 16px 0 rgb(206, 202, 202);
   transition: 0.3s;
   width: 90%;
-   margin: 20px;
+  margin: 20px;
   padding: 20px;
   border-radius: 10px;
+  color: white;
+  background-color: rgb(34, 34, 34);
  
 }
 
 .Log_Article:hover {
-  box-shadow: 0 16px 32px 0 rgba(2, 2, 2, 0.2);
-  
+  box-shadow: 0 16px 32px 0 yellow;
 }
-.Log_Container a{
-    text-decoration: none;
-    color:black
+.Log_Container a {
+  text-decoration: none;
 }
 /*! BUTTONS */
 .Log_Container {
@@ -138,3 +138,23 @@
   left: -100%;
   opacity: 0;
 }
+
+@media screen and (max-width: 992px) {
+    body {
+      background-color:black
+    }
+  }
+
+  @media screen and (max-width: 992px) {
+    .Log_Article {
+        box-shadow: 0 8px 16px 0 rgb(206, 202, 202);
+        transition: 0.3s;
+        width: 90%;
+        margin: 20px;
+        padding: 20px;
+        border-radius: 10px;
+        color:black;
+        background-color: yellow;
+     
+      }
+  }

@@ -4,4 +4,11 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: sans-serif;
+  background-color: black;
+ 
 }
+/* @media screen and (max-width: 992px) {
+  .body{
+    background-color: lightcyan;
+  }
+} */
