@@ -73,7 +73,7 @@ function New() {
           onChange={handleTextChange}
           required
         />
-        <label htmlFor="mistakesWereMadeToday">Mistakes</label>
+        <label htmlFor="mistakesWereMadeToday">Mistakes Were Made Today</label>
         <input
           checked={log.mistakesWereMadeToday}
           type="checkbox"
