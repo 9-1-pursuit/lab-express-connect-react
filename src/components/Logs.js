@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import { v4 as uuidv4 } from "uuid";
 const API = process.env.REACT_APP_API_URL;
@@ -19,7 +20,7 @@ export default function Logs() {
       <ul>
         {logs &&
           logs.map((log, i) => {
-            return <li key={uuidv4()}>{log.title}</li>;
+            return <li key={uuidv4()}><Link to={`/logs/${i}`}>{log.title}</Link></li>;
           })}
       </ul>
     </div>
