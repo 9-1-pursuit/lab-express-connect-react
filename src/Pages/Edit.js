@@ -1,7 +1,8 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-
+// Style 
+import './Edit.css'
 const API = process.env.REACT_APP_API_URL;
 //
 function Edit() {
@@ -94,14 +95,14 @@ function Edit() {
         />
         <input type="submit" />
       </form>
-
-      <button
+<div className="Form_Button"> <button
         onClick={() => {
           navigate(`/logs/${index}`);
         }}
       >
         Back!
-      </button>
+      </button></div>
+     
     </div>
   );
 }

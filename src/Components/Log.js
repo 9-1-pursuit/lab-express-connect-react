@@ -30,6 +30,7 @@ export default function Log() {
   };
   return ( 
   <div className="Log_Container">
+    <Link to={`/logs/${index}/edit`}>
     <article className="Log_Article" >
       <h3>
         {log.captainName} - {log.title}
@@ -42,7 +43,8 @@ export default function Log() {
         <b>Days sincelast Crisis:</b> {log.daysSinceLastCrisis}
       </p>
     
-    </article>  <div className="Log_Buttons">
+    </article></Link> 
+     <div className="Log_Buttons">
         {" "} <div className="Back_Button"><Link to={"/logs"}>
           {" "}
          
