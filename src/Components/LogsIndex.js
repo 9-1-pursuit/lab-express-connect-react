@@ -11,13 +11,16 @@ function LogsIndex() {
     const {API, axios, logs, setLogs, select} = useContext(ContextData)
     const navigate = useNavigate()
     // declare state for which logs array order to display
-    const [display, setDisplay] = useState(displayLogs(select, [...logs]))
+    const [display, setDisplay] = useState([])
 
     const showLogs = select !== "default" ? display : logs
 
     useEffect(() => {
         axios.get(`${API}`)
-        .then(respJson => setLogs(respJson.data))
+        .then(respJson => {
+            setLogs(respJson.data)
+            setDisplay(displayLogs(select, [...respJson.data]))
+        })
         .catch(err => navigate("/*"))
     }, [])
     
@@ -32,7 +35,7 @@ function LogsIndex() {
                     <p>Captain</p>
                     <p>Log Title</p>
                 </div>
-                { logs.length > 0 &&
+                { showLogs &&
                     showLogs.map(({captainName, title, mistakesWereMadeToday}, index) => 
                        <LogsIndexDisplay 
                        key={uuid()}
