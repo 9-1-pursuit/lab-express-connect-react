@@ -1,0 +1,160 @@
+/* !Article */
+.Log_Article {
+  box-shadow: 0 8px 16px 0 rgb(206, 202, 202);
+  transition: 0.3s;
+  width: 90%;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+  background-color: rgb(34, 34, 34);
+ 
+}
+
+.Log_Article:hover {
+  box-shadow: 0 16px 32px 0 yellow;
+}
+.Log_Container a {
+  text-decoration: none;
+}
+/*! BUTTONS */
+.Log_Container {
+  display: grid;
+  gap: 20px;
+}
+
+.Log_Buttons button {
+  background: none;
+  color: yellow;
+  border: none;
+}
+.Log_Buttons {
+  display: grid;
+  gap: 50px;
+  grid-template-columns: 2fr 2fr 2fr;
+  width: 90%;
+  margin: 20px;
+}
+.Back_Button,
+.Edit_Button,
+.Delete_Button {
+  text-align: center;
+  color: yellow;
+  background-color: black;
+  color: transparent;
+  text-decoration: none;
+  border: 3px solid yellow;
+  padding: 10px 10px;
+  font-size: 12px;
+  font-family: sans-serif;
+  transition: all 0.5s;
+  position: relative;
+}
+
+.Back_Button:hover:before {
+  transform: scale(1) rotatey(360deg);
+  left: 0;
+  opacity: 1;
+}
+
+.Back_Button:after {
+  content: "Back";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: yellow;
+  background: rgb(34, 34, 34);
+  font-size: 12px;
+  top: 0;
+  left: 0;
+  font-family: sans-serif;
+  transition: all 1s;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  transform: scale(1) rotatey(0);
+  opacity: 1;
+}
+
+.Back_Button:hover:after {
+  transform: scale(0) rotatey(360deg);
+  left: -100%;
+  opacity: 0;
+}
+.Back_Button:hover:before {
+  transform: scale(1) rotatey(360deg);
+  left: 0;
+  opacity: 1;
+}
+.Edit_Button:after {
+  content: "Edit";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: yellow;
+  background: rgb(34, 34, 34);
+  font-size: 12px;
+  top: 0;
+  left: 0;
+  font-family: sans-serif;
+  transition: all 1s;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  transform: scale(1) rotatey(0);
+  opacity: 1;
+}
+
+.Edit_Button:hover:after {
+  transform: scale(0) rotatey(360deg);
+  left: -100%;
+  opacity: 0;
+}
+.Edit_Button:hover:before {
+  transform: scale(1) rotatey(360deg);
+  left: 0;
+  opacity: 1;
+}
+.Delete_Button:after {
+  content: "Delete";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: yellow;
+  background: rgb(34, 34, 34);
+  font-size: 12px;
+  top: 0;
+  left: 0;
+  font-family: sans-serif;
+  transition: all 1s;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  transform: scale(1) rotatey(0);
+  opacity: 1;
+}
+.Delete_Button:hover:after {
+  transform: scale(0) rotatey(360deg);
+  left: -100%;
+  opacity: 0;
+}
+
+@media screen and (max-width: 992px) {
+    body {
+      background-color:black
+    }
+  }
+
+  @media screen and (max-width: 992px) {
+    .Log_Article {
+        box-shadow: 0 8px 16px 0 rgb(206, 202, 202);
+        transition: 0.3s;
+        width: 90%;
+        margin: 20px;
+        padding: 20px;
+        border-radius: 10px;
+        color:black;
+        background-color: yellow;
+     
+      }
+  }

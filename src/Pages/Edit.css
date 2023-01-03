@@ -1,0 +1,24 @@
+.Edit form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  }
+
+ input[type=text] {
+    word-wrap: break-word;
+    word-break: break-all;
+    width: 100%;
+    padding: 10px;
+}
+.Edit { 
+    color:white;
+    background-color: black;
+  box-shadow: 0 8px 16px 0 yellow;
+  transition: 0.3s;
+  width: 90%;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+

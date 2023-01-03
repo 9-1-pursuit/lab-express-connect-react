@@ -1,0 +1,22 @@
+.ErrorPage {
+ color: rgb(206, 202, 202);
+ background-image: url('https://cdn.dribbble.com/users/1175431/screenshots/6188233/404-error-dribbble-800x600.gif');
+ height: 100vh;
+  margin: auto;
+ background-repeat: no-repeat;
+ background-position: center;
+ /* background-size: cover; */
+}
+
+@media screen and (max-width: 992px) {
+  .ErrorPage {
+    background-color: rgb(236, 236, 19);
+    color: black;
+    background-image: url('https://cdn.svgator.com/images/2022/01/funny-404-error-page-design.gif');
+ height: 100vh;
+  margin: auto;
+ background-repeat: no-repeat;
+ background-position: center;
+    
+  }
+}
