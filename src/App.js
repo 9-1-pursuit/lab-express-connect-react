@@ -2,7 +2,7 @@ import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import Nav from './Components/Nav'
 import Home from './Components/Home'
 import Log from './Components/Log'
-import New from './Components/NewLog'
+
 import Edit from './Components/Forms'
 import Details from './Components/LogDetails'
 
@@ -15,7 +15,6 @@ function App() {
         <Routes>
           <Route path='/' element={<Home/>}/>
           <Route path='/logs' element={<Log/>}/>
-          <Route path='/logs/new' element={<New/>}/>
           <Route path='/logs/:index/edit' element={<Edit/>}/>
           <Route path='/logs/:index' element={<Details/>}/>
           <Route path='*'/>
