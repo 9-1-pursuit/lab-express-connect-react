@@ -1,0 +1,42 @@
+
+nav{
+    background-color: #3687e4;
+    height: 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr
+}
+
+.home{
+    margin-top: 30px;
+    margin-left: 100px;
+    height: 30px;
+    }
+
+.captain{
+    margin-top: 30px;
+    margin-left: 100px;
+    height: 30px;
+}
+
+.new-log{
+    margin-top: 30px;
+    margin-left: 100px;
+    height: 30px;
+    background-color: rgb(247, 98, 44);
+    
+}
+
+
+
+a:link{
+    color: #0d0101;
+    text-decoration: none;
+}
+
+a:hover{
+    background-color: rgb(35, 143, 232);
+}
+
+a:visited{
+    color: #2935e1
+}
