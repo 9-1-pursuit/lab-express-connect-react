@@ -13,11 +13,16 @@ const Logs = () => {
     
     return (
         <div className='logsIndex'> 
-
-            {logs.map((log, index) => {
+            <>
+                <tr className='logListHdg'>
+                    <td>Captain's name</td>
+                    <td>Title</td>
+                    <td>Mistakes</td> <br/><br/>
+                </tr> 
+          {logs.map((log, index) => {
               return <ShowOneLog key={index} log={log} index={index} />;
             })}
-          
+            </>       
         </div>
     );
 };
