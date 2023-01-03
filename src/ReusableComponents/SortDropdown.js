@@ -12,6 +12,7 @@ function SortDropdown({setDisplay}) {
         const value = e.target.value
         setSelect(value)
        value === "default" ? setDisplay(logs) : setDisplay(displayLogs(value, [...logs]))
+       
     }
 
     return (

@@ -1,10 +1,11 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { ContextData } from "./Provider";
+import { displayLogs } from "../ReusableComponents/helperFunctions";
 import "./DeleteModal.css"
 
 function DeleteModal() {
-    const {axios, API, setDeleteModal, modalIndex, originalIndex} = useContext(ContextData)
+    const {axios, API, setDeleteModal, modalIndex, originalIndex, setOriginalIndex, select} = useContext(ContextData)
     const navigate = useNavigate()
     // function for 'go back' button
     function goBack(){
@@ -12,8 +13,8 @@ function DeleteModal() {
     }
     // function for 'delete log' button 
     function deleteLog() {
-        const whichIndex = originalIndex ? originalIndex : modalIndex
-        axios.delete(`${API}/${whichIndex}`)
+        
+        axios.delete(`${API}/${modalIndex}`)
         .then(() => {
             setDeleteModal(false)
             navigate(`/logs`)

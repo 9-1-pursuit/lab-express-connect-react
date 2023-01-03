@@ -38,7 +38,26 @@ function LogsShow() {
     }
     // function to handle delete button
     function handleDeleteButton() {
-        setModalIndex(index)
+        if(select !== "default"){
+            axios.get(`${API}`)
+            .then(respJson =>  {
+                // find index in sorted array that matches original index of logs array for submitting edit form (would use id key in future but don't have that option here)
+                const match = respJson.data.findIndex(({captainName, title, post, mistakesWereMadeToday, daysSinceLastCrisis}) => {
+                    const nameMatch = thisLog.captainName === captainName
+                    const titleMatch = thisLog.title === title
+                    const postMatch = thisLog.post === post
+                    const mistakesMatch = thisLog.mistakesWereMadeToday === mistakesWereMadeToday
+                    const crisisMatch = thisLog.daysSinceLastCrisis === daysSinceLastCrisis
+                    
+                    return nameMatch && titleMatch && postMatch && mistakesMatch && crisisMatch
+                    })
+                    setModalIndex(match)
+            })
+            .catch(err => navigate("/*"))
+        }
+        else{
+            setModalIndex(index)
+        }
         setDeleteModal(true)
     }
 
