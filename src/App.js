@@ -12,14 +12,16 @@ const App = () => {
     <div className="App">
       <Router>
         <NavBar />
-        <Routes>
-          <Route path="/" element={<Main />} />
-          <Route path="/logs" element={<AllLogsIndex />} />
-          <Route path="/logs/:index" element={<LogDetails />} />
-          <Route path="/logs/new" element={<NewLogForm />} />
-          <Route path="/logs/:index/edit" element={<EditLogForm />} />
-          <Route path="*" element={<FourOFour />} />
-        </Routes>
+        <main>
+          <Routes>
+            <Route path="/" element={<Main />} />
+            <Route path="/logs" element={<AllLogsIndex />} />
+            <Route path="/logs/:index" element={<LogDetails />} />
+            <Route path="/logs/new" element={<NewLogForm />} />
+            <Route path="/logs/:index/edit" element={<EditLogForm />} />
+            <Route path="*" element={<FourOFour />} />
+          </Routes>
+        </main>
       </Router>
     </div>
   );
