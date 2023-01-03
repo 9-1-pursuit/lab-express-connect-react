@@ -7,6 +7,7 @@ import LogDetails from './Components/LogDetails'
 
 
 function App() {
+  return(
   <div className='App'>
     <Router>
       <Nav/>
@@ -21,7 +22,8 @@ function App() {
         </Routes>
       </main>
     </Router>
-  </div>;
+  </div>
+  )
 }
 
 export default App;
