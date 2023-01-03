@@ -1,13 +1,10 @@
 import { useContext } from "react";
-import { useNavigate } from "react-router-dom";
 import { ContextData } from "../Components/Provider";
 import { displayLogs } from "./helperFunctions";
 
 function SortDropdown({setDisplay}) {
-    const {API, axios, setLogs, logs, select, setSelect, setQuery} = useContext(ContextData)
-    const navigate = useNavigate()
-
-    // function for handling dropdown selection
+    const {logs, select, setSelect} = useContext(ContextData)
+   
     function handleDropdown(e) {
         const value = e.target.value
         setSelect(value)
