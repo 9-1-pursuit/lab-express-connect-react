@@ -3,11 +3,11 @@ import React from "react";
 function Home() {
   return (
     <div>
-      <h2>Welcome</h2>
-      <h3>
-        The greatest Captains <>🏴‍☠️</> of all time <>⚔️</>
+      <h1>Welcome,</h1>
+      <h2>
+        the greatest <>🏴‍☠️</> Captains <>⚔️</> of all time
         <>‼️</>
-      </h3>
+      </h2>
     </div>
   );
 }

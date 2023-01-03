@@ -1,34 +1,32 @@
-import React from "react";
-import { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 const API = process.env.REACT_APP_API_URL;
 
-//Delete button not working how I want it to WHY?
 function Delete() {
   const [captain, setCaptain] = useState([]);
-  const { index } = useParams;
-  const navigate = useNavigate();
+  let { index } = useParams();
+  let navigate = useNavigate();
 
   useEffect(() => {
     axios
-      .get(`${API}/logs/:${index}`)
+      .get(`${API}/logs/${index}`)
       .then((res) => setCaptain(res.data))
-      .catch((err) => console.log(err));
+      .catch((err) => navigate("/not-found"));
   }, [index, navigate]);
 
-  function handleOnClick() {
+  const handleDelete = () => {
     axios
       .delete(`${API}/logs/${index}`)
       .then(() => {
         navigate("/logs");
       })
       .catch((err) => console.log(err));
-  }
+  };
 
   return (
-    <div className="captainName">
-      <button>Delete</button>
+    <div>
+      <button onClick={handleDelete}>Delete</button>
     </div>
   );
 }

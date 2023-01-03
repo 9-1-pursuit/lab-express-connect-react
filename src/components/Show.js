@@ -1,36 +1,37 @@
-import React, { useState } from "react";
-import { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
-import Back from "./Back";
-import Delete from "./Delete";
+import Delete from "../buttons/Delete";
 import axios from "axios";
 const API = process.env.REACT_APP_API_URL;
 
 function Show() {
-  const [captain, setCaptain] = useState([]);
-  const index = useParams();
+  const [singleCaptain, setSingleCaptain] = useState([]);
+  const { index } = useParams();
 
   useEffect(() => {
     axios
-      //What's wrong with get http address?
-      .get(`${API}/logs/:${index}`)
-      .then((res) => setCaptain(res.data))
+      .get(`${API}/logs/${index}`)
+      .then((res) => setSingleCaptain(res.data))
       .catch((err) => console.log(err));
   }, [index]);
 
-  //Details not listing out why?
+  //When I pass the captain and index as props I was able to see the data list out but on the index show is there a way to get the details to list out without making another fetch call?
   return (
-    <div className="">
-      <h1>Captain's Log</h1>
-      <h3>Show</h3>
-      <p>{captain?.captainName}</p>
-      <p>{captain?.title}</p>
-      <p>{captain?.post}</p>
-      <p>{captain?.mistakesWereMadeToday}</p>
-      <p>{captain?.daysSinceLastCrisis}</p>
-      <Back />
+    <div className="show">
+      <h1>Show</h1>
+      <p>
+        {singleCaptain?.title} - By {singleCaptain?.captainName}
+      </p>
+      <p>{singleCaptain?.post}</p>
+      <p>{singleCaptain?.mistakesWereMadeToday}</p>
+      <p>Days since last crisis: {singleCaptain?.daysSinceLastCrisis}</p>
+      <Link to={`/logs`}>
+        <button>Back</button>
+      </Link>
+      <Link to={`/logs/${index}/edit`}>
+        <button>Edit</button>
+      </Link>
       <Delete />
-      <Link to="/logs/:index/edit">Edit</Link>
     </div>
   );
 }

@@ -6,7 +6,8 @@ import Index from "./components/Index";
 import Show from "./components/Show";
 import New from "./components/New";
 import Edit from "./components/Edit";
-import Delete from "./components/Delete";
+import Delete from "./buttons/Delete";
+// import FourOFour from "./components/FourOFour";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/logs/delete" element={<Delete />} />
           <Route path="/logs/:index" element={<Show />} />
           <Route path="/logs/:index/edit" element={<Edit />} />
+          {/* <Route path="*" element={<FourOFour />} /> */}
         </Routes>
       </Router>
     </div>

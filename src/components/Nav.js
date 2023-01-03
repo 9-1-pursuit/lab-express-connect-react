@@ -5,8 +5,8 @@ function Nav() {
   return (
     <div className="navbar">
       <nav>
-        <Link to="/logs">Index</Link>
-        <Link to="/logs/new">New</Link>
+        <Link to="/logs">Captain's Log</Link>
+        <Link to="/logs/new">New Log</Link>
       </nav>
     </div>
   );

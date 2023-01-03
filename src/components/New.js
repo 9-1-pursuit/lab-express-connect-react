@@ -1,10 +1,13 @@
-import React from "react";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 const API = process.env.REACT_APP_API_URL;
 
 function New() {
   // console.log(API);
+  const navigate = useNavigate();
+  const { index } = useParams();
+
   const [captainData, setCaptainData] = useState({
     captainName: "",
     title: "",
@@ -13,10 +16,22 @@ function New() {
     daysSinceLastCrisis: 0,
   });
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    axios
+      .post(`${API}/logs`, captainData)
+      .then((res) => {
+        setCaptainData(res.data);
+        navigate("/logs");
+      })
+      .catch((err) => console.log(err));
+  };
+
   function handleTextChange(e) {
     setCaptainData({ ...captainData, [e.target.id]: e.target.value });
   }
-
+  // not updating state value WHY?
   const handleCheckboxChange = () => {
     setCaptainData({
       ...captainData,
@@ -24,63 +39,59 @@ function New() {
     });
   };
 
-  function handleSubmit(e) {
-    e.preventDefault();
-  }
-
   useEffect(() => {
     axios
-      .get(`${API}/logs/new`)
-      .then((res) => {})
-      .catch();
+      .post(`${API}/logs/new`)
+      .then((res) => {
+        // console.log(res);
+        setCaptainData(res.data);
+      })
+      .catch((err) => console.log(err));
   }, []);
 
   return (
     <div>
-      <h1>Captain's Log</h1>
-      <h3>New</h3>
+      <h1>New</h1>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="captainsName">Captain's Name:</label>
+        <label htmlFor="captainName">Captain's Name:</label>
         <input
           type="text"
-          value=""
+          value={captainData.captainName}
           onChange={handleTextChange}
-          id="captainsName"
-          placeholder="...captains-name"
+          id="captainName"
+          placeholder="captains-name"
         />
         <label htmlFor="title">Title:</label>
         <input
           type="text"
-          value=""
+          value={captainData.title}
           onChange={handleTextChange}
           id="title"
-          placeholder="...title"
+          placeholder="title"
         />
         <label htmlFor="post">Post:</label>
-        <input
+        <textarea
           type="text"
-          value=""
+          value={captainData.post}
           onChange={handleTextChange}
           id="post"
-          placeholder="...post"
+          placeholder="post"
         />
-        <label htmlFor="...days-since-last-crisis">
-          Days Since Last Crisis:
-        </label>
+        <label htmlFor="daysSinceLastCrisis">Days Since Last Crisis:</label>
         <input
-          type="text"
-          id="days-since-last-crisis"
+          type="number"
+          id="daysSinceLastCrisis"
+          value={captainData.daysSinceLastCrisis}
+          onChange={handleTextChange}
+          placeholder="daysSinceLastCrisis"
+        />
+        <label htmlFor="mistakesWereMadeToday">Mistakes were made today:</label>
+        <input
+          type="checkbox"
+          id="mistakesWereMadeToday"
           value={captainData.mistakesWereMadeToday}
           onChange={handleTextChange}
-          placeholder="days-since-last-crisis"
-        />
-        <label htmlFor="update">Mistakes were made today:</label>
-        <input
-          type="button"
-          id="days-since-last-crisis"
-          value=""
-          onChange={handleTextChange}
-          placeholder="days-since-last-crisis"
+          placeholder="mistakesWereMadeToday"
         />
         <input type="submit"></input>
       </form>

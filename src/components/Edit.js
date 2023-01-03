@@ -1,10 +1,12 @@
-import React from "react";
-import { useState, useEffect } from "react";
+import React, { useState } from "react";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 const API = process.env.REACT_APP_API_URL;
 
 function Edit() {
-  const [captainData, setCaptainData] = useState({
+  const { index } = useParams();
+  const navigate = useNavigate();
+  const [updateCaptainData, setUpdateCaptainData] = useState({
     captainName: "",
     title: "",
     post: "",
@@ -13,82 +15,76 @@ function Edit() {
   });
 
   function handleTextChange(e) {
-    setCaptainData({ ...captainData, [e.target.id]: e.target.value });
+    setUpdateCaptainData({
+      ...updateCaptainData,
+      [e.target.id]: e.target.value,
+    });
   }
 
   const handleCheckboxChange = () => {
-    setCaptainData({
-      ...captainData,
-      mistakesWereMadeToday: !captainData.mistakesWereMadeToday,
+    setUpdateCaptainData({
+      ...updateCaptainData,
+      mistakesWereMadeToday: !updateCaptainData.mistakesWereMadeToday,
     });
   };
 
   function handleSubmit(e) {
     e.preventDefault();
-  }
-
-  useEffect(() => {
     axios
-      .post(`${API}/logs/edit`)
-      .then((res) => {})
-      .catch();
-  }, []);
-
-  function handleTextChange() {}
-
-  function handleOnClick() {}
+      .put(`${API}/logs/${index}`, updateCaptainData)
+      .then(() => navigate(`/logs/${index}`))
+      .catch((err) => console.log(err));
+  }
 
   return (
     <div className="edit">
-      <h1>Captain's Log</h1>
-      <h3>Edit</h3>
+      <h1>Edit</h1>
       <form onSubmit={handleSubmit}>
+        textarea
         <label htmlFor="captainsName">Captain's Name:</label>
         <input
           type="text"
-          value=""
+          value={updateCaptainData.captainName}
           onChange={handleTextChange}
-          id="captainsName"
-          placeholder="...captains-name"
+          id="captainName"
+          placeholder="captains-name"
         />
-        <label htmlFor="title">Title:</label>
+        <label htmlFor="title">Title</label>
         <input
           type="text"
-          value=""
+          value={updateCaptainData.title}
           onChange={handleTextChange}
           id="title"
-          placeholder="...title"
+          placeholder="title"
         />
         <label htmlFor="post">Post:</label>
-        <input
+        <textarea
           type="text"
-          value=""
+          value={updateCaptainData.post}
           onChange={handleTextChange}
           id="post"
-          placeholder="...post"
+          placeholder="post"
         />
-        <label htmlFor="...days-since-last-crisis">
-          Days Since Last Crisis:
-        </label>
+        <label htmlFor="daysSinceLastCrisis">Days Since Last Crisis:</label>
         <input
-          type="text"
-          id="days-since-last-crisis"
-          value={captainData.mistakesWereMadeToday}
+          type="number"
+          id="daysSinceLastCrisis"
+          value={updateCaptainData.daysSinceLastCrisis}
           onChange={handleTextChange}
-          placeholder="days-since-last-crisis"
+          placeholder="daysSinceLastCrisis"
         />
-        <label htmlFor="update">Mistakes were made today:</label>
+        <label htmlFor="mistakesWereMadeToday">Mistakes were made today:</label>
         <input
-          type="button"
-          id="days-since-last-crisis"
-          value=""
-          onChange={handleTextChange}
-          placeholder="days-since-last-crisis"
+          type="checkbox"
+          id="mistakesWereMadeToday"
+          value={updateCaptainData.mistakesWereMadeToday}
+          onChange={handleCheckboxChange}
+          placeholder="Mistakes-were-made-today"
         />
         <input type="submit"></input>
       </form>
+      <Link to={"/logs"}>Back</Link>
     </div>
   );
 }
-
 export default Edit;
