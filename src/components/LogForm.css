@@ -1,0 +1,26 @@
+.form {
+    border: 3px solid gold;
+    padding: 4px;
+}
+
+.form h2 {
+    color: magenta;
+}
+
+form {
+    padding: 10px;
+    display: grid;
+    row-gap: 4px;
+    max-width: 900px;
+}
+
+#submit {
+    width: 100px;background-color: yellow;
+    border: 2px solid magenta;
+}
+
+
+#submit:hover{
+    font-weight: bold;
+    color: magenta;
+}

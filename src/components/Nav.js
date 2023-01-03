@@ -3,9 +3,9 @@ import "./Nav.css";
 
 export default function Nav() {
   return (
-    <nav>
-      <Link to="/logs">Captain's Log Index</Link>
-      <Link to="/logs/new">Add a new Log</Link>
+    <nav id="nav-bar">
+      <Link to="/logs">Captain's Log</Link>
+      <Link to="/logs/new">New Log</Link>
     </nav>
   );
 }

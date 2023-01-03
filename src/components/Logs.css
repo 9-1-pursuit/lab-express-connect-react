@@ -1,0 +1,13 @@
+.Logs {
+    border: 3px solid gold;
+    padding: 4px;
+}
+
+.Logs ul a {
+  color: magenta;
+  text-decoration: none;
+}
+
+.Logs ul a:hover {
+  text-transform: uppercase;
+}

@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
+import "./LogForm.css"
 const API = process.env.REACT_APP_API_URL;
 
 export default function LogsForm() {
-  let { index } = useParams();
+  const { index } = useParams();
   const navigate = useNavigate();
 
   const [log, setLog] = useState({
@@ -52,57 +53,52 @@ export default function LogsForm() {
 
   return (
     <div className="form">
-      <h2>Logs Form</h2>
+      <h2>Log Form</h2>
       <form onSubmit={handleSubmit}>
-        <label>
-          Captain Name:
-          <input
-            id="captainName"
-            type="text"
-            value={log.captainName}
-            onChange={handleChange}
-            required
-          ></input>
-        </label>
-        <label>
-          Title:
-          <input
-            id="title"
-            type="text"
-            value={log.title}
-            onChange={handleChange}
-            required
-          ></input>
-        </label>
-        <label>
-          Post:
-          <input
-            id="post"
-            type="text"
-            value={log.post}
-            onChange={handleChange}
-            required
-          ></input>
-        </label>
-        <label>
-          Mistakes Were Made Today:
-          <input
-            type="checkbox"
-            value={log.mistakesWereMadeToday}
-            onChange={handleChange}
-          />
-        </label>
-        <label>
-          Days Since Last Crisis:
-          <input
-            id="daysSinceLastCrisis"
-            type="text"
-            value={log.daysSinceLastCrisis}
-            onChange={handleChange}
-            required
-          />
-        </label>
-        <input type="submit" />
+        <label htmlFor="captainName">Captain Name:</label>
+        <input
+          id="captainName"
+          type="text"
+          value={log.captainName}
+          onChange={handleChange}
+          required
+        ></input>
+
+        <label htmlFor="title">Title:</label>
+        <input
+          id="title"
+          type="text"
+          value={log.title}
+          onChange={handleChange}
+          required
+        ></input>
+
+        <label htmlFor="post">Post:</label>
+        <textarea
+          id="post"
+          value={log.post}
+          onChange={handleChange}
+          required
+        ></textarea>
+
+        <label htmlFor="mistakesWereMadeToday">Mistakes Were Made Today:</label>
+        <input
+          id="mistakesWereMadeToday"
+          type="checkbox"
+          value={log.mistakesWereMadeToday}
+          onChange={handleChange}
+        />
+
+        <label htmlFor="daysSinceLastCrisis">Days Since Last Crisis:</label>
+        <input
+          id="daysSinceLastCrisis"
+          type="text"
+          value={log.daysSinceLastCrisis}
+          onChange={handleChange}
+          required
+        />
+
+        <input id="submit" type="submit" />
       </form>
     </div>
   );
