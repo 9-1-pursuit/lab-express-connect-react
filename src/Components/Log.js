@@ -7,18 +7,19 @@ export default function Log(){
   const [log, setLog] = useState({});
   const { index } = useParams();
   const navigate = useNavigate();
-  const API = `${API}/logs/${index}`;
+  const newAPI = `${API}/logs/${index}`;
+  // This could be the issue but I dont think so
 
   useEffect(() => {
     axios
-      .get(API)
+      .get(newAPI)
       .then((res) => setLog(res.data))
       .catch((err) => console.log(err));
   }, [index]);
 
   const handleDelete = () => {
     axios
-      .delete(API)
+      .delete(newAPI)
       .then(() => {
         navigate("/logs");
       })

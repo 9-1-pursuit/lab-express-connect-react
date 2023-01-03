@@ -15,6 +15,7 @@ function App() {
           <Route path='/' element={<Home/>}/>
           <Route path='/logs' element={<Log/>}/>
           <Route path='/logs/:index/edit' element={<Forms/>}/>
+          {/* I figured they do the same thing so why not just make one form */}
           <Route path='/logs/:index' element={<LogDetails/>}/>
           <Route path='*'/>
         </Routes>
