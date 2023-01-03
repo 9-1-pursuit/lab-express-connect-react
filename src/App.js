@@ -5,6 +5,7 @@ import LogsIndex from "./Components/LogsIndex"
 import ShowLog from "./Components/ShowLog";
 import NewLog from "./Components/NewLog";
 import UpdateLog from "./Components/UpdateLog";
+import Error from "./Components/Error";
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
           <Route path="/logs/new" element={<NewLog />} />
           <Route path="/logs/:index" element={<ShowLog />} />
           <Route path="/logs/:index/edit" element={<UpdateLog />}/>
+          <Route path="*" element={<Error />} />
         </Routes>
       </div>
     </Router>
