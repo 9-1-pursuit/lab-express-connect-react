@@ -5,7 +5,10 @@ import "./Navbar.css"
 const NavBar = () => {
     return (
         <nav>
-      <h1 className='home'>
+    <h1 className='home'>
+        <Link to='/'>Home</Link>
+    </h1>
+      <h1 className='captain'>
         <Link to="/logs">Captain's Log</Link>
       </h1>
       
