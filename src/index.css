@@ -1,5 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
+
+
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+/* .App {
+  display: grid;
+  grid-template-rows: .5fr 1fr;
+  height: 100vh;
+  width: 150vw;
+  background-image:url("./Images/captainLogBkgrnd.png") ;
+  background-size:contain;
+  background-repeat: no-repeat;
+} */
+
+
+.nav{
+  display:grid;
+  grid-template-columns: .1fr .75fr 1fr 1fr .5fr .5fr;
+  width:102vw;
+  height: 10vh;
+  background-color: rgb(6, 69, 6);
+}
+
+.homeLink{
+  color:yellow;
+  text-decoration: none;
+  font-size: 1.1em;
+  font-family: 'Alfa Slab One', cursive;
+  text-shadow:  -3px 0 rgb(92, 37, 92), 0 3px purple, 3px 0 purple, 0 -3px purple;
+
+}
+
+.logsLink{
+  grid-column: 2;
+  margin-left: -1em;
+  color:goldenrod;
+  text-decoration: none;
+  font-size: 1.3em;
+  font-stretch:extra-expanded;
+  font-family: 'Alfa Slab One', cursive;
+  text-shadow:  -3px 0 rgb(92, 37, 92), 0 3px purple, 3px 0 purple, 0 -3px purple;
+}
+
+
+.nav button{
+    width: 5em;
+    height: 2em;
+    font-family: impact;
+    font-weight: bolder;
+    font-size: 1.3em;
+    border-radius: 25%;
+    background-color: goldenrod;
+    color: black;
+    grid-column: 6;
+    margin-top: 2vh;
+    margin-left: 2vh;
+}
+
+.home{
+background-position: center;
+display: grid;
+grid-template-rows: .5fr .5fr 1fr;
+height: 100vh;
+width: 102vw;
+background-image: url('./Images/captainLogBkgrndGreenBorderSmaller.png');
+background-repeat: no-repeat;
+background-size: unset;
+background-color: rgb(56,32,26);
+}
+
+.welcome1{
+  font-size: 4em;
+  color: goldenrod;
+  text-shadow: saddlebrown;
+}
+
+ .logsPage{
+  display: grid;
+  grid-template-rows: .25fr 1fr 1fr;
+  background-image:url("./Images/editLogBkgrnd.png") ; 
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 90vh;
+  width: auto;
+} 
+
+.logsIndex {
+  grid-row: 2;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  /* justify-items: center; */
+  margin-left: auto;
+  margin-right:auto;
+  height: 106%;
+  width: 60%;
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-color: antiquewhite;
+  border-radius: 5%;
+}
+
+
+
+/* .logListbox{
+  height: 70vh;
+  width: 80vw;
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr;
+} */
+
+.logList{
+ 
+  /* display: flex; */
+  /* justify-content:space-evenly; */
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  /* justify-items: center; */
+  align-items: center;
+  /* width: 100%; */
+  height: 3vh;
+  margin-left: 10vw;
+ 
+}
+
+.new{
+  background-position: center;
+  display: grid;
+  grid-template-rows: .25fr 1fr 1fr 1fr 1fr;
+  height: 100vh;
+  width: 102vw;
+  background-image: url('./Images/addLogBkgrnd.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: rgb(56,32,26);
+  }
+  
+
+ form {
+  grid-row: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  /* justify-items: center; */
+  margin-left: auto;
+  margin-right:auto;
+  height: fit-content;
+  padding: 5vh;
+  width: 60%;
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-color: antiquewhite;
+  margin-top: 15vh;
+  border-radius: 5%;
+}
+
+
+
+form label{ 
+
+  grid-column: 1;
+  /* justify-items: center;
+  align-items: center; 
+  width: 100%; 
+  height: 3vh;
+  margin-left: 10vw; */
+  font-weight: bold;
+  font-size: larger;
+  margin-left: 2vh;
+ 
+}
+form input {
+grid-column: 2;
+margin-right: 2vh;
+}
+
+form input[type="checkbox"]{
+ justify-self:left ;
+ width: 3vh;
+ height: 3vh;
+ border: 3px solid brown;
+}
+
+form input[type="submit"]{
+  justify-self:left ;
+  width: fit-content;
+  width: 25vh;
+  height: 9vh;
+  border: 3px solid antiquewhite;
+  color: yellow;
+  font-size: 2em;
+  font-weight: bolder;
+  background-image: url('./Images/log2.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+ }
+/* .logName{
+  grid-column: 2;
+}
+
+.logTitle{
+  grid-column: 3;
+}
+
+.logMistakes{
+  grid-column: 4;
+} */
+
+
