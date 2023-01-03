@@ -31,15 +31,14 @@ function LogDetails() {
   //display this info
   return (
     <article className='showLogDetails'>
-      <h6>{log.captainName}</h6>
-      <p>{log.title}</p>
-      <p>{log.post}</p>
-      <p>{log.daysSinceLastCrisis}</p>
+       <h2>{log.title}</h2> by <h1>{log.captainName}</h1>
+      <h3>{log.post}</h3>
+      <h3>Days since last crisis: {log.daysSinceLastCrisis}</h3>
        
       <div className="showLogButtons">
-        <Link to={`/logs`}> <button>Back</button> </Link>
-        <Link to={`/logs/${index}/edit`}><button>Edit</button> </Link>
-        <button onClick={handleDelete}>Delete</button>
+        <Link to={`/logs`}> <button className="showLogBackButton">Back</button> </Link>
+        <Link to={`/logs/${index}/edit`}><button className="showLogEditButton">Edit</button> </Link>
+        <button onClick={handleDelete} className="showLogDeleteButton">Delete</button>
       </div>
     </article>
   );

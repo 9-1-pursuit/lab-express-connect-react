@@ -118,11 +118,13 @@ form input[type="submit"]{
   /* background-position: center; display: grid; grid-template-rows: .25fr 1fr 1fr 1fr 1fr; */
   }
 .showLogDetails {
-  grid-row: 2;           grid-template-columns: 1fr 1fr;   grid-template-rows: auto;
-  display: grid;         height: 50%;                      width: 50%;
+  grid-row: 2;           grid-template-columns: 1fr;       grid-template-rows: auto;
+  display: grid;         height: 67%;                      width: 50%;
   margin-left: auto;     margin-right: auto;               margin-top: 15vh; padding: 5vh; 
   border-radius: 5%;     border:5px solid rgb(56,32,26); background-repeat: no-repeat;
-  background-size:cover; background-color:rgba(250, 235,215,.9);
+  background-size:unset; background-color:rgba(250, 235,215,.9);
+  background-position: right 9vw center;
+  background-image: url('/src/Images/captainThumbsUp.png');
   }
 /***----- Edit Log View -----***/
 .editLogPage{
