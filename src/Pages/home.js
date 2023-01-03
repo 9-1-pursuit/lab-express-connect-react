@@ -7,6 +7,5 @@ function Home() {
   }
   
   export default Home;
-  Footer
   
   
