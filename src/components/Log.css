@@ -1,0 +1,39 @@
+.log {
+    border: 3px solid gold;
+    padding: 4px;
+}
+
+.log section {
+    padding-left: 16px;
+}
+
+h3 span {
+    font-style: italic;
+}
+
+p span {
+    font-weight: bold;
+}
+
+#post {
+    font-size: 20px;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+}
+
+button, .buttons a {
+    background-color: yellow;
+    border: 2px solid magenta;
+    padding: 2px 4px;
+    color: black;
+    font-family: arial;
+    font-size: 14px;
+}
+
+button:hover, .buttons a:hover{
+    font-weight: bold;
+    color: magenta;
+}

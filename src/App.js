@@ -1,5 +1,13 @@
+import Nav from "./components/Nav";
+import RouteComponent from "./components/RouteComponent";
+
 function App() {
-  return <div>Hello World</div>;
+  return (
+    <div className="App">
+      <Nav />
+      <RouteComponent />
+    </div>
+  );
 }
 
 export default App;
