@@ -1,0 +1,38 @@
+.show {
+    text-align: center;
+    background-color: blanchedalmond;
+    width: 75%;
+    border-radius: 10px;
+    margin: auto;
+    margin-top: 10%;
+    box-shadow: gray 5px 5px 15px;
+    padding-top: 20px;
+    padding-bottom: 25px;
+}
+
+.show span {
+    font-weight: bold;
+}
+
+.show #post {
+    font-size: 20px;
+    padding-bottom: 15px;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-top: 30px;
+}
+
+.back {
+    margin-left: 20%;
+}
+
+.edit {
+    margin-left: 20%;
+}
+
+.delete {
+    margin-left: 20%;
+}
