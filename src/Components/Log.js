@@ -7,7 +7,7 @@ export default function Log(){
   const [log, setLog] = useState({});
   const { index } = useParams();
   const navigate = useNavigate();
-  const newAPI = `${API}/logs/${index}`;
+  const newAPI = `${API}/logs`;
   // This could be the issue but I dont think so
 
   useEffect(() => {
@@ -28,15 +28,8 @@ export default function Log(){
 
   return (
     <div className="log">
-      <h2>Show</h2>
-      {log.title}
-      <section className="button">
-        <Link to={`${API}`}>Back</Link>
-        &nbsp;
-        <Link to={`/logs/${index}/edit`}>Edit</Link>
-        &nbsp;
-        <button onClick={handleDelete}>Delete</button>
-      </section>
+    <h1>Hello</h1>
     </div>
   );
 }
+// Change to show all logs 

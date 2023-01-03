@@ -34,3 +34,4 @@ export default function LogDetails() {
     </div>
   );
 }
+//change to show one log
