@@ -1,0 +1,35 @@
+
+ .logs, .logsHeader {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.listedLogs {
+    margin-top: 50px;
+    height: fit-content;
+}
+
+.logs, .logsHeader {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    justify-items: center;
+    align-items: center;
+    border: 1px solid black;
+}
+
+.logs img {
+    height: 40px;
+}
+
+.logs {
+    color: #FDC30B;
+    font-size: 18px;
+    font-family: 'Rajdhani', sans-serif;
+}
+
+.logsHeader {
+    font-size: 24px;
+    font-family: 'Orbitron', sans-serif;
+}

@@ -1,0 +1,14 @@
+.edit {
+    color: #050539;
+    background-color: #AA0078d2;
+}
+
+.edit input, .edit textarea {
+    background-color: #FDC30Bd2 ;
+}
+
+.edit input.formButton:hover, .edit button:hover {
+    cursor: pointer;
+    background-color: #050539;
+    color: #FDC30B;
+}

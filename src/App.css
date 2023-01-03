@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Orbitron:wght@500&family=Rajdhani:wght@600&display=swap');
+/* 
+font-family: 'Rajdhani', sans-serif;
+font-family: 'Orbitron', sans-serif;
+ */
+
+.App {
+    background-image: url('./Components/assets/black-space.gif');
+    background-size: cover;
+    width: 100vw;
+    min-height: 100vh;
+    max-height: auto;
+ }
+
+ .home, .index, .show, .new, .edit, .deleteModal, .about, .errorPage {
+    margin-top: 70px;
+    padding: 10px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-family: 'Orbitron', sans-serif;
+ }
+ .index h2, .show h2, .new h2, .edit h2 {
+    font-size: 40px;
+    margin-bottom: 40px;
+ }
+
+ .index, .new, .show, .about, .errorPage {
+    background-color: #050539d2;
+    color: #AA0078;
+ }
+
+ button {
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 20px; 
+    margin: 30px 0;
+    background-color:#FDC30B;
+    color: #050539;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: #AA0078;
+    color: #FDC30B;
+}
+
+.errorPage p, .about {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 18px ;
+}

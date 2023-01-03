@@ -1,0 +1,9 @@
+
+.new textarea, .new input {
+    background-color: #FDC30B;
+}
+
+input.formButton:hover {
+    cursor: pointer;
+    background-color: #AA0078;
+}

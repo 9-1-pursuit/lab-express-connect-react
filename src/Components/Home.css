@@ -1,0 +1,14 @@
+.home {
+    color: #AA0078;
+    width: 60%;
+}
+
+.home h1 {
+    font-size: 60px;
+    font-family: 'Rajdhani', sans-serif;
+    color: #FDC30B;
+}
+
+.home img {
+    height: 250px;
+}
