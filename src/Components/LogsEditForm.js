@@ -17,9 +17,10 @@ function LogsEditForm() {
     // handle edit form submit (put req)
     function handleSubmit(e) {
         e.preventDefault()
-        const whichIndex = select !== "default" ? originalIndex : index
+        console.log(originalIndex)
+        const whichIndex = originalIndex ? originalIndex : index
         axios.put(`${API}/${whichIndex}`, editForm)
-            .then(() => navigate(`/logs/${index}`))
+            .then(() => navigate(`/logs/${whichIndex}`))
             .catch(err => navigate("/*"))
     }
 
@@ -30,7 +31,7 @@ function LogsEditForm() {
                 const thisObj = displayLogs(select, respJson.data)[index]
                 setEditForm(thisObj)
                 setCheckbox(thisObj.mistakesWereMadeToday)
-                matchIndex(respJson.data, thisObj, setOriginalIndex)
+                matchIndex(respJson.data,thisObj, setOriginalIndex)  
             })
             .catch(err => navigate("/*")) 
         }
