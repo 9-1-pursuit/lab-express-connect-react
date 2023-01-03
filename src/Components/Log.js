@@ -32,7 +32,9 @@ export default function Log(){
       {log.title}
       <section className="button">
         <Link to={`${API}`}>Back</Link>
+        &nbsp;
         <Link to={`/logs/${index}/edit`}>Edit</Link>
+        &nbsp;
         <button onClick={handleDelete}>Delete</button>
       </section>
     </div>

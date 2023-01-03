@@ -76,7 +76,6 @@ export default function Forms() {
 
       <input id="submit" type="submit" />
       </form>
-      <br />
       <Link to="/logs">Back</Link>
       {/* I just thought this was cute */}
     </div>
