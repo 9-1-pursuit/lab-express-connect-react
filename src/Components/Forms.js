@@ -3,7 +3,7 @@ import { useParams, useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 const API = process.env.REACT_APP_API_URL;
 
-export default function LogsForm() {
+export default function Forms() {
   const { index } = useParams();
   const navigate = useNavigate();
 

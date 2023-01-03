@@ -4,7 +4,7 @@ import axios from "axios";
 import { v4 as uuidv4 } from "uuid";
 const API = process.env.REACT_APP_API_URL;
 
-export default function Logs() {
+export default function LogDetails() {
   const [logs, setLogs] = useState([]);
 
   useEffect(() => {
