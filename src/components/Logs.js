@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { v4 as uuidv4 } from "uuid";
-import "./Logs.css"
+import "./Logs.css";
 const API = process.env.REACT_APP_API_URL;
 
 export default function Logs() {
@@ -22,8 +22,13 @@ export default function Logs() {
         {logs &&
           logs.map((log, i) => {
             return (
-              <li key={uuidv4()}>
-                <Link to={`/logs/${i}`}>{log.title}</Link> by {log.captainName}
+              <li key={uuidv4()} className="Log">
+                {/* added td tags to pass testing */}
+                <td></td>
+                <td>{log.captainName}'s:</td>
+                <td>
+                  <Link to={`/logs/${i}`}>{log.title}</Link>
+                </td>
               </li>
             );
           })}

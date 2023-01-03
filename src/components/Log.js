@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams, Link } from "react-router-dom";
 import axios from "axios";
 import "./Log.css";
 const API = process.env.REACT_APP_API_URL;
@@ -17,14 +17,6 @@ export default function Log() {
       .catch((err) => console.log(err));
   }, [index]);
 
-  const handleBack = () => {
-    navigate("/logs");
-  };
-
-  const handleEdit = () => {
-    navigate(`/logs/${index}/edit`);
-  };
-
   const handleDelete = () => {
     axios
       .delete(indexAPI)
@@ -35,12 +27,13 @@ export default function Log() {
   };
 
   return (
-    <div className="Log">
+    <div className="log">
+      <h2>Show</h2>
       {log.title && (
         <section>
-          <h2>
-            {log.title} - by <span>{log.captainName}</span>
-          </h2>
+          <h3>
+            {log.title} - By <span>{log.captainName}</span>
+          </h3>
           <p id="post">"{log.post}"</p>
           <p>
             <span>Mistakes Were Made Today: </span>
@@ -53,8 +46,8 @@ export default function Log() {
         </section>
       )}
       <section className="buttons">
-        <button onClick={handleBack}>Back</button>
-        <button onClick={handleEdit}>Edit</button>
+        <Link to={`${API}`}>Back</Link>
+        <Link to={`/logs/${index}/edit`}>Edit</Link>
         <button onClick={handleDelete}>Delete</button>
       </section>
     </div>

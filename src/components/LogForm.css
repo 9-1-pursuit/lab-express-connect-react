@@ -19,8 +19,11 @@ form {
     border: 2px solid magenta;
 }
 
-
-#submit:hover{
+#submit:hover, a:hover{
     font-weight: bold;
     color: magenta;
+}
+
+a {
+    text-decoration: none;
 }

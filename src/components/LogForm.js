@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import axios from "axios";
-import "./LogForm.css"
+import "./LogForm.css";
 const API = process.env.REACT_APP_API_URL;
 
 export default function LogsForm() {
@@ -13,7 +13,7 @@ export default function LogsForm() {
     title: "",
     post: "",
     mistakesWereMadeToday: false,
-    daysSinceLastCrisis: "",
+    daysSinceLastCrisis: 0,
   });
 
   useEffect(() => {
@@ -27,11 +27,11 @@ export default function LogsForm() {
 
   const handleChange = (event) => {
     let val = event.target.value;
-    if (event.target.id === "daysSinceLastCrisis") {
-      val = +event.target.value;
+    if (event.target.id === "mistakesWereMadeToday") {
+      val = !log.mistakesWereMadeToday;
     }
-    if (typeof event.target.value === "boolean") {
-      val = !event.target.value;
+    if (event.target.id === "daysSinceLastCrisis" && val) {
+      val = Number(val);
     }
     setLog({ ...log, [event.target.id]: val });
   };
@@ -54,8 +54,9 @@ export default function LogsForm() {
   return (
     <div className="form">
       <h2>Log Form</h2>
+      <h3>{index ? "Edit" : "New"}</h3>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="captainName">Captain Name:</label>
+        <label htmlFor="captainName">Captain's Name:</label>
         <input
           id="captainName"
           type="text"
@@ -81,7 +82,7 @@ export default function LogsForm() {
           required
         ></textarea>
 
-        <label htmlFor="mistakesWereMadeToday">Mistakes Were Made Today:</label>
+        <label htmlFor="mistakesWereMadeToday">Mistakes were made today:</label>
         <input
           id="mistakesWereMadeToday"
           type="checkbox"
@@ -92,7 +93,7 @@ export default function LogsForm() {
         <label htmlFor="daysSinceLastCrisis">Days Since Last Crisis:</label>
         <input
           id="daysSinceLastCrisis"
-          type="text"
+          type="number"
           value={log.daysSinceLastCrisis}
           onChange={handleChange}
           required
@@ -100,6 +101,8 @@ export default function LogsForm() {
 
         <input id="submit" type="submit" />
       </form>
+      <br />
+      <Link to="/logs">Back</Link>
     </div>
   );
 }

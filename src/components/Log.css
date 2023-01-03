@@ -1,9 +1,13 @@
-.Log {
+.log {
     border: 3px solid gold;
     padding: 4px;
 }
 
-h2 span {
+.log section {
+    padding-left: 16px;
+}
+
+h3 span {
     font-style: italic;
 }
 
@@ -20,12 +24,16 @@ p span {
     gap: 10px;
 }
 
-button {
+button, .buttons a {
     background-color: yellow;
     border: 2px solid magenta;
+    padding: 2px 4px;
+    color: black;
+    font-family: arial;
+    font-size: 14px;
 }
 
-button:hover{
+button:hover, .buttons a:hover{
     font-weight: bold;
     color: magenta;
 }
