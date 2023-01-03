@@ -39,20 +39,17 @@ function LogDetails() {
       <h6>{log.post}</h6>
       <p>Days since last crisis: {log.daysSinceLastCrisis}</p>
       <div className="showNavigation">
-        <div>
-          {" "}
+        <div className="log">
           <Link to={`/logs`}>
             <button>Back</button>
           </Link>
         </div>
         <div>
-          {" "}
           <Link to={`/logs/${index}/edit`}>
             <button>Edit</button>
           </Link>
         </div>
         <div>
-          {" "}
           <button onClick={handleDelete}>Delete</button>
         </div>
       </div>
