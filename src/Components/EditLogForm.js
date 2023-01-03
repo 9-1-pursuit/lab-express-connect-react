@@ -40,7 +40,7 @@ const EditLogForm = () => {
     return (
         <div>
            <br/><br/>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className='editLogForm'>
                 <label htmlFor="captainName">Captain's Name:</label>
                 <input
                 id="captainName"
@@ -88,14 +88,15 @@ const EditLogForm = () => {
                 id="mistakesWereMadeToday"
                 value={log.mistakesWereMadeToday}
                 type="text"
-                placeholder="What (if any) mistakes were made today? (or enter None)"
                 required
                 />
                 <br/> <br/>
-                <input type="submit"/>
+                <input type="submit"/>  
+                <Link to={`/logs/${index}`} className='cancelLink'><button className='cancelEditButton'>Cancel</button>
+                </Link> 
+
             </form>  
-            <Link to={`/logs/${index}`}><button>Cancel Edit</button>
-            </Link>
+   
         </div>
     );
 };
