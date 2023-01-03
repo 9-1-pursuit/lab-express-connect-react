@@ -49,9 +49,11 @@ export default function LogDetails() {
           </Link>
         </div>
         <div>
-          <button className="capButtons" onClick={handleDelete}>
-            Delete
-          </button>
+          <Link to={`/logs`}>
+            <button className="capButtons" onClick={handleDelete}>
+              Delete
+            </button>
+          </Link>
         </div>
       </div>
     </article>
