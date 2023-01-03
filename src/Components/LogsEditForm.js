@@ -3,7 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { ContextData } from "./Provider";
 import FormInputs from "../ReusableComponents/FormInputs";
 import BackButton from "../ReusableComponents/BackButton";
-import { displayLogs } from "../ReusableComponents/helperFunctions";
+import { displayLogs, matchIndex } from "../ReusableComponents/helperFunctions";
 import "./LogsEditForm.css"
 
 
@@ -30,17 +30,7 @@ function LogsEditForm() {
                 const thisObj = displayLogs(select, respJson.data)[index]
                 setEditForm(thisObj)
                 setCheckbox(thisObj.mistakesWereMadeToday)
-                // find index in sorted array that matches original index of logs array for submitting edit form (would use id key in future but don't have that option here)
-                const match = respJson.data.findIndex(({captainName, title, post, mistakesWereMadeToday, daysSinceLastCrisis}) => {
-                    const nameMatch = thisObj.captainName === captainName
-                    const titleMatch = thisObj.title === title
-                    const postMatch = thisObj.post === post
-                    const mistakesMatch = thisObj.mistakesWereMadeToday === mistakesWereMadeToday
-                    const crisisMatch = thisObj.daysSinceLastCrisis === daysSinceLastCrisis
-                    
-                    return nameMatch && titleMatch && postMatch && mistakesMatch && crisisMatch
-                    })
-                    setOriginalIndex(match)
+                matchIndex(respJson.data, thisObj, setOriginalIndex)
             })
             .catch(err => navigate("/*")) 
         }

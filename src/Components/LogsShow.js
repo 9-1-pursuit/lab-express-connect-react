@@ -3,7 +3,7 @@ import { useParams, Link, useNavigate } from 'react-router-dom';
 import { ContextData } from './Provider';
 import BackButton from '../ReusableComponents/BackButton';
 import './LogsShow.css'
-import { displayLogs } from '../ReusableComponents/helperFunctions';
+import { displayLogs, matchIndex } from '../ReusableComponents/helperFunctions';
 import picard from './assets/Picard.jpeg'
 import sarahlance from './assets/Sara-Lance.jpg'
 import ahab from './assets/Ahab.jpg'
@@ -40,19 +40,7 @@ function LogsShow() {
     function handleDeleteButton() {
         if(select !== "default"){
             axios.get(`${API}`)
-            .then(respJson =>  {
-                // find index in sorted array that matches original index of logs array for submitting edit form (would use id key in future but don't have that option here)
-                const match = respJson.data.findIndex(({captainName, title, post, mistakesWereMadeToday, daysSinceLastCrisis}) => {
-                    const nameMatch = thisLog.captainName === captainName
-                    const titleMatch = thisLog.title === title
-                    const postMatch = thisLog.post === post
-                    const mistakesMatch = thisLog.mistakesWereMadeToday === mistakesWereMadeToday
-                    const crisisMatch = thisLog.daysSinceLastCrisis === daysSinceLastCrisis
-                    
-                    return nameMatch && titleMatch && postMatch && mistakesMatch && crisisMatch
-                    })
-                    setModalIndex(match)
-            })
+            .then(respJson =>  matchIndex(respJson.data, thisLog, setModalIndex))
             .catch(err => navigate("/*"))
         }
         else{

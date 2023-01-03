@@ -45,6 +45,21 @@ function handleTextChange(e, stateVar, setFunction) {
         return display
     }
 
+    // function for matching index number of sorted log to the original listed index number
+    // find index in sorted array that matches original index of logs array for submitting edit form (would use id key in future but don't have that option here)
+    function matchIndex (responseData, obj, setFunction){
+       const match = responseData.findIndex(({captainName, title, post, mistakesWereMadeToday, daysSinceLastCrisis}) => {
+            const nameMatch = obj.captainName === captainName
+            const titleMatch = obj.title === title
+            const postMatch = obj.post === post
+            const mistakesMatch = obj.mistakesWereMadeToday === mistakesWereMadeToday
+            const crisisMatch = obj.daysSinceLastCrisis === daysSinceLastCrisis
+            
+            return nameMatch && titleMatch && postMatch && mistakesMatch && crisisMatch
+            })
+            setFunction(match)
+
+    }
 
 
 
@@ -52,4 +67,5 @@ export  {
     handleTextChange,
     convertInput,
     displayLogs,
+    matchIndex,
 }
