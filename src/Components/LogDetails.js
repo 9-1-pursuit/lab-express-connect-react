@@ -1,10 +1,15 @@
 import { useState, useEffect } from "react";
 import { Link, useParams, withRouter, useNavigate } from "react-router-dom";
 import axios from "axios";
+import ReactDOM from "react-dom";
+import Modal from "react-modal";
+import { Container, Card, Alert } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
 const API = process.env.REACT_APP_API_URL;
 
 function LogDetails() {
   const [log, setLog] = useState([]);
+
   let { index } = useParams();
   let navigate = useNavigate();
 

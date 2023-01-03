@@ -124,6 +124,10 @@ tbody td:not(td:first-of-type):hover {
   color: #000000;
 }
 
+.Light #nameLink {
+  color: #000000;
+}
+
 .Light main .Show {
   display: flex;
   flex-direction: column;
@@ -420,6 +424,13 @@ tbody td:not(td:first-of-type):hover {
   color: #ffffff;
 }
 #titleLink:hover {
+  color: #ff5a09;
+}
+
+.Dark #nameLink {
+  color: #ffffff;
+}
+#nameLink:hover {
   color: #ff5a09;
 }
 

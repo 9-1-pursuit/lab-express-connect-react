@@ -10,7 +10,15 @@ function Log({ log, index }) {
           <span>&nbsp; &nbsp; &nbsp;</span>
         )}
       </td>
-      <td>{log.captainName}</td>
+      <td>
+        <Link
+          to={`/logs/${index}`}
+          id="nameLink"
+          style={{ textDecoration: "none", cursor: "pointer" }}
+        >
+          {log.captainName}
+        </Link>
+      </td>
       <td>
         <Link
           to={`/logs/${index}`}
