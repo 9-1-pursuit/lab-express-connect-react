@@ -46,7 +46,7 @@ export default function Log() {
         </section>
       )}
       <section className="buttons">
-        <Link to={`${API}`}>Back</Link>
+        <Link to="/logs">Back</Link>
         <Link to={`/logs/${index}/edit`}>Edit</Link>
         <button onClick={handleDelete}>Delete</button>
       </section>
