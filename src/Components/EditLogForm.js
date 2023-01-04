@@ -4,6 +4,7 @@ import { useParams, Link, useNavigate } from "react-router-dom"
 import axios from 'axios'
 const API = process.env.REACT_APP_API_URL
 
+
 const EditLogForm = () => {
     let { index } = useParams();
     const navigate = useNavigate()
@@ -12,12 +13,17 @@ const EditLogForm = () => {
         title: "",
         post: "",
         days: "",
-        mistakes: "",
+        mistakes: false,
     })
 
     const handleTextChange = (event) => {
         setLog({...log, [event.target.id]: event.target.value})
     }
+    const handleCheckBox = ()=>{
+        setChecked(!checked)  //updates checkbox state
+        log.mistakes=!checked 
+    }
+    const[checked, setChecked] = useState(false)
 
     useEffect(() => {
         axios
@@ -29,7 +35,7 @@ const EditLogForm = () => {
     const handleSubmit = (event) => {
         event.preventDefault()     
         axios
-        .put(`${API}/logs/${index}`, log)
+        .put(`${API}/logs/${index}`,log)
         .then((res) => {
             setLog(res.data)
             navigate(`/logs/${index}`)
@@ -66,32 +72,36 @@ const EditLogForm = () => {
                 <label htmlFor="post">Post:</label>
                 <input
                 id="post"
+                name="post"
                 value={log.post}
                 type="text"
                 placeholder="Enter a post here"
+                onChange={handleTextChange}
                 required
                 />
                 <br/><br/>
 
-                <label htmlFor="daysSinceLastCrisis">Days Since Last Crisis:</label>
+                <label htmlFor="days">Days Since Last Crisis:</label>
                 <input
-                id="daysSinceLastCrisis"
-                value={log.daysSinceLastCrisis}
+                id="days"
+                value={log.days}
                 type="text"
+                name="days"
                 placeholder="Enter number of days since the last crisis occurred"
+                onChange={handleTextChange}
                 required
                 />
                 <br/><br/>
                 
-                <label htmlFor="mistakesWereMadeToday">Mistakes that were made today:</label>
+                <label htmlFor="mistakes">Mistakes were made today:</label>
                 <input
-                id="mistakesWereMadeToday"
-                value={log.mistakesWereMadeToday}
-                type="text"
-                required
+                id="mistakes"
+                checked={log.mistakes}
+                type="checkbox"
+                onChange={handleCheckBox}
                 />
                 <br/> <br/>
-                <input type="submit"/>  
+                <input type="submit" value="Save"/>  
                 <Link to={`/logs/${index}`} className='cancelLink'><button className='cancelEditButton'>Cancel</button>
                 </Link> 
 

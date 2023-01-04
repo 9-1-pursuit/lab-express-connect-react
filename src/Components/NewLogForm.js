@@ -88,7 +88,6 @@ const NewLogForm = () => {
                 checked={checked}
                 type="checkbox"
                 onChange={handleCheckBox}
-                required
                 />
                 <br/> <br/>
                 <input type="submit" value="  Save Log"/>
