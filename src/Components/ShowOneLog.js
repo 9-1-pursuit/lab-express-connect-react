@@ -12,8 +12,8 @@ const ShowOneLog = ({log, index}) => {
                 {/* test */}
                 <td className='logName'> {log.captainName} </td>
                 <td className='logTitle'><Link to={`/logs/${index}`}> {log.title} </Link></td>
-                <td className='logMistakes'> Mistakes 
-                    {log.mistakes  ? (<span>👺💥</span>) : ("🌈🌞")}
+                <td className='logMistakes'> 
+                    {log.mistakes  ? (<span>👺💥</span>) : ("🌈🌞")} 
             </td>
             </tr>  
             </>  
