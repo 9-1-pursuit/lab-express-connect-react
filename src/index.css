@@ -1,5 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
+
+
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+/***----- Navigation Bar -----***/
+.nav{
+  display: grid;     grid-template-columns: .1fr .75fr 1fr 1fr .5fr .5fr;
+  width: 100vw;      height: 10vh; background-color: rgb(6, 69, 6);
+}
+
+/***----- Navigation Bar Children - Home Link, LogsLink and New Log Button -----***/
+.homeLink{
+  color:yellow;    text-decoration: none;
+  font-size: 1.1em;  font-family: 'Alfa Slab One', cursive;
+  text-shadow: -3px 0 rgb(92, 37, 92), 0 3px purple, 3px 0 purple, 0 -3px purple;
+}
+.logsLink{
+  grid-column: 2;     margin-left: -1em;
+  color:goldenrod;  text-decoration: none;
+  font-size: 1.3em;   font-stretch:extra-expanded;  font-family: 'Alfa Slab One', cursive;
+  text-shadow: -3px 0 rgb(92, 37, 92), 0 3px purple, 3px 0 purple, 0 -3px purple;
+}
+.nav button{
+  grid-column: 6;      width: 5em; height: 2em;     margin-top: 2vh;   margin-left: 2vh;
+  font-family: impact; font-weight: bolder;         font-size: 1.3em;  color: black; 
+  border-radius: 25%;  background-color: goldenrod;   
+}
+
+/***----- Home View -----***/
+.home{
+  display: grid;         grid-template-rows: .5fr .5fr 1fr;
+  height: 100vh;         width: 100vw;  
+  background-position: center;
+  background-size:unset; background-color: rgb(56,32,26); 
+  background-repeat: no-repeat;
+  background-image:      url('./Images/captainLogBkgrndGreenBorderSmaller.png');
+}
+.welcomeMsg {
+  font-size: 2em;         color:  rgb(229, 90, 4);        text-shadow:saddlebrown;
+  height: 1em;            width:67vw;                      font-weight: bold;
+  background-color: rgba(77, 47, 7, 0.599);               -webkit-text-stroke: .25px yellow;
+  animation-name: slide;                                    animation-duration: 15s;
+  animation-timing-function: linear;                        animation-iteration-count: infinite;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(50px); 
+  }
+  100% {
+    transform: translateX(400px);
+  }
+}
+
+/***----- Container for Logs List -----***/
+ .logsPage{
+  display: grid;         grid-template-rows: .25fr 1fr 1fr; 
+  height: 90vh;          width: auto;                
+  background-size:cover; background-repeat: no-repeat;                      
+  background-image:      url("./Images/editLogBkgrnd.png") ; 
+} 
+
+/***----- View that will display list of logs -----***/
+.logsIndex {
+  grid-row: 2;           grid-template-rows: auto;  
+  display: grid;         grid-template-columns: 1fr; /* justify-items: center; */
+  margin-left: auto;     margin-right:auto;                  font-size: larger;
+  height: 140%;          width: 85%;                         padding: 1em;
+  background-size:cover; background-repeat: no-repeat;       border-radius: 5%;
+  background-color:      rgba(250, 235,215,.9);            border: 5px solid rgb(56,32,26);
+}     
+
+/***----- Children of LogsIndex View -  Log List Heading and Log List -----***/
+.logList, .logListHdg{
+  display: grid;         grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;   margin-left: 10vw;     height: 3vh;           
+  /* display:flex;justify-items: center; justify-content:space-evenly;*/
+}
+.logListHdg{
+  font-weight: bolder;   text-decoration: underline;
+  font-size: larger;     text-decoration-color: brown;
+}
+
+
+/***----- Container for New Log Form -----***/
+.new{
+  display: grid;         grid-template-rows: .25fr 1fr 1fr 1fr 1fr;
+  height: 100vh;         background-repeat: no-repeat;    background-size:contain;
+  width: 100vw;          background-position: center;     background-color: rgb(56,32,26);
+  background-image:      url('./Images/addLogBkgrnd.png');
+  }
+  
+/***----- New Log Form -----***/
+ form {
+  grid-row: 2;           display: grid;                   grid-template-columns: 1fr 1fr;
+  padding: 5vh;          grid-template-rows: auto;        border-radius: 5%; 
+  margin-left: auto;     background-size:cover;           border: 5px solid rgb(56,32,26); 
+  margin-right:auto;     background-repeat: no-repeat;    height: fit-content;    width:60%; 
+  margin-top: 15vh;      background-color:rgba(250, 235,215,.9);        
+}
+
+/***----- Children of new log form - label and input -----***/
+form label{ 
+  grid-column: 1;        font-weight: bold;               
+  font-size: larger;     margin-left: 2vh;/*align-items:center; */ 
+}
+
+form input {
+  grid-column: 2;        margin-right: 2vh;
+}
+
+form input[type="checkbox"]{
+  justify-self: left;    height: 3vh; 
+  width: 3vh;            border: 3px solid brown;
+}
+
+form input[type="submit"]{
+  justify-self: left;    width: 25vh;                     height: 9vh;        
+  color: yellow;       font-size: 2em;                  font-weight: bolder;
+  background-image: url('./Images/log2.png');             background-size: contain; 
+  border: 3px solid antiquewhite;                       background-repeat: no-repeat; 
+ }
+
+/***----- Show page - displays Log Details and nav buttons -----***/
+.show{
+  height: 100vh;         width: 102vw;
+  background-image: url('./Images/oceanLog.png');          background-repeat: no-repeat;
+  background-size: cover;                                  background-color: rgb(56,32,26);
+  /* background-position: center; display: grid; grid-template-rows: .25fr 1fr 1fr 1fr 1fr; */
+  }
+
+.showLogDetails {
+  grid-row: 2;           grid-template-columns: 1fr;       grid-template-rows: auto;
+  display: grid;         height: 67%;                      width: 50%;
+  margin-left: auto;     margin-right: auto;               padding: 5vh; 
+  border-radius: 5%;     border:5px solid rgb(56,32,26); background-repeat: no-repeat;
+  background-size:unset; background-color:rgba(250, 235,215,.6);
+  background-position: right 2vw;
+  background-image: url('/src/Images/captainThumbsUp.png');
+  }
+  /* .logDetailsPost{
+    background-color: rgba(250, 235,215,.7); } */
+
+.showLogBackButton{
+  justify-self: left;    width: 25vh;                     height: 9vh;        
+  color: yellow;       font-size: 1.5em;                font-weight: bolder; 
+  padding-left: 1em;     background-repeat: no-repeat;    border: 3px solid antiquewhite;
+  background-image: url('./Images/log2.png');             background-size: contain;
+  -webkit-animation: wave1 5.5s ease-in-out forwards infinite;
+  animation: wave1 5.5s ease-in-out forwards infinite;                    
+
+}
+.showLogEditButton{
+  justify-self: left;    width: 25vh;                     height: 9vh;        
+  color: deepskyblue;  font-size: 2em;                  font-weight: bolder;
+  background-image: url('./Images/log2.png');             background-size: contain; 
+  border: 3px solid rgb(250, 246, 215);                 background-repeat: no-repeat;
+  -webkit-transform-origin: 50% 0;                        transform-origin: 50% 0;
+  animation: wave2 3.5s ease-in-out forwards infinite;                    
+  -webkit-animation: wave2 3.5s ease-in-out forwards infinite;
+}
+.showLogDeleteButton{
+  justify-self: left;      width: 25vh;                   height: 9vh;        
+  color: rgb(248, 9, 9); font-size: 2.2em;              font-weight: bolder;
+  background-image: url('./Images/log2.png');             background-size: contain; 
+  border: 3px solid antiquewhite;                       background-repeat: no-repeat;
+  -webkit-text-stroke: .5px whitesmoke;                 /* text-shadow: 2px 2px 5px white;*/
+   -webkit-transform-origin: 50% 0;                       transform-origin: 50% 0;
+  animation: wave3 4.5s ease-in-out forwards infinite;                    
+   -webkit-animation: wave3 4.5s ease-in-out forwards infinite;
+}
+
+@keyframes wave1{
+  0%{transform: rotate(15deg);}
+40%{transform: rotate(-10deg)}
+  100%{transform: rotate(10deg);}
+}
+@keyframes wave2{
+  0%{transform: rotate(10deg);}
+  50%{transform: rotate(-5deg)}
+  100%{transform: rotate(14deg);}
+}
+@keyframes wave3{
+  0%{transform: rotate(6deg);}
+  50%{transform: rotate(-15deg)}
+  100%{transform: rotate(18deg);}
+}
+
+ 
+/***----- Edit Log View -----***/
+.editLogPage{
+  height: 100vh;             width: 100vw;
+  background-size: cover;                                  background-color: rgb(56,32,26);
+  background-image: url('./Images/mapLog.png');            background-repeat: no-repeat;
+}
+
+.editLogForm{
+  grid-row: 2;
+  margin-top: 6vh;
+}
+ 
+.editLogHdg {
+  margin-top:3em;
+  font-size: 3em;
+  width: 11vw;
+  background-color:rgb(40, 104, 156);
+  border: 5px solid rgb(92, 37, 92);
+  margin-left:12.5em;
+  color:antiquewhite;
+  border-radius: 10%;
+}
+
+.editLogCancelHdg{
+  display:inline-block;
+  grid-row: 1; 
+  justify-items: center;
+  background-color:rgba(40, 104, 156, .7);
+  color:antiquewhite;
+  border-radius: 7%;
+  height: 5vh;         
+  width: 27.5vw;
+  border: 3px solid rgb(92, 37, 92);
+  justify-items: center;
+  font-weight: bold;
+  margin-left:10em;
+  text-align: center;
+  margin-left: 33em;
+  font-size: 1em;
+}
+
+.cancelEditButton{
+  justify-self: left;    width: 25vh;                     height: 9vh;        
+  color: red;       font-size: 2em;                     font-weight: bolder;
+  background-image: url('./Images/log2.png');             background-size: contain; 
+  border: 3px solid antiquewhite;                       background-repeat: no-repeat;
+}
+
+.cancelLink{
+  grid-column: 2;
+}
+
