@@ -33,10 +33,10 @@ function LogDetails() {
     <article className='showLogDetails'>
        <h2>{log.title}</h2> by <h1>{log.captainName}</h1>
       <h3 className="logDetailsPost">{log.post}</h3>
-      <h3>Days since last crisis: {log.days}</h3>
+      <h3>Days since last crisis: {log.daysSinceLastCrisis}</h3>
        
       <div className="showLogButtons">
-        <Link to={`/logs`}> <button className="showLogBackButton">Back</button> </Link>
+        <Link to={`/logs`}> <button className="showLogBackButton"> Back to Logs</button> </Link>
         <Link to={`/logs/${index}/edit`}><button className="showLogEditButton">Edit</button> </Link>
         <button onClick={handleDelete} className="showLogDeleteButton">Delete</button>
       </div>
