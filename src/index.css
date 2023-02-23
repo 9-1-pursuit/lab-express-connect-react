@@ -3,3 +3,139 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+
+
+nav {
+  background: linear-gradient(90deg, rgba(233,102,52,1) 5%, rgba(235,132,51,1) 24%, rgba(237,145,43,1) 47%, rgba(236,175,98,0.9626444327731093) 74%);
+
+  background-attachment: fixed;
+  background-size: cover;
+  background-attachment: fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  box-shadow: 2px 2px 4px rgb(32, 14, 14);
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+main {
+  width: 90%;
+  margin: auto;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(80, 49, 8);
+  
+}
+button  {
+  color: rgb(222, 130, 9);
+  font-size: 25px;
+  border-radius: 15px;
+}
+
+h4 {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+}
+
+table {
+  width: 70%;
+  margin: auto;
+  font-size: 30px;
+  border: 2px solid rgb(240, 116, 71);
+  border-radius: 10px;
+  box-shadow: rgba(54, 27, 3, 0.24) 10px 13px 8px;
+  padding: 30px;
+  margin-bottom: 20px;
+  margin-top: 70px;}
+
+td {
+  text-align: center;
+  font-size: 22px;
+}
+
+tbody td:not(td:first-of-type):hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+tbody tr:nth-child(even) {
+  background: #f2dbc5;
+}
+
+
+
+
+ form {
+  margin: auto;
+  width: 50%;
+  border: 2px solid rgb(240, 116, 71);
+  border-radius: 10px;
+  box-shadow: rgba(54, 27, 3, 0.24) 10px 13px 8px;
+  padding: 30px;
+  margin-bottom: 20px;
+  margin-top: 70px;
+
+}
+
+input[type],
+textarea {
+  display: block;
+  width: 90%;
+  margin: auto;
+}
+
+input[type="checkbox"] {
+  margin: 0;
+  width: 15%;
+}
+
+input[type="submit"] {
+  width: 30%;
+}
+
+.showNavigation {
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+
+}
+
+.Show{
+  margin: auto;
+  width: 50%;
+  border: 2px solid rgb(240, 116, 71);
+  border-radius: 10px;
+  box-shadow: rgba(54, 27, 3, 0.24) 10px 13px 8px;
+  padding: 30px;
+  margin-bottom: 20px;
+  margin-top: 70px;
+}
+
+.container-log-details{
+
+  justify-content: center;
+  text-align: center;
+  font-size: 20px;
+}
+
+.New{
+  justify-content: space-between;
+
+  font-size: 20px;
+}
+.New-Edit{
+  justify-content: space-between;
+
+  font-size: 20px;
+}
+
+
+.home{
+  text-align: center;
+}
